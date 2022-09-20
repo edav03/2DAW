@@ -1,0 +1,3 @@
+El ssh inclou un fps, pe tant no decen installa un altre fps ja que pt incorrer a error de ports uftps
+
+SSL nivell d'aplicacio i TSL nivell de transport
