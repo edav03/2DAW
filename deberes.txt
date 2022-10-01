@@ -1,3 +1,2 @@
 Deberes:
 -DISSENY D'INTERFICIES: Currículum
--ENGLISH: Git practices
