@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="recibe_datos.php" method="post" enctype="multipart/form-data">
+        Sexo:
+        <INPUT TYPE="radio" NAME="sexo" VALUE="M" CHECKED>Mujer
+        <INPUT TYPE="radio" NAME="sexo" VALUE="H">Hombre
+        <br>
+      <h2>Selecciona los extras de tu inmueble</h2>  
+        <INPUT TYPE="checkbox" NAME="extras[]" VALUE="garaje" CHECKED>Garaje
+        <br>
+        <INPUT TYPE="checkbox" NAME="extras[]" VALUE="piscina">Piscina
+        <br>
+        <INPUT TYPE="checkbox" NAME="extras[]" VALUE="jardin">Jardín
+
+        <br>
+
+        Color:
+        <SELECT NAME="color">
+         <option value="rojo" selected>
+         <OPTION VALUE="verde">Verde</option>
+         <OPTION VALUE="azul">Azul</option>
+        </SELECT><br>
+
+
+        Idiomas:
+        <SELECT MULTIPLE size="3" NAME="idiomas[]">
+         <OPTION VALUE="ingles" SELECTED>Inglés
+         <OPTION VALUE="frances">Francés
+         <OPTION VALUE="aleman">Alemán
+         <OPTION VALUE="holandes">Holandés
+        </SELECT>
+<br>
+Comentario:
+<TEXTAREA COLS="50" ROWS="4" NAME="comentario">
+Este libro me parece ...
+</TEXTAREA>
+<br>
+<input type="file" name="fichero" id="fichero"><br>
+        <input type="submit" value="Aceptar">
+    </form>
+    
+</body>
+</html>

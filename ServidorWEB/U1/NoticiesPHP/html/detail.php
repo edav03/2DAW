@@ -19,19 +19,23 @@
         echo 'Connection error: ' . mysqli_connect_error();
     }
 
-    echo "The id of the notice is = " . $_GET['id'];
-    
-    $nID = intval($_GET['id']);
-    
-    $sent = "SELECT post_abstact FROM gnr_post WHERE post_id=&nID";
-    ini_set('display_errors', 1);
+    $num = $_GET['id'];
 
-    $result = mysqli_query($conn, $sent);
-    error_log($result);
+    // $sql = "SELECT `post_abstract`, `post_body` FROM `gnr_post` WHERE `post_id`=$num;";
 
-    $final = mysqli_fetch_all($result, MYSQLI_ASSOC);
+    $result = mysqli_query($conn, "SELECT `post_abstract`, `post_body` FROM `gnr_post` WHERE `post_id`=$num;");
 
-    print_r($final);
+    $row = mysqli_fetch_array($result);
+
+    echo "<table border = '1'>";
+    echo "<tr>";
+    echo "<th><h1>". $row['post_abstract'] . "</h1></th>";
+    echo "</tr>";
+
+    echo "<tr>";
+    echo "<td>" . $row['post_body'] . "</td>";
+    echo "</tr>";
+    echo "</table>";
 
     ?>
 </body>
