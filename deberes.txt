@@ -1,2 +1,8 @@
 Deberes:
 -ClientWeb: Java exercises
+
+Hablar:
+-DWEC
+-DWS
+-DIF
+-EIE

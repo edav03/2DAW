@@ -1,0 +1,82 @@
+<!DOCTYPE html >
+<html lang="es">
+  <head>
+    <title>Form en Pug</title>
+    <meta charset="utf-8"/>
+  </head>
+  <body> 
+    <header> 
+      <h1>Form en Pug </h1>
+    </header>
+    <main> 
+      <form name="datos" method="get" action="procesa.php">
+        <fieldset>
+          <legend>Datos Personales </legend>
+          <p> 
+            <label for="nom">Nombre: </label>
+            <input type="text" id="name" name="nom" maxlength="100" placeholder="Yeeep escribe"/>
+          </p>
+          <p> 
+            <label for="home">Hombre: </label>
+            <input type="radio" id="home" name="sexo"/>
+            <label for="dona">Mujer: </label>
+            <input type="radio" id="dona" name="sexo"/>
+          </p>
+          <p> 
+            <label for="edad">Edad: </label>
+            <input type="number" id="edad" name="edad"/>
+          </p>
+          <p> 
+            <label for="colorp">Color preferido </label>
+            <input type="color" id="colorp" name="colorp"/>
+          </p>
+          <p> 
+            <label for="email">e-mail </label>
+            <input type="email" required="required" maxlength="50"/>
+          </p>
+          <p> 
+            <label for="mayor">Mayor de Edad</label>
+            <input type="checkbox" checked="checked" disabled="disabled"/>
+          </p>
+        </fieldset>
+        <fieldset> 
+          <legend>Formacion</legend>
+          <p> Hola
+            <label for="estudios">Nivel Estudios </label>
+            <select name="estudios" id="estudios"> 
+              <option value="eso">E.S.O </option>
+              <option value="bac">Bachiller/FP</option>
+              <option value="uni">Universidad   </option>
+            </select>
+          </p>
+          <p> 
+            <label for="idiomas">Idiomas </label>
+            <select name="idiomas" id="idiomas" multiple="multiple" size="2">
+              <option value="al">Aleman </option>
+              <option value="fr">Frances</option>
+              <option value="en">Ingles   </option>
+            </select>
+          </p>
+          <p> 
+            <label for="carnet">Carnet de conducir</label>
+            <input type="text" maxlength="3" pattern="[A-C][1-2]"/>
+          </p>
+          <p> 
+            <label for="hobby">Aficiones</label>
+            <input type="text" id="hobby" name="hobby" list="aficiones"/>
+            <datalist id="aficiones">
+              <option value="Pescar"></option>
+              <option value="Leer"></option>
+              <option value="Dormir"></option>
+            </datalist>
+          </p>
+        </fieldset>
+        <p>
+          <input type="reset" value="Borrar"/>
+          <input type="submit" value="Enviar"/>
+          <button type="submit"><img src="img/button.jpeg" alt="boton"/></button>
+        </p>
+      </form>
+    </main>
+  </body>
+</html>

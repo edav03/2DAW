@@ -1,0 +1,21 @@
+-var tit= "Mi titulo"
+-var libros= ["Quijote", "La Biblia", "StarWars"]
+include includes/mixins.pug
+doctype html 
+html(lang="es") 
+    include includes/head.pug
+    body 
+        header 
+        main 
+            section(id="libros")
+                ul
+                    each libro in libros
+                        li(value=libro) #{libro}
+            section(id="fotos")
+                - for (var x= 1; x<= 10; x++)
+                    //- div
+                    //-     img(src="img/foto"+x+".jpg", alt="foto "+x)
+                    +creafotos("./img/foto"+x+".jpg", "foto "+x)
+            section(id="listado")
+                +crealista("autores", "Autores", "Cervantes", "Anonimo", "G.Lucas")
+        include includes/footer.pug

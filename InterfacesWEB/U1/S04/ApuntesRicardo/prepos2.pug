@@ -1,0 +1,80 @@
+doctype html 
+-var tit="Form en Pug"
+html(lang="es")
+    head
+        title #{tit}
+        meta(charset="utf-8")
+    body 
+        header 
+            h1 #{tit} 
+        main 
+            form(name="datos", method="get", action="procesa.php")
+                fieldset
+                    legend Datos Personales 
+                    p 
+                        label(for="nom") Nombre: 
+                        input(type="text", id="name", name="nom", maxlength="100", placeholder="Yeeep escribe")
+                            //-autofocus ppone el cursor automaticamente
+                            //-required para valor requerido
+
+                    p  
+                        label(for="home") Hombre: 
+                        input(type="radio", id="home", name="sexo")
+                        
+                        label(for="dona") Mujer: 
+                        input(type="radio", id="dona", name="sexo")
+
+                    p 
+
+                        label(for="edad") Edad: 
+                        input(type="number", id="edad", name="edad")
+                            //-min y max para valores numericos
+                    p 
+                        label(for="colorp") Color preferido 
+                        input(type="color", id="colorp", name="colorp") 
+
+                    p 
+                        label(for="email") e-mail 
+                        input(type="email", required, maxlength="50")
+
+                    p 
+                        label(for="mayor") Mayor de Edad
+                        input(type="checkbox", checked, disabled)
+                    //- p 
+                    //-     input(type="reset", value="Borrar")
+                    //-     input(type="submit", value="Enviar") 
+                fieldset 
+                    legend Formacion
+                    p  Hola
+                        label(for="estudios") Nivel Estudios 
+                        select(name="estudios", id="estudios")  
+                            option(value="eso") E.S.O 
+                            option(value="bac") Bachiller/FP
+                            option(value="uni") Universidad   
+                                //-Si no ponemos value, viaje al texto de la derecha
+                    p 
+                        label(for="idiomas") Idiomas 
+                        select(name="idiomas", id="idiomas", multiple, size="2")
+                            option(value="al") Aleman 
+                            option(value="fr") Frances
+                            option(value="en") Ingles   
+                                //-Multiple permite varias selecciones.
+                                //-con size controla el tamaño
+                    p 
+                        label(for="carnet") Carnet de conducir
+                        input(type="text", maxlength="3", pattern="[A-C][1-2]")
+                    
+                    p 
+                        label(for="hobby") Aficiones
+                        input(type="text", id="hobby", name="hobby", list="aficiones")
+                        //- Los datalist pueden estar al final del html, se vinculan
+                        //- con el atributo "list", haciendo referencia al id del datalist
+                        datalist(id="aficiones")
+                            option(value="Pescar")
+                            option(value="Leer")
+                            option(value="Dormir")
+                p
+                    input(type="reset", value="Borrar")
+                    input(type="submit", value="Enviar") 
+                    button(type="submit")
+                        img(src="img/button.jpeg", alt="boton")

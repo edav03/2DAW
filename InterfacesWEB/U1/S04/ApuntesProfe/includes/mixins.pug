@@ -1,0 +1,10 @@
+mixin crealista(valorid, titulo, ...items)
+    div(id=valorid)
+        h3 #{titulo}
+        ul 
+            each item in items
+                li #{item}
+
+mixin creaimg(url, alt)
+    div 
+        img(url=url, alt=alt)
