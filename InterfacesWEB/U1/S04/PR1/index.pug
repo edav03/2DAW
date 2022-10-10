@@ -7,10 +7,97 @@ html
         header
             include includes/nav.pug
         main 
-            form(name="datos", method="GET", action="process.php")
+            form(name="curriculum", method="GET", action="process.php")
                 fieldset
-                    legend DATOS PERSONALES
+                    legend(id="datos") DATOS PERSONALES
 
                     p  
-                        label Nombre:
-                        Edison Alcocer Valencia
+                        label(for="nombre") Nombre:
+                        input(type="text" id="nombre" autofocus required)
+
+                    p 
+                        label(for="nacimiento") Fecha de nacimiento: 
+                        input(type="date" id="Fnaci" max="2004-09-01" min="1940-01-01" required)
+                    
+                    p 
+                        label(for="carnet") Carnet de conducir:
+                        input(type="text", maxlength="3", pattern="[A-C][1-2]")
+
+                    p
+                        label(for="mail") Email:
+                        input(type="email" id="mail" placeholder="email@example.com")
+                    
+                    p
+                        label(for="num") Tlf:
+                        input(type="number" id="num" placeholder="+34 XXX-XXX-XXX" required)
+
+                    p
+                        label(for="favcolor") Color favorito:
+                        input(type="color" id="favcolor")
+
+                    p 
+                        label(for="hobby") Aficiones
+                        input(type="text", id="hobby", name="hobby", list="hobbies")
+                        datalist(id="hobbies")
+                            option(value="Futbol")
+                            option(value="Leer")
+                            option(value="Videojuegos")
+
+                fieldset 
+                    legend(id="estudios") ESTUDIOS
+
+                    p 
+                        input(type="checkbox" id="eso" checked)
+                        label(for="eso") E.S.O
+                        
+                    p 
+                        input(type="checkbox" id="bachiller")
+                        label(for="bach") BACHILLER
+                    
+                    p 
+                        input(type="checkbox" id="mCiclo")
+                        label(for="medio") CICLO MEDIO 
+                    
+                    p 
+                        input(type="checkbox" id="sCiclo")
+                        label(for="superior") CICLO SUPERIOR
+                    
+                    p 
+                        input(type="checkbox" id="carrera")
+                        label(for="carrera") UNIVERSITARIO/A
+                fieldset 
+                    legend(id="exp") EXPERIENCIA
+
+                    p 
+                        label(for="1empr") Empresa 1
+                        input(type="text" id="1empr" placeholder="Nombre de la Empresa")
+                        label(for="fin1") Fecha que terminaste contrato:
+                        input(type="date" id="fin1")
+
+                    p 
+                        label(for="2empr") Empresa 2
+                        input(type="text" id="2empr" placeholder="Nombre de la Empresa")
+                        label(for="fin2") Fecha que terminaste contrato:
+                        input(type="date" id="fin2")
+
+                fieldset 
+                    legend(id="idiomas") IDIOMAS
+
+                    p 
+                        label(for="esp") Español
+                        input(type="range" id="espLevel" min="0" max="100" placeholder="0")
+                    
+                    p 
+                        label(for="eng") Ingles
+                        input(type="range" id="engLevel" min="0" max="100")
+
+                    p 
+                        label(for="cat") Catalan
+                        input(type="range" id="catLevel" min="0" max="100")
+
+                p
+                    input(type="reset", value="Borrar")
+                    input(type="submit", value="Enviar")
+                    
+                    
+                

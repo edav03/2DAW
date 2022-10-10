@@ -7,17 +7,103 @@
   <body> 
     <header>
       <h1>Curriculum Vitae </h1>
-      <nav> <a href="#">Datos personal | </a><a href="#">Estudios |</a><a href="#">Experiencia |</a><a href="#">Idiomas |</a><a href="#">Contacto</a></nav>
+      <nav> <a href="#datos">Datos personal | </a><a href="#estudios">Estudios |</a><a href="#exp">Experiencia |</a><a href="#idiomas">Idiomas |</a></nav>
     </header>
     <main> 
-      <form name="datos" method="GET" action="process.php">
+      <form name="curriculum" method="GET" action="process.php">
         <fieldset>
-          <legend>DATOS PERSONALES</legend>
+          <legend id="datos">DATOS PERSONALES</legend>
           <p> 
-            <label>Nombre:</label>
-            <Edison>Alcocer Valencia</Edison>
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" autofocus="autofocus" required="required"/>
+          </p>
+          <p> 
+            <label for="nacimiento">Fecha de nacimiento: </label>
+            <input type="date" id="Fnaci" max="2004-09-01" min="1940-01-01" required="required"/>
+          </p>
+          <p> 
+            <label for="carnet">Carnet de conducir:</label>
+            <input type="text" maxlength="3" pattern="[A-C][1-2]"/>
+          </p>
+          <p>
+            <label for="mail">Email:</label>
+            <input type="email" id="mail" placeholder="email@example.com"/>
+          </p>
+          <p>
+            <label for="num">Tlf:</label>
+            <input type="number" id="num" placeholder="+34 XXX-XXX-XXX" required="required"/>
+          </p>
+          <p>
+            <label for="favcolor">Color favorito:</label>
+            <input type="color" id="favcolor"/>
+          </p>
+          <p> 
+            <label for="hobby">Aficiones</label>
+            <input type="text" id="hobby" name="hobby" list="hobbies"/>
+            <datalist id="hobbies">
+              <option value="Futbol"></option>
+              <option value="Leer"></option>
+              <option value="Videojuegos"></option>
+            </datalist>
           </p>
         </fieldset>
+        <fieldset> 
+          <legend id="estudios">ESTUDIOS</legend>
+          <p> 
+            <input type="checkbox" id="eso" checked="checked"/>
+            <label for="eso">E.S.O</label>
+          </p>
+          <p> 
+            <input type="checkbox" id="bachiller"/>
+            <label for="bach">BACHILLER</label>
+          </p>
+          <p> 
+            <input type="checkbox" id="mCiclo"/>
+            <label for="medio">CICLO MEDIO </label>
+          </p>
+          <p> 
+            <input type="checkbox" id="sCiclo"/>
+            <label for="superior">CICLO SUPERIOR</label>
+          </p>
+          <p> 
+            <input type="checkbox" id="carrera"/>
+            <label for="carrera">UNIVERSITARIO/A</label>
+          </p>
+        </fieldset>
+        <fieldset> 
+          <legend id="exp">EXPERIENCIA</legend>
+          <p> 
+            <label for="1empr">Empresa 1</label>
+            <input type="text" id="1empr" placeholder="Nombre de la Empresa"/>
+            <label for="fin1">Fecha que terminaste contrato:</label>
+            <input type="date" id="fin1"/>
+          </p>
+          <p> 
+            <label for="2empr">Empresa 2</label>
+            <input type="text" id="2empr" placeholder="Nombre de la Empresa"/>
+            <label for="fin2">Fecha que terminaste contrato:</label>
+            <input type="date" id="fin2"/>
+          </p>
+        </fieldset>
+        <fieldset> 
+          <legend id="idiomas">IDIOMAS</legend>
+          <p> 
+            <label for="esp">Español</label>
+            <input type="range" id="espLevel" min="0" max="100" placeholder="0"/>
+          </p>
+          <p> 
+            <label for="eng">Ingles</label>
+            <input type="range" id="engLevel" min="0" max="100"/>
+          </p>
+          <p> 
+            <label for="cat">Catalan</label>
+            <input type="range" id="catLevel" min="0" max="100"/>
+          </p>
+        </fieldset>
+        <p>
+          <input type="reset" value="Borrar"/>
+          <input type="submit" value="Enviar"/>
+        </p>
       </form>
     </main>
   </body>
