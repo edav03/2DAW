@@ -10,11 +10,10 @@ function newCode(letter, num) {
     var newLetter = parseInt(letter.charCodeAt(0));
 
     // Spaces don't change
-    if (newLetter == 32) {
-        newLetter = 32;
-    }else if (newLetter == 90 || newLetter == 122){ // Case newLetter is Z or z
-        newLetter -= 26;
-        newLetter += num;
+    if (newLetter == 32);
+    else if (newLetter > 90){ // Case newLetter > z
+        newLetter -= 26 + num;
+        // newLetter += num;
     }else{
         newLetter += num;
     }
@@ -22,14 +21,3 @@ function newCode(letter, num) {
 
     document.write(letra + " - " + newLetter + "<br>");
 }
-
-// if(newLetter+num > 90 && newLetter+num < 97){
-//      y + 5 = d
-//      y -> z = 1
-//      cont -= 1
-//      newLetter = 25;
-//      newLetter += cont;
-
-// else if (newLetter == 90 || newLetter == 122){ // Case newLetter is Z or z
-//     newLetter -= 26;
-//     newLetter += num;

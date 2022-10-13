@@ -1,17 +1,24 @@
-// var frase = prompt("Escribe algo");
-// var num  = parseInt(prompt("Introduce un numero"));
+var frase = prompt("Escribe algo");
+var num = prompt("Introduce un numero");
+var k = 0;
 
-// for (let i = 0; i < frase.length; i++) {
-//     newCode(frase[i], num);
-// }
+for (var i = 0; i < frase.length; i++) {
 
-// // Function for getting the next Character
-// // function newCode(letter, num) {
-// //     var newLetter = parseInt(letter.charCodeAt(0));
+    if (k < num.length) {
+        // document.write(frase[i] + " con num = " + num[k] + "<br>");
+        newCode(frase[i], num[k]);
+        k++;
+    }else{
+        k = 0;
+    }
+        
+}
+        
+// Function for getting the next Character
+function newCode(letter, num) {
+    var newLetter = parseInt(letter.charCodeAt(0)) + parseInt(num);
 
-// //     newLetter += num;
+    var letra = String.fromCharCode(newLetter);
 
-// //     var letra = String.fromCharCode(newLetter);
-
-// //     document.write(letra + " - " + newLetter + "<br>");
-// // }
+    document.write(letter + " + " + num + " = " + letra + "<br>");
+}
