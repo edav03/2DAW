@@ -13,7 +13,7 @@
 
     <?php
 
-    $conn = mysqli_connect('localhost', 'root', '', 'noticias_servidor');
+    $conn = mysqli_connect('localhost', 'edison', 'edison2005', 'noticias_servidor');
 
     if (!$conn) {
         echo 'Connection error: ' . mysqli_connect_error();

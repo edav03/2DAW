@@ -11,7 +11,7 @@
             "skipFiles": [
                 "<node_internals>/**"
             ],
-            "program": "${workspaceFolder}/Act2/activity2.js"
+            "program": "${workspaceFolder}/Act8/activity8.js"
         }
     ]
 }

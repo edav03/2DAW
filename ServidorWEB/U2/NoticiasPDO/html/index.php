@@ -1,18 +1,20 @@
 <?php
-    include_once 'dbh.inc.php';
-	include_once 'info.inc.php';
+    include_once 'dbconfig.php';
 ?>
+<?php include_once 'header.php'; ?>
 
-<!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="utf-8">
-		<title></title>
-	</head>
-	<body>
-		<?php
-		$object = new Info;
-		echo $object->getAllInfo();
-		?>
-	</body>
+<table border='1'>
+	<tr>
+	<th>Titulo</th>
+	<th>Imagenes</th>
+	<th>Opciones</th>
+	</tr>
+	<?php
+		$query = 'SELECT * FROM gnr_post';
+		$newquery = $crud->paging($query);
+		$crud->dataview($newquery);
+	?>
+</table>
+
+</body>
 </html>

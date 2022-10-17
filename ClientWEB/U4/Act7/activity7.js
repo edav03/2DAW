@@ -6,7 +6,6 @@ function removeTrash(frase){
     var code;
     for (const i of frase) {
         code = parseInt(i.charCodeAt(0));
-        // document.write(i + " - " + code + "<br>");
         if( !(code > 96 && code < 122)){
             var change = String.fromCharCode(code);
             frase = frase.replace(change, "");
