@@ -11,4 +11,14 @@ $filas = array(
         'nombre' =>'Ruben', 'apellidos' => 'Guardia Jurado', 'telefono' => '654213896')
 );
 
-while($row = )
+echo "<table border='1'>";
+
+foreach ($filas as $sol) {
+    echo "<tr>";
+    echo "<th>" . $sol['nombre'] . "</th>";
+    echo "<th>" . $sol['apellidos'] . "</th>";
+    echo "<th>" . $sol['telefono'] . "</th>";
+    echo "</tr>";
+}
+
+echo "</table>";
