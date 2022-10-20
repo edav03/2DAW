@@ -1,7 +1,7 @@
-<?php
-    include_once 'dbconfig.php';
-?>
-<?php include_once 'header.php'; ?>
+<?php include_once 'dbconfig.php';?>
+<?php include_once 'header.php';?>
+
+<h1>Noticias del Blog</h1>
 
 <table border='1'>
 	<tr>
@@ -11,8 +11,7 @@
 	</tr>
 	<?php
 		$query = 'SELECT * FROM gnr_post';
-		$newquery = $crud->paging($query);
-		$crud->dataview($newquery);
+		$crud->dataview($query);
 	?>
 </table>
 
