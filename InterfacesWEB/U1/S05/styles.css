@@ -86,7 +86,7 @@ body{
 
 .menu label:hover,
 .menu label:focus {
-background: #1c87c9;
+    background: #1c87c9;
 }
 
 .slide {
@@ -127,3 +127,35 @@ background: #1c87c9;
 .slide-5{
     background-image: url("/img/cafe5.jpeg");
 }
+
+.Firstaside{
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+
+}
+
+.SecAside{
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+}
+
+aside iframe{
+    margin-right: 10px;
+}
+
+.contHead{
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+}
+
+.contHead h1{
+    color:  #a12413;
+}
+
+form{
+    display: table;
+}
+
