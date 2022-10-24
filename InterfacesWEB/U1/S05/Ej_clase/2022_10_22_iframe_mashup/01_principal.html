@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<title>Ejemplo IFRAME</title>
+	<style type="text/css">
+		html,body,main,iframe{ height: 100%; width: 100%; }
+	</style>
+</head>
+<body>
+	<header><h1>Ejemplos IFrame</h1></header>
+	<nav>
+		<p>
+			<a href="https://elpais.com" target="frame1">El País </a>&nbsp;
+			<a href="https://google.com" target="frame1">Google </a>&nbsp;
+			<a href="https://marca.com" target="frame1">Marca </a>&nbsp;&nbsp; 
+			<a href="./02_mostrar_en_iframe.html" target="frame1">Página prueba Sandbox</a>&nbsp; 
+
+		</p>
+	</nav>
+	<main>
+		<!-- sin Sandbox permite todo -->
+		<!-- con Sandbox no permite nada -->
+		<!-- Para permitir Forms: sandbox="allow-forms allow-same-origin" -->
+		<!-- Para permitir Scripts: sandbox="allow-scripts" -->
+		<!-- Para permitir cambiar URL del parent: sandbox="allow-top-navigation" -->
+		
+		<iframe name="frame1" src="https://marca.com" sandbox="allow-forms allow-same-origin allow-scripts"></iframe>
+	</main>
+</body>
+</html>
