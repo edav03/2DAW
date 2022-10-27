@@ -1,8 +1,9 @@
 var row = 0;
 var col = 0;
+var color = 'black';
 
-function createTable(row = 10, col = 4) {
-    document.write("<table border = '1px solid'>");
+function createTable(row = 10, col = 4, color = 'black') {
+    document.write("<table border ='1px' bordercolor='" + color + "' width=100%>");
 
     for (let i = 0; i < row; i++) {
         document.write("<tr>");
@@ -15,4 +16,4 @@ function createTable(row = 10, col = 4) {
     document.write("</table>");
 }
 
-createTable();
+createTable(20, 10, 'green');
