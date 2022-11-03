@@ -3,11 +3,9 @@
         <title>
             @yield('titulo')
         </title>
+        @extends('partials.nav')
     </head>
     <body>
-        <nav>
-
-        </nav>
         @yield('contenido')
     </body>
 </html>
