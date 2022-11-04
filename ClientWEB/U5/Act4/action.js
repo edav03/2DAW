@@ -14,7 +14,7 @@ arrayWords=[...setWords];
 //arrayWords is sorted by lowest to major content
 arrayWords.sort((a,b)=>(-a.localeCompare(b,"es")));
 
-//forEach method iterates the array saving each valor on 'w'
+//forEach method iterates the array saving each value on 'w'
 arrayWords.forEach(function(w){
 document.write(`<p>${w}</p>`);
 })
