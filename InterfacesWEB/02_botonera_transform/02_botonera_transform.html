@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <title>Ejemplos botoneras y otros</title>
+    <style type="text/css">
+        /* DIRECTIVAS */
+        @charset "utf-8";
+        /* aquí arriba irían todas: @font-face   @import  ... */
+               
+        /* SELECTORS */
+        * {  padding: 0; margin:0;
+            text-decoration: none;
+            box-sizing: border-box;
+            /*border: 1px dotted red;*/
+        }
+
+        :root{  /* :root es html */
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 16px;
+            background-image: url(img/O5GLLH0.jpg);
+            background-attachment: fixed;
+        }
+
+        body{
+            width: calc(100% - 20rem - 1px);  /* Nueva de CSS3, ojo con espaciado */
+            background-color: rgba(100%,100%,100%, 0.8);
+            margin: 0 auto; /* truco para centrar el body: 0 arri/abajo auto der/izq */
+            padding: 2rem;
+        }
+        
+        /* HEADER */
+        header h1{
+            -webkit-text-stroke: 2px red;
+            color: transparent;
+            transform: rotate(5deg);
+            margin: 1.5em 0 0.5em 0; /* agujas reloj */
+            /* transform: rotate(5deg); */
+            transition: transform 1s ease, color 2s linear, letter-spacing 1s ease 2s;
+
+            /* Esta propiedad es un shorthand de
+                transition-property:    ;
+                transition-duration:    ;
+                transition-timing-function:     ;
+                transition-delay:   ;
+            */
+        }
+
+        body:hover header h1{
+            transform: rotate(5deg) scale(1.1,1.1) translate(1em,0);
+            color: green;
+            letter-spacing: 0.4em;
+        }
+
+        /* NAV: botonera a partir de listas */
+        nav ul{
+            list-style: none;
+            width: 100%;
+        }
+
+        nav ul#botonera1 li{ /* que estén unos al lado de los otros */
+            display: inline-block;
+            margin: 0.5rem 1.5rem;
+            width: 10rem;
+        }
+
+        nav ul#botonera1 li a{
+            display: block; /* se expandiran a todo el espacio disponible */
+            border: 1px solid red;
+            padding: 0.5em;
+            background-color: white;
+            color: red;
+            border-radius: 2rem;
+            box-shadow: 0.3em 0.3em 0.2em black;
+            text-align: center;
+            font-weight: bold;
+            transition: all 0.5s ease;
+        }
+
+        nav ul#botonera1 li a:hover{
+            color: white;
+            background-color: red;
+            transform: translate(2px, 2px) scale(0.98,0.98);
+            box-shadow: 0.2em 0.2em 0.1em black;
+        }
+
+        nav ul#botonera1 li a:active{
+            box-shadow: 0.3em 0.3em 0.4em blue;
+        }
+
+    /* BOTONERA */
+        nav ul#botonera2 li{
+            margin: 1rem 0rem;
+            width: 15rem;
+        }
+
+        nav ul#botonera2 li a{
+            display: block;
+            border: 1px solid red;
+            padding: 0.5em;
+            background-color: white;
+            color: red;
+            box-shadow: 0.3em 0.3em 0.2em black;
+            text-align: center;
+            font-weight: bold;
+            transition: all 0.5s ease;
+        }
+
+        nav ul#botonera2 li a:hover{
+            transform: skewX(-15deg) scale(1.1,1.1) ;
+            color: white;
+            background-color: red;
+        }
+
+        /* MAIN: Párrafos y galería */
+        main section>*{   /* Cualquier cosa hijo de section */
+            margin: 1rem;
+            text-align: justify;
+        }
+
+        main div#galeria{
+            padding: 3rem 0;
+            display: flex; /* ESto lo veremos más adelante */
+            justify-content: space-evenly;
+        }
+        main div#galeria img{
+            width: 30%;
+            opacity: 0.6; /* imágenes semitransparentes */
+        }
+
+        main div#galeria img:first-child:hover{
+            transform: rotate(5deg);
+            opacity: 1; /* quitamos transparencia */
+        }
+
+        main div#galeria img:nth-child(2):hover{
+            transform: skew(10deg, 10deg);
+            opacity: 1;
+        }
+
+        main section>p:hover{
+            transform: scale(1.02,1.02);
+            text-shadow: 1px 1px 3px grey;
+        }
+
+        /* ASIDE */
+
+        aside{
+            position: fixed;
+            top: 0; left: 0;
+            width: 1.5em;
+            background-color: grey;
+            min-height: 100em;
+            transition: width 1s ease-in-out;
+        }
+
+        aside:hover{
+            width: 20rem;
+        }
+    </style>
+</head>
+<body>
+ <header>
+  <h1>Ejemplos botoneras y otros</h1>
+ </header>
+ <nav>
+    <ul id="botonera1">
+        <li><a href="#">Opcion1</a></li>
+        <li><a href="#">Opcion 2</a></li>
+        <li><a href="#">Opcion 3</a></li>
+    </ul> 
+     
+    <ul id="botonera2">
+        <li><a href="#">Opc1</a></li>
+        <li><a href="#">Opcion 2</a></li>
+        <li><a href="#">Opcion 3</a></li>
+    </ul>    
+ </nav>
+ <main>
+     <section>
+        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit condimentum augue, nullam rutrum vel etiam porttitor quis dictumst eu tristique imperdiet, sapien integer mi accumsan pharetra lobortis semper hac. Cum dictum rhoncus interdum nec habitasse metus scelerisque magna neque, sapien natoque blandit condimentum nullam venenatis ullamcorper donec habitant, vulputate vitae ultrices ligula justo facilisi phasellus cubilia. Duis phasellus et vel aliquet fames nunc proin diam ultricies sed, purus nisl erat nisi sagittis habitasse faucibus conubia.
+        </p>
+        <div id="galeria"><img src="img/1.jpg"/><img src="img/2.jpg"/> </div> 
+        
+        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit condimentum augue, nullam rutrum vel etiam porttitor quis dictumst eu tristique imperdiet, sapien integer mi accumsan pharetra lobortis semper hac. Cum dictum rhoncus interdum nec habitasse metus scelerisque magna neque, sapien natoque blandit condimentum nullam venenatis ullamcorper donec habitant, vulputate vitae ultrices ligula justo facilisi phasellus cubilia. Duis phasellus et vel aliquet fames nunc proin diam ultricies sed, purus nisl erat nisi sagittis habitasse faucibus conubia.
+        </p>
+         
+         <p>Lorem ipsum dolor sit amet consectetur adipiscing elit condimentum augue, nullam rutrum vel etiam porttitor quis dictumst eu tristique imperdiet, sapien integer mi accumsan pharetra lobortis semper hac. Cum dictum rhoncus interdum nec habitasse metus scelerisque magna neque, sapien natoque blandit condimentum nullam venenatis ullamcorper donec habitant, vulputate vitae ultrices ligula justo facilisi phasellus cubilia. Duis phasellus et vel aliquet fames nunc proin diam ultricies sed, purus nisl erat nisi sagittis habitasse faucibus conubia.
+        </p>
+         
+        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit condimentum augue, nullam rutrum vel etiam porttitor quis dictumst eu tristique imperdiet, sapien integer mi accumsan pharetra lobortis semper hac. Cum dictum rhoncus interdum nec habitasse metus scelerisque magna neque, sapien natoque blandit condimentum nullam venenatis ullamcorper donec habitant, vulputate vitae ultrices ligula justo facilisi phasellus cubilia. Duis phasellus et vel aliquet fames nunc proin diam ultricies sed, purus nisl erat nisi sagittis habitasse faucibus conubia.
+        </p>
+     </section>
+ </main>
+ <aside></aside>
+ <footer></footer>
+</body>
+</html>
