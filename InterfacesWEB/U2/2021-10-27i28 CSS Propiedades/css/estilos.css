@@ -1,0 +1,74 @@
+@charset 'utf-8';
+
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Open+Sans+Condensed:wght@300&display=swap');
+
+@font-face{
+		font-family: 'Tranquila';
+		src: url('../ttf/tranquila.otf') format('opentype');
+}
+
+/****************************/
+*{
+	padding:0 ; margin: 0;
+	text-decoration: none;
+	box-sizing: border-box;
+	/*border: 1px dotted green;*/
+}
+
+:root{
+	font-family: 'Arial', sans-serif;
+	font-size: 16px;
+}
+
+body{
+	transform: rotate(10deg);
+}
+form legend{
+	font-family: 'Tranquila', 'Arial', sans-serif;
+	font-size: 2.5rem  ;
+	color: darkblue;
+	text-align: center;
+	letter-spacing: calc(1em/8); /* Aprox 5px */
+	text-transform: uppercase;
+}
+
+form fieldset{
+	display:  table;
+	width: 40rem;
+	margin: 5rem auto; /* centrar con grem aire arriba y abajo*/
+	padding: 3.1rem;
+	border:  0.8rem ridge grey;
+	border-radius: 2rem;
+
+}
+
+form fieldset p{ 
+	display: table-row;
+	
+}
+
+form fieldset p>*{ /* todos los hijos de p */
+	display: table-cell;
+	padding: 0.2em;
+	margin: 0.3em 0;
+	vertical-align: top; /* alineacion vertical */
+}
+
+form fieldset p>*:nth-child(even){ /* solo los hijos pares */
+	width: 100%;
+}
+
+form input[type="reset"]{
+	width: 100%;
+}
+
+form label{
+	font-family: 'Open Sans Condensed', sans-serif;
+}
+
+
+form input[type="text"],
+form input[type="password"],
+form textarea{
+	border:  2px solid blue;
+}
