@@ -1,0 +1,145 @@
+@font-face {
+    font-family: Free;
+    src: url("../ttf/WinterSong-owRGB.ttf");
+}
+:root{
+    background-image: url(../imgs/back.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    scroll-behavior: smooth;
+    font-family: Free;
+}
+
+*{
+    margin: 0px;
+    padding: 0px;
+    text-decoration: none;
+    list-style: none;
+}
+
+body{
+    background-image: url(/imgs/retro_back.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    text-align: center;
+    align-items: center;
+    width: calc(100% - 10rem - 1px);
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    border-radius: 15px;
+    opacity: 0.8;
+}
+
+body > div#choise{
+    margin-top: 50px;
+}
+
+
+div#choise .button{
+    width: 200px;
+    height: 50px;
+    font-size: 20px;
+    background-color: rgba(189, 186, 13, 0.712);
+    margin: 20px 100px;
+    opacity: 0.3;
+    transition: all 0.5s ease;
+    color: black;
+}
+
+div#choise .button:hover{
+    transition: all 1s ease;
+    opacity: 1;
+} 
+
+h2::first-letter{
+    color: rgb(197, 49, 12);
+}
+
+header{
+    margin-top: 100px;
+    height: 300px;
+}
+
+header > p{
+    opacity: 0.5;
+}
+
+header h1{
+    font-size: 5rem;
+}
+
+header > p{
+    display: none;
+}
+
+header > div#persona{
+    position: absolute;
+    right: 40px;
+    top: 170px;
+    box-shadow: 1px;
+}
+
+header > div#persona img#FotoPersona{
+    width: 150px;
+    height: 200px;
+}
+
+nav{
+    width: 100%;
+    display: inline-block;
+    margin: 20px;
+}
+
+nav a{
+    color: rgb(0, 0, 0);
+    font-size: 2em;
+    margin: 50px;
+}
+
+img:nth-child(2){
+    width: 120px;
+    height: 70px;
+}
+
+section{
+    height: 500px;
+    margin: 50px;
+}
+
+section#contacto{
+    display: flex;
+    flex-direction: column;
+}
+
+section#contacto > table , tr , th , td{
+    width: 80%;
+    border: none;
+}
+
+section#experiencia{
+    align-items: baseline;
+}
+
+section#experiencia > a{
+    position: absolute;
+    bottom: 1200px;
+    right: 700px;
+}
+
+section#idiomas > a{
+    position: absolute;
+    bottom: 50px;
+    right: 700px;
+
+}
+
+section > h2:first-line{
+    font-size: 1.5em;
+}
+
+section > :not(h2){
+    font-size: 1.5em;
+}

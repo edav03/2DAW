@@ -1,14 +1,17 @@
+@import url('https://fonts.googleapis.com/css?family=Pacifico');
+
 :root{
     background-color: bisque;
     background-repeat: no-repeat;
+    scroll-behavior: smooth;
+    font-family: Pacifico;
 }
 
 *{
     margin: 0px;
     padding: 0px;
     text-decoration: none;
-    box-sizing: border-box;
-    /* border: 2px solid black; */
+    list-style: none;
 }
 
 body{
@@ -17,16 +20,20 @@ body{
     background-size: cover;
     position: relative;
     text-align: center;
+    align-items: center;
     width: calc(100% - 10rem - 1px);
     margin: auto;
     margin-top: 50px;
     margin-bottom: 50px;
     border-radius: 15px;
-    list-style: none;
 }
 
 body > div#choise{
     margin-top: 50px;
+}
+
+a:hover{
+    text-decoration: underline;
 }
 
 div#choise .button{
@@ -41,6 +48,7 @@ div#choise .button{
 }
 
 div#choise .button:hover{
+    transition: all 1s ease;
     opacity: 1;
 } 
 
@@ -49,34 +57,56 @@ header{
     height: 300px;
 }
 
+header > p{
+    opacity: 0.5;
+}
+
 header h1{
-    font-size: 7rem;
+    font-size: 5rem;
+}
+
+header h1:hover{
+    transition: all 1s ease;
+    color: rgba(128, 13, 13, 0.658);
+}
+
+header h1:active{
+    transform: matrix3d(
+  -0.6,       1.34788, 0,        0,
+  -2.34788,  -0.6,     0,        0,
+   0,         0,       1,        0,
+   0,         0,      10,        1);
 }
 
 header > div#persona{
     position: absolute;
     right: 40px;
-    top: 200px;
+    top: 170px;
     box-shadow: 1px;
-    border: 1px solid rgb(214, 127, 255);
-    border-radius: 20px;
 }
 
 header > div#persona img#FotoPersona{
     width: 150px;
     height: 200px;
+    border-radius: 15px;
+}
+
+header > div#persona img#FotoPersona:active{
+    transition: all 1s ease;
+    width: 300px;
+    height: 400px;
+    transform: translateX(-500px) translateY(-100px);
 }
 
 nav{
     width: 100%;
     display: inline-block;
-    /* margin: 20px 30px; */
     margin: 20px;
 }
 
 nav a{
     color: rgb(0, 0, 0);
-    font-size: 1.5rem;
+    font-size: 2em;
     margin: 50px;
 }
 
@@ -86,7 +116,69 @@ nav a:hover{
     padding: 30px;
 }
 
-#contacto{
-    height: 300px;
-    margin-top: 50px;
+
+img:nth-child(2){
+    width: 120px;
+    height: 70px;
+}
+
+img:nth-child(2):hover{
+    transition: all 0.7s ease-out;
+    width: 240px;
+    height: 140px;
+}
+
+section{
+    height: 500px;
+    margin: 50px;
+}
+
+section#contacto{
+    display: flex;
+    flex-direction: column;
+}
+
+section#contacto > table , tr , th , td{
+    width: 80%;
+    border: none;
+}
+
+section#experiencia{
+    align-items: baseline;
+}
+
+section > h2:first-line{
+    font-size: 2em;
+}
+
+section > :not(h2){
+    font-size: 1.5em;
+}
+
+h2:hover{
+    transition: all 0.8s ease;
+    font-size: 2.05em;
+}
+
+section#formacion > table:hover{
+    transition: all 1s ease;
+    transform: rotate(10deg);
+}
+
+section > a:hover{
+    transition: all 0.8s ease-in-out;
+    transform:rotate(360deg);
+}
+
+section#experiencia > a{
+    position: absolute;
+    bottom: 1200px;
+    right: 700px;
+}
+
+section#idiomas > a{
+    position: absolute;
+    bottom: 50px;
+    right: 700px;
+
 }

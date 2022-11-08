@@ -1,0 +1,166 @@
+body{
+    background-color: #CCCC66;
+}
+
+.header{
+    display: inline;
+    width: 50%;
+}
+
+
+#banner{
+    padding-left: 20%;
+}
+
+.home{
+    margin-top: 50px;
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+}
+
+.nav{
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+}
+
+.marco{
+    margin-left: 20%;
+}
+
+.homehead{
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+}
+
+.tipoBody h1{
+    color:brown;
+}
+
+.tipoHeader{
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+}
+.tipoMove{
+    display: flex;
+    flex-direction: row;
+}
+
+.tipoMove li{
+    color:sienna;
+    text-decoration:underline;
+}
+
+.tipoNav{
+    margin-right: 50px;
+}
+
+.slider-container {
+    height: 400px;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+}
+
+.menu {
+    position: absolute;
+    left: 0;
+    z-index: 900;
+    width: 100%;
+    bottom: 0;
+}
+
+.menu label {
+    cursor: pointer;
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background: #fff;
+    border-radius: 50px;
+    margin: 0 0.2em 1em;
+}
+
+.menu label:hover,
+.menu label:focus {
+    background: #1c87c9;
+}
+
+.slide {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    z-index: 10;
+    padding: 8em 1em 0;
+    background-size: cover;
+    background-position: 50% 50%;
+    transition: left 0s 0.75s;
+}
+
+[id^="slide"]:checked + .slide {
+  left: 0;
+  z-index: 100;
+  transition: left 0.65s ease-out;
+}
+
+.slide-1 {
+    background-image: url("img/cafe1.jpeg");
+}
+
+.slide-2 {
+    background-image: url("img/cafe2.jpeg");
+}
+
+.slide-3 {
+    background-image: url("img/cafe3.jpeg");
+}
+
+.slide-4{
+    background-image: url("img/cafe4.jpeg");
+}
+
+.slide-5{
+    background-image: url("img/cafe5.jpeg");
+}
+
+.Firstaside{
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+
+}
+
+.SecAside{
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+}
+
+#c_d5f6e752859e7b3263a84da44d78c009{
+    margin-right: 10px;
+    margin-bottom: 10px
+}
+
+aside iframe{
+    margin-right: 10px;
+}
+
+.contHead{
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+}
+
+.contHead h1{
+    color:  #a12413;
+}
+
+form{
+    display: table;
+}
+

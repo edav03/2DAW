@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        p{
+            display: table-row;
+        }
+        label{
+            display: table-cell;
+        }
+        input{
+            display: table-cell;
+        }
+    </style>
+</head>
+<body>
+    <div class="contHead">
+        <img src="../img/grano.gif" alt="grano" width="30px" height="30px">
+        <h1>Contacto</h1>
+    </div>
+    <hr>
+    <p>Si deseas ponerte en contacto con nosotros rellana este formulario y te contestaremos a la mayor breveded posible</p>
+    <br>
+    <form>
+        <p>
+            <label for="imp"><strong>Nombre*:</strong></label>
+            <input type="text" id="nombre" maxlength="12" autofocus="autofocus" required>
+        </p>
+        <br>
+        <p>
+            <label for="apellido">Apellidos:</label>
+            <input type="text" id="apellido" maxlength="25">
+        </p>
+        <br>
+        <p>
+            <label for="imp"><strong>Correo electronico*: </strong></label>
+            <input type="email" id="corea" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required >
+        </p>
+        <br>
+        <p>
+            ¿Cuantas tazas de cafe tomas al dia?
+            <br>
+            <input type="radio" id="1-2" checked>1 o 2 tazas
+            <input type="radio" id="2-5">2 - 5 tazas
+            <input type="radio" id="+5">Mas de 5 tazas
+        </p>
+        <br>
+        <p>
+            <label for="formas">¿Como te gusta preparar el cafe?</label>
+            <br><br>
+            <select id="formas">
+                <option value="op1">Espresso o Cafe expreso</option>
+                <option value="op2">Cafe cortado</option>
+                <option value="op3">Capuccino</option>
+                <option value="op4">Cafe con leche</option>
+                <option value="op5">Bombon</option>
+            </select>
+        </p>
+        <br>
+        <p>
+            <label for="coment">Comentario:</label>
+            <textarea id="coment" cols="30" rows="10">Escribe algo...</textarea>
+        </p>
+        <br>
+        <p>
+            <label for="sug">Como nos has encontrado?</label>
+            <br><br>
+            <select id="sug">
+                <option value="anuncio">Anuncio de television</option>
+                <option value="buscadores">Buscadores</option>
+                <option value="amigo">Amigo</option>
+            </select>
+        </p>
+        <br>
+        <p>
+            <label for="edad">Introduce tu edad: </label>
+            <input type="number" min="18" max="99">
+        </p>
+        <br><br>
+        <button>Enviar</button>
+        <button>Borrar</button>
+    </form>
+</body>
+</html>

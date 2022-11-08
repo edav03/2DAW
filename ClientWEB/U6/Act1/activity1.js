@@ -18,6 +18,18 @@ function Punto(coordX,coordY){
         //     return false;
         // }
     }
+    this.addition = (p) => new Punto(this.x + p.x, this.y + p.y);
+
+    this.getDistance = that => {
+        let a = Math.abs(this.x - that.x);
+        let b = Math.abs(this.y - that.y);
+
+        a *= a;
+        b *= b;
+
+        let area = Math.sqrt(a, b);
+        return area;
+    }
 }
 
 let a=new Punto(10,20);
