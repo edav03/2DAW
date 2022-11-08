@@ -1,0 +1,92 @@
+:root{
+    background-color: bisque;
+    background-repeat: no-repeat;
+}
+
+*{
+    margin: 0px;
+    padding: 0px;
+    text-decoration: none;
+    box-sizing: border-box;
+    /* border: 2px solid black; */
+}
+
+body{
+    background-image: url(/imgs/modern_back.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    text-align: center;
+    width: calc(100% - 10rem - 1px);
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    border-radius: 15px;
+    list-style: none;
+}
+
+body > div#choise{
+    margin-top: 50px;
+}
+
+div#choise .button{
+    width: 200px;
+    height: 50px;
+    border-radius: 50px;
+    font-size: 20px;
+    background-color: rgb(13, 148, 189);
+    margin: 20px 100px;
+    opacity: 0.3;
+    transition: all 0.5s ease;
+}
+
+div#choise .button:hover{
+    opacity: 1;
+} 
+
+header{
+    margin-top: 100px;
+    height: 300px;
+}
+
+header h1{
+    font-size: 7rem;
+}
+
+header > div#persona{
+    position: absolute;
+    right: 40px;
+    top: 200px;
+    box-shadow: 1px;
+    border: 1px solid rgb(214, 127, 255);
+    border-radius: 20px;
+}
+
+header > div#persona img#FotoPersona{
+    width: 150px;
+    height: 200px;
+}
+
+nav{
+    width: 100%;
+    display: inline-block;
+    /* margin: 20px 30px; */
+    margin: 20px;
+}
+
+nav a{
+    color: rgb(0, 0, 0);
+    font-size: 1.5rem;
+    margin: 50px;
+}
+
+nav a:hover{
+    transition: all 0.5s ease;
+    color: rgb(231, 243, 70);
+    padding: 30px;
+}
+
+#contacto{
+    height: 300px;
+    margin-top: 50px;
+}

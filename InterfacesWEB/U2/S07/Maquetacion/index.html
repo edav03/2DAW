@@ -12,15 +12,45 @@
     <meta name="author" content="Edison Alcocer">
     <meta name="keywords" content="UX, UI, Desarrollador, JavaScript">
     <meta name="theme-color" content="#FF0000"/>
+    <link id="estilos" rel="stylesheet" href="css/moderno.css">
     <style>
         table, th, td{
             border: 1px solid black;
         }
     </style>
+    <script type="text/javascript">
+
+        function moderno(){
+            document.getElementById('estilos').href='./css/moderno.css';
+        }
+
+        function retro(){
+            document.getElementById('estilos').href='./css/retro.css';
+        }
+
+    </script>
     <title>Curriculum</title>
+
+
 </head>
 <body>
-    <h1>EDISON ALCOCER</h1>
+    <div id="choise">
+        <button type="submit" onclick="retro()" class="button">Retro</button>
+        <button type="submit" onclick="moderno()" class="button">Moderno</button>
+    </div>
+    <header>
+        <h1>EDISON ALCOCER</h1>
+        <div id="persona">
+            <img src="/imgs/persona.jpeg" alt="persona" id="FotoPersona">
+        </div>
+    </header>
+    <hr>
+    <nav>
+        <a href="#contacto">Contacto</a>
+        <a href="#experiencia">Experiencia</a>
+        <a href="#formacion">Formacion</a>
+        <a href="#idiomas">Idiomas</a>
+    </nav>
     <hr>
     <section id="contacto">
         <h2>INFORMACION DE CONTACTO</h2>
@@ -45,7 +75,7 @@
         <a href="#">Ir a la parte superior</a>
     </section>
     <hr>
-    <section id="idiomas">
+    <section id="formacion">
         <h2>Formacion Academica</h2>
         <table>
             <tr>
@@ -65,7 +95,7 @@
         <a href="#">Ir a la parte superior</a>
     </section>
     <hr>
-    <section>
+    <section id="idiomas">
         <h2>Idiomas</h2>
         <label for="español">Español: </label>
         <progress id="español" value="10" min="0" max="10">10 de 10</progress>
