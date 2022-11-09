@@ -23,7 +23,8 @@ class PostController extends Controller
      */
     public function create()
     {
-        return "Nuevo post";
+        // return redirect()->route('inicio');
+        return "Ruta create modificada con exito";
     }
 
     /**
@@ -56,7 +57,7 @@ class PostController extends Controller
      */
     public function edit($id)
     {
-        return "Edicion de post";
+        return redirect()->route('inicio');
     }
 
     /**
