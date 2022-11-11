@@ -3,5 +3,5 @@
 @section('titulo', 'Listado de posts')
 
 @section('contenido')
-    <h1>Listado de posts</h1>
+    <h1>Listado de post</h1>
 @endsection

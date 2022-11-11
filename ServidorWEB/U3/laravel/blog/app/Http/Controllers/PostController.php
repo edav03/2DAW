@@ -23,9 +23,9 @@ class PostController extends Controller
      */
     public function create()
     {
-        // return redirect()->route('inicio');
-        return "Ruta create modificada con exito";
+        return redirect()->route('inicio');
     }
+
 
     /**
      * Store a newly created resource in storage.
@@ -55,7 +55,7 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit()
     {
         return redirect()->route('inicio');
     }

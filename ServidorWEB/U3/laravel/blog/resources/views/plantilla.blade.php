@@ -3,9 +3,13 @@
         <title>
             @yield('titulo')
         </title>
-        @extends('partials.nav')
+        {{setActivo('inicio')}}
     </head>
     <body>
+        <header class="headerPartials">
+            @extends('partials.nav')
+        </header>
+
         @yield('contenido')
     </body>
 </html>
