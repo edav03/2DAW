@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        *{
+            border: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root{
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 16px;
+        }
+
+        header h1{
+            margin-bottom: 2em;
+        }
+
+        div#marco{
+            position: relative; /* nuevo origen para sus descendientes */
+        }
+
+        div#marco img#foto{
+            position: absolute;
+            top: 1rem; left: 1rem;
+            filter: blur(1px) sepia(70%);
+        }
+
+        div#marco img#logo{
+            position: absolute;
+            top: 2rem; left: 2rem;
+            width: 4rem;
+            z-index: 1;
+            filter: drop-shadow(0 0 5px rgb(186, 13, 13));
+        }
+
+        main article{
+            padding: 1rem;
+            column-count: 5;
+            column-rule: 1px solid grey;
+            column-gap: 25px;
+            text-align: justify;
+        }
+
+    </style>
+</head>
+<body>
+    <header><h1>Superponer fotos con absolute</h1></header>
+    <main>
+        <article>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec placerat sagittis lacus nec elementum. Phasellus semper euismod gravida. Curabitur odio erat, porta quis diam quis, euismod dapibus risus. Aenean euismod ligula vel metus aliquet consectetur. Praesent semper laoreet cursus. Quisque scelerisque vehicula ex, eleifend lobortis ipsum luctus ac. Vivamus eu eros sit amet neque volutpat aliquam at sed diam. Aenean vitae mauris dui. Praesent varius massa sit amet ante convallis consequat. Donec leo odio, sollicitudin sit amet scelerisque ultrices, accumsan et sem. Sed cursus lorem eu faucibus suscipit.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec placerat sagittis lacus nec elementum. Phasellus semper euismod gravida. Curabitur odio erat, porta quis diam quis, euismod dapibus risus. Aenean euismod ligula vel metus aliquet consectetur. Praesent semper laoreet cursus. Quisque scelerisque vehicula ex, eleifend lobortis ipsum luctus ac. Vivamus eu eros sit amet neque volutpat aliquam at sed diam. Aenean vitae mauris dui. Praesent varius massa sit amet ante convallis consequat. Donec leo odio, sollicitudin sit amet scelerisque ultrices, accumsan et sem. Sed cursus lorem eu faucibus suscipit.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec placerat sagittis lacus nec elementum. Phasellus semper euismod gravida. Curabitur odio erat, porta quis diam quis, euismod dapibus risus. Aenean euismod ligula vel metus aliquet consectetur. Praesent semper laoreet cursus. Quisque scelerisque vehicula ex, eleifend lobortis ipsum luctus ac. Vivamus eu eros sit amet neque volutpat aliquam at sed diam. Aenean vitae mauris dui. Praesent varius massa sit amet ante convallis consequat. Donec leo odio, sollicitudin sit amet scelerisque ultrices, accumsan et sem. Sed cursus lorem eu faucibus suscipit.</p>
+        </article>
+        <div id="marco">
+            <img id="logo" src="./img/sagrada_familia_256.png" alt="logo">
+            <img id="foto" src="./img/familia1.jpg" alt="foto">
+        </div>
+    </main>
+</body>
+</html>
