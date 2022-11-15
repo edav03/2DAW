@@ -7,6 +7,7 @@ use App\Models\Post;
 
 class PostController extends Controller
 {
+
     /**
      * Display a listing of the resource.
      *
@@ -83,8 +84,33 @@ class PostController extends Controller
      */
     public function destroy($id)
     {
-        //
+        post::findOrFail($id)->delete();
+        $post = post::get();
+        return view('libros.index', compact('post'));
     }
 
+    public function nuevoPrueba()
+    {
+        $idTitle = rand();
+        $idTitle += 1;
+        $x = rand(0, 1000);
+        $c = rand(0, 1000);
+
+        $data = new Post();
+        $data->id = strval($idTitle);
+        $data->titulo = "Titulo ${x}";
+        $data->contenido_post = "Contenido ${c}";
+        $data->created_at = date("Y/m/d");
+        $data->save();
+    }
+
+    public function editarPrueba($id){
+        $x = rand(0, 1000);
+        $c = rand(0, 1000);
+
+        $modifiacion = post::findOrFail($id);
+        $modifiacion->titulo = "Titulo ${x}";
+        $modifiacion->contenido = "Contenido ${c}";
+    }
    
 }

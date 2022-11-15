@@ -14,12 +14,10 @@ use \App\Http\Controllers\PostController;
 |
 */
 
-Route::get('/', function () {
-    return view('inicio');
-})->name('inicio');
+Route::get('/', function () { return view('inicio'); })->name('inicio');
 
-Route::get('libros/nuevaPrueba', function(){
-    return view('')
-});
+Route::get('posts/nuevaPrueba', [PostController::class, 'nuevoPrueba'])->name('NuevoLibro');
+
+Route::get('posts/editarPrueba', [PostController::class, 'editarPrueba'])->name('EditarLibro');
 
 Route::resource('posts', PostController::class);

@@ -3,12 +3,9 @@
 @section('titulo', 'Ficha post')
 
 @section('contenido')
-    <h1>Ficha posts {{ $id }}</h1>
+    <h1>Ficha posts {{ $post->titulo }}</h1>
 
-    <h3>Contenido</h3>
-    @forelse ($posts as $cont)
-        <p> {{ $cont->contenido_post}} </p>
-    @empty
+    <p> {{ $post->contenido_post}} </p>
+    <p> <em>Fecha de creacion: </em>{{ $post->created_at}}</p>
         
-    @endforelse
 @endsection
