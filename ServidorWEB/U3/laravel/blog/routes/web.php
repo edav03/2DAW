@@ -18,5 +18,8 @@ Route::get('/', function () {
     return view('inicio');
 })->name('inicio');
 
-Route::resource('posts', PostController::class)
-->only(['index', 'show', 'create', 'edit']);
+Route::get('libros/nuevaPrueba', function(){
+    return view('')
+});
+
+Route::resource('posts', PostController::class);
