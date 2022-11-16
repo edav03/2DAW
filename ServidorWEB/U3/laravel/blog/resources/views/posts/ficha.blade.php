@@ -1,3 +1,6 @@
+/*
+    ficha.blade.php muestra el contenido de un post
+*/
 @extends('plantilla')
 
 @section('titulo', 'Ficha post')

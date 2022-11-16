@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use \Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Http\Request;
 use App\Models\Post;
 
@@ -89,7 +90,17 @@ class PostController extends Controller
         return view('libros.index', compact('post'));
     }
 
-    public function nuevoPrueba()
+    /**
+     * Get the user that owns the PostController
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function user(): BelongsTo
+    {
+        return $this->belongsTo(User::class, 'user_id', 'id');
+    }
+
+    public function nuevoPrueba() // Crea nuevos posts y los añade a la DB
     {
         $idTitle = rand();
         $idTitle += 1;
@@ -98,13 +109,14 @@ class PostController extends Controller
 
         $data = new Post();
         $data->id = strval($idTitle);
+        $data->user_id = $
         $data->titulo = "Titulo ${x}";
         $data->contenido_post = "Contenido ${c}";
         $data->created_at = date("Y/m/d");
         $data->save();
     }
 
-    public function editarPrueba($id){
+    public function editarPrueba($id){ // Edita los posts y los guarda en la DB
         $x = rand(0, 1000);
         $c = rand(0, 1000);
 

@@ -15,10 +15,14 @@ return new class extends Migration
     {
         Schema::create('posts', function (Blueprint $table) {
             $table->id();
-            $table->foreign('user_id')->references('id')->on('usuarios');
+            $table->unsignedBigInteger('user_id');
             $table->string('titulo');
             $table->text('contenido_post');
+
+            $table->foreign('user_id')->references('id')->on('usuarios');
+
             $table->timestamps();
+
         });
     }
 

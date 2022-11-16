@@ -1,3 +1,6 @@
+/*
+    Plantilla base para las demas paginas
+*/
 <html>
     <head>
         <title>
