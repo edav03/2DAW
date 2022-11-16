@@ -110,7 +110,10 @@ class PostController extends Controller
 
         $modifiacion = post::findOrFail($id);
         $modifiacion->titulo = "Titulo ${x}";
-        $modifiacion->contenido = "Contenido ${c}";
+        $modifiacion->contenido_post = "Contenido ${c}";
+        $modifiacion->save();
+
+        return "Modificacion -> Titulo ${x}";
     }
    
 }

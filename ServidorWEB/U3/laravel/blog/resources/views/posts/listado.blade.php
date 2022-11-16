@@ -15,10 +15,11 @@
                         @csrf
                         <button>Borrar</button>
                     </form>
+                    <button><a href="{{ route('EditarLibro', $row->id) }}">EDITAR</a></button>
                 </h3>
             </li>
         @empty
-            <p>La Query no funciona</p>
+            <p>La Query esta vacia</p>
         @endforelse
     </ul>
 

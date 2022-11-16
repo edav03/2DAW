@@ -18,6 +18,6 @@ Route::get('/', function () { return view('inicio'); })->name('inicio');
 
 Route::get('posts/nuevaPrueba', [PostController::class, 'nuevoPrueba'])->name('NuevoLibro');
 
-Route::get('posts/editarPrueba', [PostController::class, 'editarPrueba'])->name('EditarLibro');
+Route::get('posts/editarPrueba/${id}', [PostController::class, 'editarPrueba'])->name('EditarLibro');
 
 Route::resource('posts', PostController::class);
