@@ -8,9 +8,14 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 
-class User extends Authenticatable
+class Usuarios extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
+
+    public function post()
+    {
+        return $this->hasMany(\App\Models\Post::class);
+    }
 
     protected $table = 'usuarios';
 
@@ -44,8 +49,5 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function post()
-    {
-        return $this->hasMany('App\Models\Post');
-    }
+    
 }

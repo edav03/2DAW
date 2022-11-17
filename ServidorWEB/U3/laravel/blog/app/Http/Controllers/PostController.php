@@ -2,13 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use \Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Http\Request;
 use App\Models\Post;
+// use App\Models\Usuarios;
 
 class PostController extends Controller
 {
-
     /**
      * Display a listing of the resource.
      *
@@ -16,7 +15,7 @@ class PostController extends Controller
      */
     public function index()
     {
-        $data = post::orderBy('titulo')->paginate(5);
+        $data = post::with('usuarios')->orderBy('titulo')->paginate(5);
         return view('posts.listado', compact('data'));
     }
 
@@ -51,6 +50,7 @@ class PostController extends Controller
     public function show($id)
     {
         $post = post::findorFail($id);
+        $data = post::with('usuarios')->findOrFail($id);
         return view('posts.ficha', compact('post'));
     }
 
@@ -86,34 +86,30 @@ class PostController extends Controller
     public function destroy($id)
     {
         post::findOrFail($id)->delete();
-        $post = post::get();
-        return view('libros.index', compact('post'));
+        $data = post::orderBy('titulo')->paginate(5);
+        return view('posts.listado', compact('data'));
     }
 
-    /**
-     * Get the user that owns the PostController
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
-     */
-    public function user(): BelongsTo
-    {
-        return $this->belongsTo(User::class, 'user_id', 'id');
-    }
+    
 
-    public function nuevoPrueba() // Crea nuevos posts y los añade a la DB
+    public function redirectPrueba() // Crea nuevos posts y los añade a la DB
     {
-        $idTitle = rand();
-        $idTitle += 1;
-        $x = rand(0, 1000);
-        $c = rand(0, 1000);
+        // $idTitle = rand();
+        // $ui = rand(1, 3);
+        // $x = rand(0, 1000);
+        // $c = rand(0, 1000);
 
-        $data = new Post();
-        $data->id = strval($idTitle);
-        $data->user_id = $
-        $data->titulo = "Titulo ${x}";
-        $data->contenido_post = "Contenido ${c}";
-        $data->created_at = date("Y/m/d");
-        $data->save();
+        // $DBdata = new Post();
+        // $DBdata->id = strval($idTitle);
+        // $DBdata->user_id = $DBdata->user_id;
+        // $DBdata->titulo = "Titulo ${x}";
+        // $DBdata->contenido_post = "Contenido ${c}";
+        // $DBdata->created_at = date("Y/m/d");
+        // $DBdata->save();
+
+        // $data = post::with('usuarios')->orderBy('titulo')->paginate(5);
+        // return view('posts.listado', compact('data'));
+        return view('posts.create');
     }
 
     public function editarPrueba($id){ // Edita los posts y los guarda en la DB
@@ -125,7 +121,8 @@ class PostController extends Controller
         $modifiacion->contenido_post = "Contenido ${c}";
         $modifiacion->save();
 
-        return "Modificacion -> Titulo ${x}";
+        $data = post::with('usuarios')->orderBy('titulo')->paginate(5);
+        return view('posts.listado', compact('data'));
     }
    
 }

@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>PRÁCTICA CSS3: Transition & Animation</title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+			list-style: none;
+			text-decoration: none;
+			border: none;
+			outline: none;
+			background: #031321;
+			text-align: center;
+			justify-content: center;
+
+			color: white;
+		}
+
+		.banner{
+			width: 700px;
+			height: 300px;
+			border: 3px solid black;
+			margin: auto;
+
+			background-size: 100% 100%;
+
+			animation: banner 10s infinite;
+
+		}
+
+		@keyframes banner{
+			0%, 30%{
+				background-image: url('img/land1.webp');
+			}
+
+			31%, 34%{
+				filter: blur(1.5px);
+			}
+
+			35%, 65%{
+				background-image: url('img/land2.jpg');
+				opacity: 1;
+			}
+
+			66%, 69%{
+				filter: grayscale(100%);
+			}
+
+			70%, 100%{
+				background-image: url('img/land3.jpg');
+				opacity: 1;
+			}
+		}
+
+		section#ej2 > h3{
+			margin-top: 2.5rem;
+			margin-bottom: 1.5rem;
+		}
+
+		a{
+			position: absolute;
+			display: inline-block;
+			padding: 15px 30px;
+			margin-left: -280px;
+			color: #2196f3;
+			text-transform: uppercase;
+			letter-spacing: 4px;
+			text-decoration: none;
+			font-size: 24px;
+			overflow: hidden;
+			transition: 0.2s;
+		}
+
+		a:hover{
+			color: #255784;
+			background: #2196f3;
+			box-shadow: 0 0 10px #2196f3, 0 0 40px #2196f3, 0 0 80px #2196f3;
+			transition-delay: 1s;
+		}
+
+		a span{
+			position: absolute;
+			display: block;
+		}
+
+		a span:nth-child(1){
+			top: 0;
+			left: -100%;
+			width: 100%;
+			height: 2px;
+			background: linear-gradient(90deg, transparent, #2196f3);
+		}
+
+		a:hover span:nth-child(1){
+			left: 100%;
+			transition: 1s;
+		}
+
+		a span:nth-child(2){
+			top: -100%;
+			right: 0;
+			width: 2px;
+			height: 100%;
+			background: linear-gradient(180deg, transparent, #2196f3);
+		}
+
+		a:hover span:nth-child(2){
+			top: 100%;
+			transition: 1s;
+			transition-delay: 0.25s;
+		}
+
+		a span:nth-child(3){
+			bottom: 0;
+			right: -100%;
+			width: 100%;
+			height: 2px;
+			background: linear-gradient(270deg, transparent, #2196f3);
+		}
+
+		a:hover span:nth-child(3){
+			right: 100%;
+			transition: 1s;
+			transition-delay: 0.5s;
+		}
+
+		a span:nth-child(4){
+			bottom: -100%;
+			left: 0;
+			width: 2px;
+			height: 100%;
+			background: linear-gradient(0deg, transparent, #2196f3);
+		}
+
+		a:hover span:nth-child(4){
+			bottom: 100%;
+			transition: 1s;
+			transition-delay: 0.75s;
+		}
+
+		section#ej3{
+			margin-top: 200px;
+		}
+
+		div#linea{
+			position: absolute;
+			top: 90%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			width: 100px;
+			height: 100px;
+			background: transparent;
+			border-bottom: 4px solid #fff;
+			animation: animate 2s linear infinite;
+		}
+
+		@keyframes animate{
+			0%{
+				transform: translate(-50%, -50%) rotate(0deg);
+			}
+			100%{
+				transform: translate(-50%, -50%) rotate(360deg);
+			}
+		}
+
+		div#bola{
+			position: absolute;
+			top: 90%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			width: 10px;
+			height: 10px;
+			background: #fff;
+			border-radius: 50%;
+			animation: bola 2s linear infinite;
+		}
+
+		@keyframes bola{
+			0%{
+				top:calc(90% + 45px);
+			}
+			25%{
+				top:calc(90% - 100px);
+			}
+			50%{
+				top:calc(90% - 55px);
+			}
+			75%{
+				top:calc(90% - 90px);
+			}
+		}
+
+		section#ej4{
+			margin-top: 20rem;
+		}
+
+	</style>
+</head>
+<body>
+	<header>
+		<h1 >PRÁCTICA CSS3: Transition & Animation</h1><br>
+	</header>
+
+	<section id="ej1">
+		<h3><em>Ejercicio 1 Implementa un carrusel de fotos</em></h3><br>
+		<div class="banner"></div>
+	</section>
+
+	<section id="ej2">
+		<h3><em>Ejercicio 2 Implementa un banner con tu nombre, que tenga efecto neón</em></h3>
+		<a href="#">
+			edison david alcocer valencia
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+		</a>
+	</section>
+
+	<section id="ej3">
+		<h3><em>Ejercicio 3 Implementa esta animación, pero haz alguna modificacion en la dinámica de la misma</em></h3>
+		<div id="linea"></div>
+		<div id="bola"></div>
+	</section>
+
+	<section id="ej4">
+		<h3><em>Ejercicio 4 Implementa un banner animado con tu nombre.</em></h3>
+		<div class="name">Edison Alcocer</div>
+	</section>
+</body>
+</html>
