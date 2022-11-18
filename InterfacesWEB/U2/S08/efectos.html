@@ -6,6 +6,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>PRÁCTICA CSS3: Transition & Animation</title>
 	<style type="text/css">
+		@import url('https://fonts.googleapis.com/css2?family=Rubik+Distressed');
+
 		*{
 			margin: 0;
 			padding: 0;
@@ -69,7 +71,6 @@
 			color: #2196f3;
 			text-transform: uppercase;
 			letter-spacing: 4px;
-			text-decoration: none;
 			font-size: 24px;
 			overflow: hidden;
 			transition: 0.2s;
@@ -196,6 +197,59 @@
 
 		section#ej4{
 			margin-top: 20rem;
+		}
+
+		div.name{
+			position: absolute;
+			font-family: 'Rubik Distressed';
+			color: darkred;
+			background: transparent;
+			display: inline-block;
+			padding: 35px;
+			margin-left: -150px;
+			text-transform: uppercase;
+			letter-spacing: 4px;
+			font-size: 10px;
+			overflow: hidden;
+			animation-name: makeBig, rebote, makeSmall;
+			animation-duration: 5s, 0.5s, 5s;
+			animation-delay: 2s, 7s, 7.6s;
+			animation-fill-mode: forwards, none, forwards;
+			animation-timing-function: linear, ease-out;
+		}
+
+		@keyframes makeBig{
+			from{
+				transform: scale(1);
+			}to{
+				transform: scale(4) rotate(360deg) rotate(360deg);
+			}
+		}
+
+		@keyframes rebote{
+			0%{
+				font-size: scale(4);
+				transform: translateY(0);
+			}
+			50%{
+				font-size: scale(4);
+				transform: translateY(-300%);
+			}
+			100%{
+				font-size: scale(4);
+				transform: translateY(0);
+			}
+		}
+
+		@keyframes makeSmall{
+			from{
+				transform: scale(4);
+				opacity: 1;
+			}
+			to{
+				transform: scale(0);
+				opacity: 0;
+			}
 		}
 
 	</style>
