@@ -15,7 +15,7 @@
     .orange{ background-color: orange;  }
     
     body { width: 80%;  margin: 0 auto; }
-    header, main, footer { width: 100%; }
+    header, main, footer { width: 100%;}
     
     /************ header **************/
     header{
@@ -28,22 +28,30 @@
 
     header > section > *{
       display: table-cell;
+
     }
         
     /************* main **************/
-    main{
-      display: table;
-    }
-
     main > section{
-      display: table-row;
+      display: table;
+      width: 100%;
+      height: 100px;
     }
 
     main > section > *{
       display: table-cell;
     }
+
+    main div.green{
+      width: 70%;
+    }
+
+    main div.orange{
+      width: 30%;
+    }
     
     /************ footer *************/
+
     
 </style>
 </head>
@@ -59,18 +67,18 @@
     <section>
       <h2 class="pink">Subtitulo</h2>
       <article class="blue">Texto de relleno, texto de relleno <br/>
-                                Texto de relleno, texto de relleno
+                            Texto de relleno, texto de relleno
       </article>
     </section>
  </header>
  <main>
     <!-- 1ª Fila del main --> 
-    <section> 
+    <section id="firstSection"> 
         <div class="green">70%</div>
         <div class="orange">30%</div>
     </section>
     <!-- 2ª Fila del main --> 
-    <section>
+    <section id="secondSection">
         <div class="orange">30%</div>
         <div class="green">70%</div>
     </section> 
