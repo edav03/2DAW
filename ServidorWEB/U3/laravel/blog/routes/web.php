@@ -16,7 +16,7 @@ use \App\Http\Controllers\PostController;
 
 Route::get('/', function () { return view('inicio'); })->name('inicio');
 
-Route::get('posts/nuevoPrueba', [PostController::class, 'redirectPrueba'])->name('NuevoLibro');
+Route::get('posts.create', [PostController::class, 'createPost'])->name('NuevoPost');
 
 Route::get('posts/editarPrueba/${id}', [PostController::class, 'editarPrueba'])->name('EditarLibro');
 

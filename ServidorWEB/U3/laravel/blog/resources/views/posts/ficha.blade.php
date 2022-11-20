@@ -11,4 +11,9 @@
     <p> {{ $post->contenido_post}} </p>
     <p> <em>Fecha de creacion: </em>{{ $post->created_at}}</p>
         
+    <form action="{{ route('posts.destroy', $post->id) }}" method="POST">
+        @method('DELETE')
+        @csrf
+        <button>Borrar</button>
+    </form>
 @endsection

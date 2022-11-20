@@ -5,7 +5,7 @@
 
 @section('contenido')
     <h1 id="list">Listado de post</h1>
-    <button><a href="{{ route('NuevoLibro') }}">Nuevo Post</a></button>
+    <button><a href="{{ route('NuevoPost') }}">Nuevo Post</a></button>
 
     <ul>
         @forelse ($data as $row)
