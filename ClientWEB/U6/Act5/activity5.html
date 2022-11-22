@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acivity 5</title>
+    <script>
+        function requestDate() {
+            let UserPrompt = prompt("Introduce a date (type: dd/mm/yy)");
+
+            //Chequea los datos y los acopla a un array
+            const ARR_UserPrompt = UserPrompt.split("/").filter(x => parseInt(x));
+            if (ARR_UserPrompt.length < 1) requestDate();
+            ARR_UserPrompt[1] = ARR_UserPrompt[1] - 1;
+
+            return ARR_UserPrompt;
+        }
+        
+        // Request the first date
+        var entry = requestDate();
+        const FirstDate = new Date(entry[0], entry[1], entry[2]);
+
+        // Request the second date
+        entry = requestDate();
+        const SecDate = new Date(entry[0], entry[1], entry[2]);
+
+        // Calculates the numbers of difference and returns it's value positive
+        const days = (date_1, date_2) =>{
+            let difference = date_1.getTime() - date_2.getTime();
+            let TotalDays = Math.abs(Math.ceil(difference / (1000 * 3600 * 24)));
+            return TotalDays;
+        }
+
+        document.write(`<h1> ${days(FirstDate, SecDate)} days of difference </h1>`);
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

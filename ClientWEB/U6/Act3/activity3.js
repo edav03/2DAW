@@ -1,30 +1,17 @@
-const map1 = new Map().set(1, "Optimal").set(2, "Noteworthy").set(3, "Alcocer").set(4, "Excellent").set(5, "Improvable").set(6, "Excellent").set(7, "Banuls");
+// Creation Map
+const map1 = new Map([[1, "Optimal"], [2, "Noteworthy"], [3, "Alcocer"], [4, "Excellent"], [5, "Improvable"], [6, "Excellent"], [7, "Banuls"]]);
 
-const Arrmap2 = map1.values();
+map1.invertMap = function() { // Function to invert the map values <--> keys
+    const ArrMap = new Map(Array.from(map1, a => a.reverse()));
 
-map1.invertMap = function() {
-    let x;
-    let y;
-    const map2 = new Map();
-    const ArrMap = [];
-
-    for (const [key, value] of map1) {
-        ArrMap.push(value);
-    }
-
-    for (const [key, value] of map1) {
-        k = key;
-        v = value;
-        if (ArrMap.includes(value)) {
-
-        }
-    }
-
-    return map2;
+    return ArrMap;
 }
 
-const map2 = map1.invertMap();
+const map2 = map1.invertMap(); // Testing the invertMap function
 
 for (const [key, value] of map2) {
-    console.log(key + " - " + value);
+    console.log(`Clave: ${key} || Valor ${value}`)
 }
+
+// Voy a pasar los valores del MAP a un array
+// La posicion será la key y los elementos el valor

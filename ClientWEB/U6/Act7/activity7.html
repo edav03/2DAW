@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    <label for="nif">Introduce tu NIF: </label>
+    <input type="text" id="nif">
+    <input type="submit" value="Enviar" onclick="validatenif(document.getElementById('nif').value)">
+    
+    <script>
+        function validatenif(nif) {
+            var numero, let, letra;
+            // var REGULAR_EXP_NIF = /^[XYZ]?\d{5,8}[A-Z]$/;
+            let REGULAR_EXP_NIF=/[XYZ0-9][\d]{7}[A-Z]/;
+
+            nif = nif.toUpperCase();
+
+            debugger
+            if(REGULAR_EXP_NIF.test(nif) === true){
+                numero = nif.substr(0 , nif.length-1);
+                numero = numero.replace('X', 0);
+                numero = numero.replace('Y', 1);
+                numero = numero.replace('Z', 2);
+                let = nif.substr(nif.length-1, 1);
+                numero = numero % 23;
+                letra = 'TRWAGMYFPDXBNJZSQVHLCKET';
+                letra = letra.substring(numero, numero+1);
+                if (letra != let) {
+                    alert('nif erroneo, la letra del NIF no se corresponde');
+                    return false;
+                }else{
+                    alert('nif correcto');
+                    return true;
+                }
+            }else{
+                alert('nif erroneo, formato no válido');
+                return false;
+            }
+
+        }
+    </script>
+</body>
+</html>
