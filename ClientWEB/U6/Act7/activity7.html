@@ -15,12 +15,10 @@
     <script>
         function validatenif(nif) {
             var numero, let, letra;
-            // var REGULAR_EXP_NIF = /^[XYZ]?\d{5,8}[A-Z]$/;
             let REGULAR_EXP_NIF=/[XYZ0-9][\d]{7}[A-Z]/;
 
             nif = nif.toUpperCase();
 
-            debugger
             if(REGULAR_EXP_NIF.test(nif) === true){
                 numero = nif.substr(0 , nif.length-1);
                 numero = numero.replace('X', 0);

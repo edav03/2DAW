@@ -12,6 +12,3 @@ const map2 = map1.invertMap(); // Testing the invertMap function
 for (const [key, value] of map2) {
     console.log(`Clave: ${key} || Valor ${value}`)
 }
-
-// Voy a pasar los valores del MAP a un array
-// La posicion será la key y los elementos el valor
