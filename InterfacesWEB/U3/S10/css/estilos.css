@@ -12,14 +12,12 @@
 	background-image: url("../img/background.jpg");
 	background-repeat: no-repeat;
 	background-size: 100% 60%;
-
 }
 
 body{
 	font-family: 'Arial';
 	position: relative;
 	width: 80%;
-	opacity: 80%;
 	margin: auto;
 	min-width: 730px;
 }
@@ -32,8 +30,10 @@ header{
 }
 
 div#section1{
-	background-color: hsl(0, 100%, 0%);
+	background-color: black;
 	height: 2rem;
+	opacity: 80%;
+
 }
 
 div#section1>div.content{
@@ -62,6 +62,8 @@ nav#nav1{
 	background-color: lightblue;
 	font-family: Tahoma, Verdana;
 	font-size: 16pt;
+	opacity: 80%;
+
 }
 
 nav#nav1>ul>li{
@@ -84,6 +86,8 @@ nav#nav1>ul>li a:hover{
 
 main>div.content{
 	background-color: white;
+	opacity: 80%;
+
 }
 
 main>div.content>h1{
@@ -105,6 +109,8 @@ div.row{
 	display: table-row;
 }
 
+/*------Section NAV2------*/
+
 div#nav2{
 	background-color: lightblue;
 	display: table-cell;
@@ -119,7 +125,7 @@ div#nav2>ul>li{
 	margin-top: 0.5rem;
 }
 
-div#nav2>ul>li:hover{
+div#nav2>ul.firstUL>li:hover{
 	color: red;
 }
 
@@ -128,7 +134,13 @@ div#nav2>ul>li>ul>li{
 	margin-left: 1.5rem;
 }
 
-div#nav2>ul>li>ul>li:hover{
+/*------FIN Section NAV2------*/
+
+ul.secUL>li{
+	color: black;
+}
+
+ul.secUL>li:hover{
 	text-decoration: underline;
 }
 
@@ -154,6 +166,10 @@ table, tr, td{
 	border-style: dotted;
 }
 
+tr>*:first-child{
+	font-family: "Courier New";
+}
+
 div#touristIMG{
 	display: inline-block;
 }
@@ -162,3 +178,32 @@ div#touristIMG>img{
 	width: 300px;
 }
 
+/*------FIN Section MAIN------*/
+
+/*------Section FOOTER------*/
+
+footer>div#parrFooter{
+	background-color: lightgrey;
+}
+
+footer>div#parrFooter>p{
+	color: grey;
+	font-size: small;
+}
+
+footer>div#containerFooter{
+	position: relative;
+	background-color: darkgrey;
+}
+
+footer>div#containerFooter>img#silueta{
+	height: 120px;
+	width: 100%;
+}
+
+footer>div#containerFooter>img#www{
+	position: absolute;
+	right: 0;
+}
+
+/*------FIN Section FOOTER------*/
