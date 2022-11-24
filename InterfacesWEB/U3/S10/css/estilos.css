@@ -3,13 +3,7 @@
 	padding: 0;
 	list-style: none;
 	text-decoration: none;
-/*	border: none;*/
-	border: 1px solid red;
 	outline: none;
-
-/*	align-content: center;
-	background-image: url("../img/background.jpg");
-	background-repeat: no-repeat;*/
 }
 
 :root{
@@ -27,24 +21,144 @@ body{
 	width: 80%;
 	opacity: 80%;
 	margin: auto;
+	min-width: 730px;
 }
 
+/*------Section HEADER------*/
+
 header{
-	height: 2rem;
+	height: 5rem;
 	display: inline;
 }
 
 div#section1{
 	background-color: hsl(0, 100%, 0%);
-	height: inherit;
+	height: 2rem;
 }
 
-div#section1 > img{
-	width: 3rem;
-	height: 2rem;
+div#section1>div.content{
+	height: 3rem;
 	position: absolute;
 	right: 0;
 }
-/*
-div#section1 > p{
-}*/
+
+div#section1>div.content>img{
+	display: inline;
+	width: 3rem;
+	height: 2rem;
+}
+
+div#section1>div.content>p{
+	display: inline;
+	color: white;
+	font-size: 0.8rem;
+}
+
+/*------FIN Section HEADER------*/
+
+/*------Section NAV1------*/
+
+nav#nav1{
+	background-color: lightblue;
+	font-family: Tahoma, Verdana;
+	font-size: 16pt;
+}
+
+nav#nav1>ul>li{
+	display: inline;
+	margin-left: 1.2rem;
+	margin-right: 1.2rem;
+}
+
+nav#nav1>ul>li a{
+	color: inherit;
+}
+
+nav#nav1>ul>li a:hover{
+	background-color: red;
+}
+
+/*------FIN Section NAV1------*/
+
+/*------Section H1------*/
+
+main>div.content{
+	background-color: white;
+}
+
+main>div.content>h1{
+	padding: 1rem;
+	color: green;
+	border-bottom: 5px solid green;
+}
+
+/*------FIN Section H1------*/
+
+/*------Section MAIN------*/
+
+div.col{
+	display: table;
+	width: 100%;
+}
+
+div.row{
+	display: table-row;
+}
+
+div#nav2{
+	background-color: lightblue;
+	display: table-cell;
+	width: 20%;
+}
+
+div#nav2>ul{
+	margin: 1rem 0rem 1rem 1rem ;
+}
+
+div#nav2>ul>li{
+	margin-top: 0.5rem;
+}
+
+div#nav2>ul>li:hover{
+	color: red;
+}
+
+div#nav2>ul>li>ul>li{
+	margin-top: 0.5rem;
+	margin-left: 1.5rem;
+}
+
+div#nav2>ul>li>ul>li:hover{
+	text-decoration: underline;
+}
+
+article{
+	display: table-cell;
+	width: 80%;
+	background-color: white;
+	text-align: center;
+}
+
+article>h1{
+	letter-spacing: 2px;
+	color: blue;
+}
+
+table#touristTable{
+	display: inline-block;
+	margin-bottom: 107px;
+}
+
+table, tr, td{
+	border: 1px solid red;
+	border-style: dotted;
+}
+
+div#touristIMG{
+	display: inline-block;
+}
+
+div#touristIMG>img{
+	width: 300px;
+}
+

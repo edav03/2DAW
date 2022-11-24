@@ -19,7 +19,7 @@
 }
 
 body{
-    background-image: url(/imgs/retro_back.jpg);
+    background-image: url(./imgs/retro_back.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
