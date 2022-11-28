@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Grid 3x3 con posiciones</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-decoration: none;
+        }
+
+        :root{
+            font-size: 16px;
+            background-color: grey;
+        }
+
+        body{
+            background-color: white;
+            width: 95%;
+            margin:0 auto;
+            display: grid; /* Voy a convertirlo en Rejilla */
+            grid-template-columns: 8rem 4fr 1fr;
+            grid-template-rows: auto auto auto;
+            grid-template-areas: "hd hd lg"
+                                 "nv mn bn"
+                                 "ft ft ft";
+        }
+
+        header{
+            background-color: red;
+            grid-area: hd;
+        }
+
+        aside#logo{
+            background-color: lightcoral;
+            grid-area: lg;
+        }
+
+        nav{
+            background-color: blue;
+            grid-area: nv;
+        }
+
+        main{
+            background-color: lightblue;
+            min-height: 40rem;
+            grid-area: mn;
+        }
+
+        aside#banner{
+            background-color: orange;
+            grid-area: bn;
+        }
+
+        footer{
+            background-color: darkkhaki;
+            grid-area: ft;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Titulo</h1>
+    </header>
+    <aside id="logo">
+        <h3>Logo</h3>
+    </aside>
+
+    <nav>
+    </nav>
+
+    <main>
+    </main>
+
+    <aside id="banner">
+        <p>Banner</p>
+    </aside>
+
+    <footer>
+        <p>copyright 2022</p>
+    </footer>
+</body>
+</html>
