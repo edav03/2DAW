@@ -16,11 +16,13 @@ class UsuariosFactory extends Factory
      */
     public function definition() //Accion a realizar sobre la base de datos en el modelo que elijas
     {
+        $login = $this->faker->unique()->word();
+
         return [
             'id' => $this->faker->unique()->randomNumber(),
             'name' => $this->faker->name,
-            'login' => $this->faker->unique()->word(),
-            'password' => $this->faker->word(), // password
+            'login' => $login,
+            'password' => bcrypt($login), // password
             'created_at' =>  null,
             'updated_at' => null 
         ];

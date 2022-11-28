@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Route;
 use \App\Http\Controllers\PostController;
 
@@ -21,3 +22,7 @@ Route::get('posts.create', [PostController::class, 'createPost'])->name('NuevoPo
 Route::get('posts/editarPrueba/${id}', [PostController::class, 'editarPrueba'])->name('EditarLibro');
 
 Route::resource('posts', PostController::class);
+
+Route::get('login', [LoginController::class, 'loginForm'])->name('login');
+Route::post('login', [LoginController::class, 'login']);
+Route::get('logout', [LoginController::class, 'logout'])->name('logout');

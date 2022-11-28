@@ -9,6 +9,15 @@ use App\Models\Usuarios;
 class PostController extends Controller
 {
     /**
+     * Define routes with restricted acces
+     */
+
+    public function __construct()
+    {
+        $this->middleware('auth', ['except' => ['index', 'show']]);
+    }
+
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response

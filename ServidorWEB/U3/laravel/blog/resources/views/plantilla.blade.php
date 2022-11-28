@@ -15,7 +15,7 @@
                 margin-top: 70px;
             }
 
-            a#route{
+            p#route{
                 position: fixed;
                 right: 10;
                 font-size: 1.5rem;

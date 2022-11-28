@@ -1,0 +1,1 @@
+<h1>Ficha posts {{ $id }}</h1>
