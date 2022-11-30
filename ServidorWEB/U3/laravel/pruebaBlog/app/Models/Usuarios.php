@@ -12,6 +12,10 @@ class Usuarios extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
 
+    public function post(){
+        return $this->hasMany(\App\Models\Post::class);
+    }
+
     /**
      * The attributes that are mass assignable.
      *
