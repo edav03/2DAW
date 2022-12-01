@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="css/estilos.css">
+	</head>
+	<body>
+		<header>
+				<img id="logo" src="img/logo.png">
+				<div class="banderas">
+					<img src="img/bandera_esp.png">
+					<img src="img/bandera_ing.png">
+							<br>
+					<img src="img/bandera_fra.png">
+					<img src="img/bandera_ale.png">
+				</div>
+		</header>
+
+		<nav>
+			<div class="navSection">
+				<ul>
+					<li><a href="#">HOME</a></li>
+					<li><a href="#">VENTA</a></li>
+					<li><a href="#">ALQUILER</a></li>
+					<li><a href="#">CONTACTO</a></li>
+				</ul>
+
+				<div class="busqueda">
+					<input type="text" name="barra">
+					<button>Buscar</button>
+				</div>
+			</div>
+		</nav>
+
+		<main>
+			<div class="row">
+				<div class="mainSection">
+					<div class="headerParcela">
+						<p>Parcela Urbana Miramar<p/>
+					</div>
+					<div class="navParcela">
+						<div class="row">
+							<p>Ref: P333555A</p>
+							<p>+Info</p>
+						</div>
+					</div>
+					<img class="imgParcela" src="./img/Parcela1.jpg">
+					<div class="footerParcela">
+						<img src="./img/facebook.png">
+						<img src="./img/twitter.png">
+						<img src="./img/instagram.png">
+					</div>
+				</div>
+
+				<div class="section">
+					<div class="contactSection">
+						<p>Envia email a <a href="mailto:info@inmcan.eu">info@inmcan.eu</a></p><br>
+						<p>O rellena este formulario</p><br>
+
+						<form action="procesa.php" method="GET">
+							<label for="nombre">Nombre</label>
+							<br>
+							<input type="text" name="nombre" maxlength="75" required>
+							<br>
+							
+							<label for="email">E-mail:</label>
+							<br>
+							<input type="text" name="email" pattern="^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$" maxlength="75" required>
+							<br>
+							
+							<label for="mensaje">Mensaje: </label><br>
+							<textarea name="mensaje" id="mensaje" 
+							placeholder="En el mensaje cita la referencia del inmueble"/ maxlength="300"></textarea><br><br>
+
+							<input id="politica" type="checkbox" checked>
+							<label for="politica">Si, acepto politica de privacidad</label>
+							<br><br>
+							
+							<button type="submit">Submit</button>
+						</form>
+					</div>
+				</div>
+			</div>
+		</main>
+	</body>
+</html>
