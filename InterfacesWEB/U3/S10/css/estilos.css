@@ -134,8 +134,6 @@ div#nav2>ul>li>ul>li{
 	margin-left: 1.5rem;
 }
 
-/*------FIN Section NAV2------*/
-
 ul.secUL>li{
 	color: black;
 }
@@ -143,6 +141,8 @@ ul.secUL>li{
 ul.secUL>li:hover{
 	text-decoration: underline;
 }
+
+/*------FIN Section NAV2------*/
 
 article{
 	display: table-cell;
