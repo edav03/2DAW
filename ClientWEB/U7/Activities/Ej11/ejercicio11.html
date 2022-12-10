@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="contenido">
+        <p>Silla</p>
+        <p>Estufa</p>
+        <p>Sofa</p>
+        <p>Gafas</p>
+        <p>Ordenador</p>
+        <p>Sol</p>
+        <p>Luna</p>
+        <p>Coche</p>
+        <p>Restar</p>
+        <p>Miercoles</p>
+    </div>
+
+    <script>
+        function askList() {
+            debugger
+            let e = prompt("Quieres ordenar la lista?(s/n)");
+            debugger
+            if (e == "n" || e == "no") {
+                const cont = document.getElementById('contenido');
+                let t = document.createElement('p');
+                t.innerHTML = "Nuevo texto";
+                cont.appendChild(t);
+            }
+            else{
+                const cont = document.getElementById('contenido');
+                const ARR_cont = [...cont];
+
+                ARR_cont.sort();
+
+                cont.append(...ARR_cont);
+            }
+        }
+        setTimeout(() => askList(), 3000)
+    </script>
+</body>
+</html>
