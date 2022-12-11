@@ -62,13 +62,13 @@
 
     <script>
         debugger
-        const parent = document.getElementsByClassName('content');
-
-        const arr = [...parent];
-
-        arr.reverse
-
+        const parent = document.getElementById('contenido');
+        const arr = [...parent.childNodes];
+        arr.reverse();
         parent.append(...arr);
+
+        
+        
     </script>
 </body>
 </html>

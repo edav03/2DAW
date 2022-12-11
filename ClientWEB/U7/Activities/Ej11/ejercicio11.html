@@ -8,23 +8,23 @@
 </head>
 <body>
     <div id="contenido">
-        <p>Silla</p>
-        <p>Estufa</p>
-        <p>Sofa</p>
-        <p>Gafas</p>
-        <p>Ordenador</p>
-        <p>Sol</p>
-        <p>Luna</p>
-        <p>Coche</p>
-        <p>Restar</p>
-        <p>Miercoles</p>
+        <p>P</p>
+        <p>O</p>
+        <p>Q</p>
+        <p>A</p>
+        <p>C</p>
+        <p>Z</p>
+        <p>L</p>
+        <p>F</p>
+        <p>I</p>
+        <p>E</p>
     </div>
 
     <script>
         function askList() {
             debugger
             let e = prompt("Quieres ordenar la lista?(s/n)");
-            debugger
+
             if (e == "n" || e == "no") {
                 const cont = document.getElementById('contenido');
                 let t = document.createElement('p');
@@ -32,14 +32,14 @@
                 cont.appendChild(t);
             }
             else{
-                const cont = document.getElementById('contenido');
-                const ARR_cont = [...cont];
-
-                ARR_cont.sort();
-
-                cont.append(...ARR_cont);
+                const parent = document.getElementById('contenido');
+                const divs = [...parent.querySelectorAll('p')];
+                divs.forEach(div => div.remove());
+                divs.sort((a, b) => (a.innerText > b.innerText) ? 1 : -1);
+                divs.forEach(div => parent.append(div));
             }
         }
+
         setTimeout(() => askList(), 3000)
     </script>
 </body>
