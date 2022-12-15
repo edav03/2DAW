@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Ejercicio 1</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+  <body>
+    <script>
+      let screenLog = document.querySelector('#screen-log')
+      document.addEventListener('mousemove', logkey)
+
+      function logkey(e) {
+        console.log('X: ' + event.clientX)
+        console.log('Y: ' + event.clientY)
+      }
+    </script>
+  </body>
+</html>
