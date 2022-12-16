@@ -30,3 +30,7 @@ capa.addEventListener("click", () => {
 capa.addEventListener("contextmenu", () => {
   capa.style.backgroundColor = "darkblue";
 });
+
+capa.addEventListener("mouseleave", () => {
+  capa.style.backgroundColor = "white";
+});

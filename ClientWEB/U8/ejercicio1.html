@@ -7,19 +7,19 @@
   </head>
   <body>
     <script>
-      const cartel = document.createElement('div')
-      cartel.innerHTML = '<h1>I Will Follow You</h1>'
-      cartel.style.position = 'absolute'
-      cartel.style.backgroundColor = 'yellow'
-      cartel.style.width = '400px'
-      cartel.style.height = '200px'
+      const cartel = document.createElement("div");
+      cartel.innerHTML = "<h1>I Will Follow You</h1>";
+      cartel.style.position = "absolute";
+      cartel.style.backgroundColor = "yellow";
+      cartel.style.width = "400px";
+      cartel.style.height = "200px";
 
-      document.body.appendChild(cartel)
+      document.body.appendChild(cartel);
 
-      document.addEventListener('mousemove', (e) => {
-        cartel.style.top = e.clientY - 100 + 'px'
-        cartel.style.left = e.clientX - 200 + 'px'
-      })
+      document.addEventListener("mousemove", (e) => {
+        cartel.style.top = e.clientY - 100 + "px";
+        cartel.style.left = e.clientX - 200 + "px";
+      });
     </script>
   </body>
 </html>
