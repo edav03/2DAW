@@ -7,22 +7,35 @@
   </head>
   <body>
     <script>
+      <!-- Div con Background de color azul -->
       const banner = document.createElement('div')
       banner.innerHTML = '<h1>PRESS ALT + F12 TO CHANGE BACKGROUND</h1>'
       banner.style.position = 'relative'
       banner.style.backgroundColor = 'lightblue'
       banner.style.color = 'white'
-      banner.style.height = '500px'
-      banner.style.width = '100%'
+      banner.style.height = '700px'
+      banner.style.width = '900px'
 
       document.body.appendChild(banner)
 
+      <!-- Texto del div -->
       const title = document.getElementsByTagName('h1')[0]
       title.style.position = 'absolute'
       title.style.top = '35%'
       title.style.left = '35%'
 
-      document.div.appendChild(title)
+      document.body.addEventListener('keydown', (e) => {
+        if (e.key == 'F12' && e.altKey == true) {
+          putImage()
+          console.log('EventListener working')
+        }
+      })
+
+      function putImage() {
+        banner.style.backgroundImage = 'url(https://source.unsplash.com/random)'
+        banner.style.backgroundRepeat = 'no-repeat'
+        console.log('Funcion putImage()')
+      }
     </script>
   </body>
 </html>
