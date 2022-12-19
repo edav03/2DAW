@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Ejercicio 7</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      outline: none;
+      list-style: none;
+      text-decoration: none;
+      border: none;
+    }
+
+    p {
+      position: absolute;
+      width: 200px;
+      height: 100px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 1px solid black;
+    }
+
+    p#draggable {
+      background-color: yellow;
+      top: 25%;
+    }
+
+    p#destiny {
+      top: 25%;
+      right: 0;
+    }
+  </style>
+
+  <body>
+    <p id="draggable" draggable="true">I am draggable</p>
+    <p id="destiny">I am destiny</p>
+    <script src="ejercicio7.js"></script>
+  </body>
+</html>

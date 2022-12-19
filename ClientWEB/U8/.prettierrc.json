@@ -304,7 +304,7 @@
         },
         "tabWidth": {
           "description": "Number of spaces per indentation level.",
-          "default": 2,
+          "default": 6,
           "type": "integer"
         },
         "trailingComma": {
@@ -327,7 +327,7 @@
         },
         "useTabs": {
           "description": "Indent with tabs instead of spaces.",
-          "default": false,
+          "default": true,
           "type": "boolean"
         },
         "vueIndentScriptAndStyle": {
