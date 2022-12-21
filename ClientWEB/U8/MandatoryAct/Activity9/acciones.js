@@ -25,17 +25,13 @@ button.onclick = (e) => {
     lista.appendChild(li);
     li.append(textTarea, btnTarea);
 
-    /* Reset del input y añadimos al ID */
-    tarea.value = "";
-    id++;
-
     /* Poner tarea como primera */
     textTarea.addEventListener("click", () => {
       let thisID = textTarea.id;
       let thisTAREA = document.getElementById(thisID);
       thisTAREA.remove();
-      li.prepend(thisTAREA);
-      console.log("Has pulsado el texto");
+      lista.prepend(thisTAREA);
+      console.log(thisTAREA);
     });
 
     /* Eliminar tarea */
@@ -44,5 +40,9 @@ button.onclick = (e) => {
       let thisLI = document.getElementById(thisID);
       thisLI.remove();
     };
+
+    /* Reset del input y añadimos al ID */
+    tarea.value = "";
+    id++;
   }
 };
