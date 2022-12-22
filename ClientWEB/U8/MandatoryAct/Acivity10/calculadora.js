@@ -42,6 +42,9 @@ division.onclick = () => {
 };
 
 reset.onclick = () => {
-  document.getElementById("numero1").reset();
-  document.getElementById("numero2").reset();
+  let valor1 = document.getElementById("numero1");
+  let valor2 = document.getElementById("numero2");
+
+  valor1.value = "";
+  valor2.value = "";
 };
