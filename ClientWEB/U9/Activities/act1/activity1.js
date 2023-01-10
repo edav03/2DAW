@@ -2,11 +2,12 @@ function timer(tiempo) {
   var promesa = new Promise((resolve, reject) => {
     var tmp = setTimeout(() => {
       resolve('Time completed')
-      clearTimeout(tmp)
+      clearTimeout(tmp2)
     }, tiempo)
 
     var tmp2 = setTimeout(() => {
       reject('Time is not going well')
+      clearTimeout(tmp)
     }, tiempo * 2)
   })
 
