@@ -1,3 +1,4 @@
+const bodyParser = require('body-parser')
 const express = require('express')
 const mongoose = require('mongoose')
 
@@ -24,6 +25,7 @@ let libro = mongoose.model('libro', libroSchema)
 
 let app = express()
 
+app.use(bodyParser.json())
 app.listen(8080)
 
 app.get('/libros', (req, res) => {
@@ -49,5 +51,56 @@ app.get('/libros/:id', (req, res) => {
     })
     .catch((error) => {
       res.send([])
+    })
+})
+
+app.put('/libros', (req, res) => {
+  let nuevoLibro = new libro({
+    titulo: req.body.titulo,
+    editorial: req.body.editorial,
+    precio: req.body.precio,
+  })
+  nuevoLibro
+    .save()
+    .then((resultado) => {
+      res.send({ error: false, resultado: resultado })
+    })
+    .catch((error) => {
+      res.send({ error: true, mensaje: 'Error añadiendo libro' })
+    })
+})
+
+app.put('/libros/:id', (req, res) => {
+  libro
+    .findByIdAndUpdate(
+      req.params.id,
+      {
+        $set: {
+          titulo: req.body.titulo,
+          editorial: req.body.editorial,
+          precio: req.body.precio,
+        },
+      },
+      { new: true }
+    )
+    .then((resultado) => {
+      res.send({ error: false, resultado: resultado })
+    })
+    .catch((error) => {
+      res.send({
+        error: true,
+        mensajeError: 'Error actualizando libro',
+      })
+    })
+})
+
+app.delete('/libros/:id', (req, res) => {
+  libro
+    .findOneAndDelete(req.params.id)
+    .then((resultado) => {
+      res.send({ error: false, resultado: resultado })
+    })
+    .catch((error) => {
+      res.send({ error: true, mensajeError: 'Error eliminando el contacto' })
     })
 })
