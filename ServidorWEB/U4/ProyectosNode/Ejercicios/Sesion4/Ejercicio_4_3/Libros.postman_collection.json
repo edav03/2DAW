@@ -1,0 +1,120 @@
+{
+	"info": {
+		"_postman_id": "7266a981-764b-4c70-befb-aa60dc3ebe30",
+		"name": "Libros",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET/libros",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/libros",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"libros"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET/libros/:id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/libros/:id",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"libros",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST/libros",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/libros",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"libros"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT/libros/:id",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/libros/:id",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"libros",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE/libros/:id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/libros/:id",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"libros",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
