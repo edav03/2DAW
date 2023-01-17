@@ -1,64 +1,51 @@
-const bodyParser = require('body-parser')
 const express = require('express')
-const mongoose = require('mongoose')
 
-mongoose.Promise = global.Promise
-mongoose.connect('mongodb://localhost:27017/libros')
+let libro = require(__dirname + '/../models/libro.js')
 
-let libroSchema = new mongoose.Schema({
-  titulo: {
-    type: String,
-    required: true,
-    minlength: 3,
-  },
-  editorial: {
-    type: String,
-  },
-  precio: {
-    type: Number,
-    required: true,
-    min: 0,
-  },
-})
+let router = express.Router()
 
-let libro = mongoose.model('libro', libroSchema)
-
-let app = express()
-
-app.use(bodyParser.json())
-app.listen(8080)
-
-app.get('/libros', (req, res) => {
+/* Muestra todos los libros */
+router.get('/', (req, res) => {
   libro
     .find()
     .then((resultado) => {
       res.send(resultado)
     })
     .catch((error) => {
-      res.send([])
+      res.send('Error buscando libros')
     })
 })
 
-app.get('/libros/:id', (req, res) => {
+/* Muestra el libro segun su ID */
+router.get('/:id', (req, res) => {
   libro
     .findById(req.params.id)
     .then((resultado) => {
       if (resultado) {
         res.send({ error: false, resultado: resultado })
       } else {
-        res.send({ error: true, mensajeError: 'No se ha encontrado resultado' })
+        res.send({
+          error: true,
+          mensajeError: 'No se ha encontrado resultado',
+        })
       }
     })
     .catch((error) => {
-      res.send([])
+      res.send({
+        error: true,
+        mensajeError: 'No es ha encontrado ningun resultado',
+      })
     })
 })
 
-app.put('/libros', (req, res) => {
+/* Crea nuevos libros, autores y comentarios */
+router.post('/', (req, res) => {
   let nuevoLibro = new libro({
     titulo: req.body.titulo,
     editorial: req.body.editorial,
     precio: req.body.precio,
+    autor: req.body.autor,
+    comentarios: req.body.comentarios,
   })
   nuevoLibro
     .save()
@@ -70,7 +57,8 @@ app.put('/libros', (req, res) => {
     })
 })
 
-app.put('/libros/:id', (req, res) => {
+/* Actualiza libros, autores y comentarios */
+router.put('/:id', (req, res) => {
   libro
     .findByIdAndUpdate(
       req.params.id,
@@ -79,6 +67,8 @@ app.put('/libros/:id', (req, res) => {
           titulo: req.body.titulo,
           editorial: req.body.editorial,
           precio: req.body.precio,
+          autor: req.body.autor,
+          comentarios: req.body.comentarios,
         },
       },
       { new: true }
@@ -94,13 +84,16 @@ app.put('/libros/:id', (req, res) => {
     })
 })
 
-app.delete('/libros/:id', (req, res) => {
+/* Elimina libros segun su ID */
+router.delete('/:id', (req, res) => {
   libro
-    .findOneAndDelete(req.params.id)
+    .findByIdAndRemove(req.params.id)
     .then((resultado) => {
       res.send({ error: false, resultado: resultado })
     })
     .catch((error) => {
-      res.send({ error: true, mensajeError: 'Error eliminando el contacto' })
+      res.send({ error: true, mensajeError: 'Error eliminando el libro' })
     })
 })
+
+module.exports = router

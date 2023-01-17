@@ -1,9 +1,9 @@
-const bodyParser = require("body-parser");
-const express = require("express");
-const mongoose = require("mongoose");
+const bodyParser = require('body-parser')
+const express = require('express')
+const mongoose = require('mongoose')
 
-mongoose.Promise = global.Promise;
-mongoose.connect("mongodb://localhost:27017/libros");
+mongoose.Promise = global.Promise
+mongoose.connect('mongodb://localhost:27017/libros')
 
 let libroSchema = new mongoose.Schema({
   titulo: {
@@ -19,64 +19,64 @@ let libroSchema = new mongoose.Schema({
     required: true,
     min: 0,
   },
-});
+})
 
-let libro = mongoose.model("libro", libroSchema);
+let libro = mongoose.model('libro', libroSchema)
 
-let app = express();
+let app = express()
 
-app.use(bodyParser.json());
-app.listen(8080);
+app.use(bodyParser.json())
+app.listen(8080)
 
-app.get("/libros", (req, res) => {
+app.get('/libros', (req, res) => {
   libro
     .find()
     .then((resultado) => {
-      res.send(resultado);
+      res.send(resultado)
     })
     .catch((error) => {
-      res.send([]);
-    });
-});
+      res.send([])
+    })
+})
 
-app.get("/libros/:id", (req, res) => {
+app.get('/libros/:id', (req, res) => {
   libro
     .findById(req.params.id)
     .then((resultado) => {
       if (resultado) {
-        res.send({ error: false, resultado: resultado });
+        res.send({ error: false, resultado: resultado })
       } else {
         res.send({
           error: true,
-          mensajeError: "No se ha encontrado resultado",
-        });
+          mensajeError: 'No se ha encontrado resultado',
+        })
       }
     })
     .catch((error) => {
       res.send({
         error: true,
-        mensajeError: "No es ha encontrado ningun resultado",
-      });
-    });
-});
+        mensajeError: 'No es ha encontrado ningun resultado',
+      })
+    })
+})
 
-app.post("/libros", (req, res) => {
+app.post('/libros', (req, res) => {
   let nuevoLibro = new libro({
     titulo: req.body.titulo,
     editorial: req.body.editorial,
     precio: req.body.precio,
-  });
+  })
   nuevoLibro
     .save()
     .then((resultado) => {
-      res.send({ error: false, resultado: resultado });
+      res.send({ error: false, resultado: resultado })
     })
     .catch((error) => {
-      res.send({ error: true, mensaje: "Error añadiendo libro" });
-    });
-});
+      res.send({ error: true, mensaje: 'Error añadiendo libro' })
+    })
+})
 
-app.put("/libros/:id", (req, res) => {
+app.put('/libros/:id', (req, res) => {
   libro
     .findByIdAndUpdate(
       req.params.id,
@@ -90,23 +90,23 @@ app.put("/libros/:id", (req, res) => {
       { new: true }
     )
     .then((resultado) => {
-      res.send({ error: false, resultado: resultado });
+      res.send({ error: false, resultado: resultado })
     })
     .catch((error) => {
       res.send({
         error: true,
-        mensajeError: "Error actualizando libro",
-      });
-    });
-});
+        mensajeError: 'Error actualizando libro',
+      })
+    })
+})
 
-app.delete("/libros/:id", (req, res) => {
+app.delete('/libros/:id', (req, res) => {
   libro
-    .findOneAndDelete(req.params.id)
+    .findByIdAndDelete(req.params.id)
     .then((resultado) => {
-      res.send({ error: false, resultado: resultado });
+      res.send({ error: false, resultado: resultado })
     })
     .catch((error) => {
-      res.send({ error: true, mensajeError: "Error eliminando el contacto" });
-    });
-});
+      res.send({ error: true, mensajeError: 'Error eliminando el contacto' })
+    })
+})

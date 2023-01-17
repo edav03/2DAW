@@ -1,8 +1,5 @@
 const mongoose = require('mongoose')
 
-mongoose.Promise = global.Promise
-mongoose.connect('mongodb://localhost:27017/libros')
-
 /* Esquema Comentarios */
 let comentariosSchema = new mongoose.Schema({
   fecha: {

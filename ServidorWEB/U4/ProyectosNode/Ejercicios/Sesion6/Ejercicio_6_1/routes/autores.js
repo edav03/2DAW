@@ -1,11 +1,11 @@
 const express = require('express')
 
-let libro = require(__dirname + '../models/autor.js')
+let autor = require(__dirname + '/../models/autor.js')
 
-let app = express.Router()
+let router = express.Router()
 
 /* Listar todos */
-app.get('/autor', (req, res) => {
+router.get('/', (req, res) => {
   autor
     .find()
     .then((resultado) => {
@@ -17,7 +17,7 @@ app.get('/autor', (req, res) => {
 })
 
 /* Añadir nuevo */
-app.post('/autor', (req, res) => {
+router.post('/', (req, res) => {
   let nuevoAutor = new autor({
     nombre: 'Jose',
     nacimiento: 1990,
@@ -26,21 +26,25 @@ app.post('/autor', (req, res) => {
   nuevoAutor
     .save()
     .then((resultado) => {
-      console.log('Autor 1 añadido: ' + resultado)
+      console.log('Autor añadido: ' + resultado)
+      res.send('Autor añadido: ' + resultado)
     })
     .catch((error) => {
-      console.log('Error añadiendo Autor1')
+      console.log('Error añadiendo Autor')
+      res.send('Error añadiendo autor: ' + error)
     })
 })
 
 /* Borrar por ID */
-app.put('/libros/:id', (req, res) => {
+router.put('/:id', (req, res) => {
   autor
-    .findOneAndDelete(req.params.id)
+    .findByIdAndRemove(req.params.id)
     .then((resultado) => {
       res.send({ error: false, resultado: resultado })
     })
     .catch((error) => {
-      res.send({ error: true, mensajeError: 'Error eliminando libro' })
+      res.send({ error: true, mensajeError: 'Error eliminando autor' })
     })
 })
+
+module.exports = router
