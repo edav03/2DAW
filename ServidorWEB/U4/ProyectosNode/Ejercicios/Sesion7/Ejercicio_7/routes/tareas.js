@@ -20,27 +20,24 @@ const meses = [
 
 let router = express.Router()
 
-router.get('/tareas', (req, res) => {
-  let listadoTareas = []
+router.get('/', (req, res) => {
   Tarea.find()
     .then((respuesta) => {
-      listadoTareas += respuesta
+      res.render('lista_tareas', { tareas: respuesta })
     })
     .catch((error) => {
-      res.send('Error recopilando las Tareas: ' + error)
+      res.render('lista_tareas', { tareas: [] })
     })
-  res.render('../views/lista_tareas.ejs', { tareas: listadoTareas })
 })
 
 router.get('/:id', (req, res) => {
   Tarea.findById(req.params.id)
     .then((resultado) => {
-      let idTarea = resultado
+      res.render('ficha_tarea', { tareas: resultado })
     })
     .catch((error) => {
       res.send('Error encontrando Tarea: ' + error)
     })
-  res.render()
 })
 
 router.post('/', (req, res) => {

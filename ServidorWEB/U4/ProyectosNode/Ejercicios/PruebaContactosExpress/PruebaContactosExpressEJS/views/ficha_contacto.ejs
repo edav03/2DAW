@@ -1,0 +1,36 @@
+<%- include('cabecera'); %>
+
+<h1>Ficha de contacto</h1>
+
+<%
+if (contacto == null) {
+%>
+
+<p>Contacto incorrecto</p>
+
+<%
+} else {
+%>
+
+<ul>
+    <li><strong>Nombre:</strong> <%=contacto.nombre%></li>
+    <li><strong>Teléfono:</strong> <%=contacto.telefono%></li>
+    <li><strong>Edad:</strong> <%=contacto.edad%></li>
+    <li><strong>Restaurante favorito:</strong> <%=contacto.restauranteFavorito.nombre + "(" + contacto.restauranteFavorito.direccion + ")"%></li>
+    <li><strong>Mascotas:</strong>
+        <ul>
+            <% 
+            contacto.mascotas.forEach(mascota => {
+            %>
+                <li><%=mascota.nombre%></li>
+            <%
+            });
+            %>
+        </ul>
+    </li>    
+</ul>
+<%
+}
+%>
+
+<%- include('pie'); %>

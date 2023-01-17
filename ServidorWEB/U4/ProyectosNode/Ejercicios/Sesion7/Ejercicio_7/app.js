@@ -7,27 +7,21 @@ const tareas = require(__dirname + '/routes/tareas')
 const index = require(__dirname + '/routes/index')
 
 mongoose.Promise = global.Promise
-mongoose.connect('mongodb://localhost:27017/tareas')
+mongoose.connect('mongodb://127.0.0.1:27017/tareas')
 
 let app = express()
 
 /* Carga del motor de plantilla EJS */
 app.set('view engine', 'ejs')
 
-/* Definicion de la carpeta de contenido estatico */
-app.use('/public', express.static(__dirname + '/public'))
-
 /* Middleware bodyParser */
 app.use(bodyParser.json())
 
-/* Ruta '/' mapeada al enrutador 'index' */
-app.get('/', (req, res) => {
-  res.render('index')
-})
+/* Definicion de la carpeta de contenido estatico */
+app.use('/public', express.static(__dirname + '/public'))
 
-/* Ruta '/tareas' mapeada al enrutador 'tareas' */
-app.get('/tareas', (req, res) => {
-  res.render('tareas')
-})
+/* Maper rutas con el enrutador */
+app.use('/', index)
+app.use('/tareas', tareas)
 
 app.listen(8080)

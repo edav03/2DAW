@@ -1,19 +1,19 @@
 {
   "name": "ejercicio_7",
   "version": "1.0.0",
-  "description": "",
+  "description": "Proyecto de Tareas",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon app.js"
   },
-  "author": "",
+  "author": "Edison Alcocer",
   "license": "ISC",
   "dependencies": {
-    "body-parser": "^1.18.3",
-    "ejs": "^2.6.1",
-    "express": "^4.16.3",
-    "mongoose": "^5.1.2",
+    "body-parser": "^1.20.1",
+    "ejs": "^3.1.8",
+    "express": "^4.18.2",
+    "mongoose": "^6.8.4",
     "nodemon": "^2.0.20"
   }
 }

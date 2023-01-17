@@ -1,0 +1,29 @@
+<%- include('cabecera'); %>
+
+<h1>Listado de contactos</h1>
+
+<%
+if (contactos.length == 0) {
+%>
+
+<p>No se han encontrado contactos que mostrar</p>
+
+<%
+} else {
+%>
+
+<ul>
+
+<%
+    contactos.forEach(contacto => {
+%>
+        <li><%=contacto.nombre%> <a href="/contactos/<%=contacto._id%>">Ver ficha</a>&nbsp;&nbsp;<a href="javascript:borrarContacto('<%=contacto._id%>')">Borrar</a></li>
+<%
+    });
+%>
+</ul>
+<%
+}
+%>
+
+<%- include('pie'); %>
