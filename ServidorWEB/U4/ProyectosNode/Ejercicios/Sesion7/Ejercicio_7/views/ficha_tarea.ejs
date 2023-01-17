@@ -1,17 +1,21 @@
 <%- include('cabecera');%>
 <h1>Ficha de Tareas</h1>
 
-<% if(tareas == {}){%>
-<p> No se ha encontrado la tarea </p>
-<%} else{%>
+<%
+  if(tareas == {}){
+%>
 
-<h3><%= tareas.titulo%></h3>
+<p> No se ha encontrado la tarea </p>
+
+<% } else{ %>
+
+<h3> <%= tareas.titulo %> </h3>
 <ul>
 
-  <li><%= tareas.fecha%></li>
-  <li><%= tareas.prioridad%></li>       
+  <li><strong>Fecha tope: </strong> <%= tareas.fecha.getDate()%> de <%= mes[tareas.fecha.getMonth()] %> de <%= tareas.fecha.getFullYear() %> </li>
+  <li><strong>Prioridad: </strong> <%= prioridad[tareas.prioridad - 1]%> </li>       
  
 </ul>
 
-<%}%>
+<% } %>
 <%- include('pie'); %>

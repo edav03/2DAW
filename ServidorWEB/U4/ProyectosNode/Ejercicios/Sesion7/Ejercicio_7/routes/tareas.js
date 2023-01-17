@@ -20,27 +20,51 @@ const meses = [
 
 let router = express.Router()
 
+/* Mostrar toda la Lista de Tareas */
 router.get('/', (req, res) => {
   Tarea.find()
-    .then((respuesta) => {
-      res.render('lista_tareas', { tareas: respuesta })
+    .then((resultado) => {
+      res.render('lista_tareas', { tareas: resultado })
     })
     .catch((error) => {
       res.render('lista_tareas', { tareas: [] })
     })
 })
 
+/* Ordenar por prioridad */
+router.get('/prioridad', (req, res) => {
+  Tarea.find()
+    .sort('prioridad')
+    .then((resultado) => {
+      res.render('lista_tareas', { tareas: resultado })
+    })
+})
+
+/* Ordenar por fecha */
+router.get('/fecha', (req, res) => {
+  Tarea.find()
+    .sort('fecha')
+    .then((resultado) => {
+      res.render('lista_tareas', { tareas: resultado })
+    })
+})
+
+/* Mostrar Ficha de una Tarea */
 router.get('/:id', (req, res) => {
-  console.log('Llega al router')
   Tarea.findById(req.params.id)
     .then((resultado) => {
-      res.render('ficha_tarea', { tareas: resultado })
+      res.render('ficha_tarea', {
+        tareas: resultado,
+        mes: meses,
+        prioridad: prioridades,
+      })
     })
     .catch((error) => {
       res.send('Error encontrando Tarea: ' + error)
     })
 })
 
+/* Crear un nueva Tarea */
 router.post('/', (req, res) => {
   let nuevaTarea = new Tarea({
     titulo: req.body.titulo,
@@ -58,9 +82,10 @@ router.post('/', (req, res) => {
     })
 })
 
+/* Eliminar una Tarea */
 router.delete('/:id', (req, res) => {
-  Tarea.findById(req.params.id)
-    .then((error) => {
+  Tarea.findByIdAndDelete(req.params.id)
+    .then((resultado) => {
       res.send({ error: false })
     })
     .catch((error) => {

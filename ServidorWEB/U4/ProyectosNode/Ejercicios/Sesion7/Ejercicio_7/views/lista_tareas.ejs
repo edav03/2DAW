@@ -1,18 +1,24 @@
 <%- include('cabecera');%>
 <h1>Lista de Tareas</h1>
 
+
+<a class="btn btn-primary" href="/tareas/prioridad">Ordenar por prioridad</a>&nbsp;&nbsp;&nbsp;
+<a class="btn btn-primary" href="/tareas/fecha">Ordenar por fecha</a>
+<br><br>
+
 <% if(tareas.length == 0){ %>
     <p>No hay tareas pendientes</p>
-<%} else{ %>
+<% } else{ %>
 <ul>
-    <% tareas.forEach(tarea => {
+    <% 
+        tareas.forEach(tarea => {
     %>
         <li>
-            <%= tarea.titulo%>
+            <%= tarea.titulo %>
             &nbsp&nbsp<a href="/tareas/<%= tarea.id%>" method="GET">Ver Ficha</a>
-            &nbsp&nbsp<a href="/tareas/<%= tarea.id%>" method="DELETE">Borrar</a>
+            &nbsp&nbsp<a href="javascript:borrarTarea('<%= tarea.id%>')">Borrar</a>
         </li>
-    <%})%>
+    <% }) %>
 </ul>
 <% } %>
 <%- include('pie'); %>
