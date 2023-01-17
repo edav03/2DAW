@@ -1,13 +1,17 @@
 <%- include('cabecera');%>
-<h1>Tareas</h1>
+<h1>Ficha de Tareas</h1>
 
-<h2><%= tareas.titulo%></h2>
+<% if(tareas == {}){%>
+<p> No se ha encontrado la tarea </p>
+<%} else{%>
 
+<h3><%= tareas.titulo%></h3>
 <ul>
 
   <li><%= tareas.fecha%></li>
   <li><%= tareas.prioridad%></li>       
  
 </ul>
-<% } %>
+
+<%}%>
 <%- include('pie'); %>

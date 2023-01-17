@@ -13,7 +13,6 @@ function nuevaTarea() {
             if (data.error) {
                 $('#nuevoError').css('display', 'block')
                 $('#nuevoOK').css('display', 'none')
-                console.log(data)
             } else {
                 $('#nuevoError').css('display', 'none')
                 $('#nuevoOK').css('display', 'block')

@@ -31,6 +31,7 @@ router.get('/', (req, res) => {
 })
 
 router.get('/:id', (req, res) => {
+  console.log('Llega al router')
   Tarea.findById(req.params.id)
     .then((resultado) => {
       res.render('ficha_tarea', { tareas: resultado })
@@ -41,7 +42,6 @@ router.get('/:id', (req, res) => {
 })
 
 router.post('/', (req, res) => {
-
   let nuevaTarea = new Tarea({
     titulo: req.body.titulo,
     fecha: req.body.fecha,

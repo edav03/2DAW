@@ -5,9 +5,12 @@
     <p>No hay tareas pendientes</p>
 <%} else{ %>
 <ul>
-    <% tarea.forEach(tarea => { %>
+    <% tareas.forEach(tarea => {
+    %>
         <li>
-            <h5>Una tarea</h5>
+            <%= tarea.titulo%>
+            &nbsp&nbsp<a href="/tareas/<%= tarea.id%>" method="GET">Ver Ficha</a>
+            &nbsp&nbsp<a href="/tareas/<%= tarea.id%>" method="DELETE">Borrar</a>
         </li>
     <%})%>
 </ul>
