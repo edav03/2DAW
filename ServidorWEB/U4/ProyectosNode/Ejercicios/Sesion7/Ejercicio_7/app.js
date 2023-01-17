@@ -7,7 +7,7 @@ const tareas = require(__dirname + '/routes/tareas')
 const index = require(__dirname + '/routes/index')
 
 mongoose.Promise = global.Promise
-mongoose.connect('mongodb://127.0.0.1:27017/tareas')
+mongoose.connect('mongodb://localhost:27017/tareas')
 
 let app = express()
 

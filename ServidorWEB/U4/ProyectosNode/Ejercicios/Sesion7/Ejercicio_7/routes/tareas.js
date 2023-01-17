@@ -41,10 +41,11 @@ router.get('/:id', (req, res) => {
 })
 
 router.post('/', (req, res) => {
+
   let nuevaTarea = new Tarea({
-    titulo: req.params.titulo,
-    fecha: req.params.fecha,
-    prioridad: req.params.prioridad,
+    titulo: req.body.titulo,
+    fecha: req.body.fecha,
+    prioridad: req.body.prioridad,
   })
 
   nuevaTarea
