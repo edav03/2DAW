@@ -5,15 +5,18 @@
 <% if(participante.length == 0){%>
 <p> No se ha podido encontrar los participantes </p>
 
-<% else{%>
+<% } else{%>
 
 <table class="table">
     <thead>
       <tr>
         <% participante.forEach(persona => {%>
-        <th> <%= persona.appellidos%> &nbsp <%= persona.nombre%> &nbsp <%= persona.dorsal%> <a href="javascript:borrarParticipante('<%= persona.id%>')">Borrar</a> </th>
+            <th> <%= persona.appellidos%> &nbsp <%= persona.nombre%> &nbsp <%= persona.dorsal%> <a href="javascript:borrarParticipante('<%= persona.id%>')">Borrar</a> </th>
+        <% }) %>
       </tr>
     </thead>
 </table>
+
+<% } %>
 
 <%- include('pie'); %>

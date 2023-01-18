@@ -21,7 +21,7 @@ router.get('/nuevo_participante', (req, res) => {
 })
 
 /* Pagina Lista de los participantes */
-router.get('/lista_participantes', (req, res) => {
+router.get('/participantes', (req, res) => {
   Participantes.find()
     .sort('apellido')
     .then((resultado) => {
