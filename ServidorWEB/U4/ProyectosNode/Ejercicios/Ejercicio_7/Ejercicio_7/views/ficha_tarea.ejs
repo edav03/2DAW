@@ -1,0 +1,9 @@
+<%- include('cabecera')%>
+<h1>Ficha Tarea</h1>
+
+<% console.log(tarea) %>
+<h3><%= tarea.titulo%></h3>
+
+<p><strong>Fecha tope: </strong><%= tarea.fecha.getDate()%> de <%= mes[tarea.fecha.getMonth()]%> de <%= tarea.fecha.getFullYear()%></p>
+<p><strong>Prioridad: </strong><%= prioridad[tarea.prioridad - 1]%></p>
+<%- include('pie')%>

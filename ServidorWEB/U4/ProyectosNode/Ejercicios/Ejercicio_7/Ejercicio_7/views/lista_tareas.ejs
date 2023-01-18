@@ -1,0 +1,26 @@
+<%- include('cabecera');%>
+<h1>Lista de Tareas</h1>
+
+<% if(tareas.length == 0){ %>
+  <p>No hay nada que mostrar</p>
+<% 
+  }else{
+%>
+<a class="btn btn-primary" href="/tareas/prio">Ordenar por prioridad</a>
+<a class="btn btn-primary" href="/tareas/fecha">Ordenar por fecha</a>
+<ul>
+    <% 
+     tareas.forEach(tarea => { 
+    %>
+      <li>
+        <%= tarea.titulo %>
+        <a href="/tareas/<%= tarea.id%>">Ver ficha</a>&nbsp&nbsp
+        <a href="javascript:borrarTarea('<%= tarea.id%>')">Borrar</a>
+      </li>
+    <% }); %>
+  </ul>
+  
+  <%
+    }
+  %>
+<%- include('pie');%>

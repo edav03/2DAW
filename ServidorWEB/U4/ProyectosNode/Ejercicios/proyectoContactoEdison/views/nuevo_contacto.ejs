@@ -1,0 +1,50 @@
+<%- include('cabecera'); %>
+
+<h1>Formulario de alta de nuevo contacto</h1>
+
+<div id="nuevoError" class="alert alert-danger">
+        Error añadiendo el contacto
+</div>
+
+<div id="nuevoOK" class="alert alert-success">
+        Contacto añadido correctamente
+</div>
+
+<div class="form-group">
+<label for="nombre">Nombre:</label>
+<input type="text" class="form-control" id="nombre" name="nombre" />
+</div>
+<div class="form-group">
+        <label for="telefono">Teléfono:</label>
+        <input type="text" class="form-control" id="telefono" name="telefono" />
+</div>
+<div class="form-group">
+        <label for="edad">Edad:</label>
+        <input type="number" class="form-control" id="edad" name="edad" />
+</div>
+<div class="form-group">
+        <label for="restauranteFavorito">Restaurante favorito:</label>
+        <select class="form-control" id="restauranteFavorito" name="restauranteFavorito">
+                <option value="" selected>--Escoge un restaurante--</option>
+                <%
+                restaurantes.forEach(restaurante => {
+                %>
+                        <option value="<%=restaurante._id%>"><%=restaurante.nombre%></option>
+                <%
+                });
+                %>
+        </select>
+</div>
+<div class="form-group">
+        <label for="mascotas">Mascotas:</label><br />
+        <%
+        mascotas.forEach(mascota => {
+        %>
+                <input type="checkbox" name="mascotas" class="mascotas" value="<%=mascota._id%>" /> <%=mascota.nombre %><br />
+        <%
+        });
+        %>
+</div>
+<button class="btn btn-secondary" onclick="nuevoContacto()">Enviar</button>
+
+<%- include('pie'); %>

@@ -1,0 +1,14 @@
+<%- include('cabecera')%>
+<h1>Listado de contactos</h1>
+
+<ul>
+  <% contacto.forEach( contact => {%>
+    <li>
+      <strong><%= contact.nombre %><strong>
+      <a href="/contactos/ficha_contacto/<%= contact.id%>">Ver ficha</a>&nbsp&nbsp
+      <a href="javascript:borrarContacto('<%= contact.id%>')">Borrar</a>
+    </li>
+
+  <% }) %>
+</ul>
+<%- include('pie')%>
