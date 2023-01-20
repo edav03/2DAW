@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Ejercicio 1</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="css/style.css" rel="stylesheet" />
+  </head>
+  <style type="text/css">
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      text-decoration: none;
+    }
+    /***************/
+    /* VISTA MÓVIL */
+    /***************/
+    html {
+      font-size: 14px;
+      background-color: grey;
+    }
+
+    body {
+      background-color: white;
+      width: 100%;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: auto auto auto auto auto;
+      grid-template-areas:
+        "lg"
+        "hd"
+        "nv"
+        "mn"
+        "ft";
+    }
+
+    header {
+      background-color: red;
+      grid-area: hd;
+    }
+
+    aside#logo {
+      grid-area: lg;
+    }
+
+    nav {
+      grid-area: nv;
+      display: none;
+      background-color: blue;
+    }
+
+    main {
+      grid-area: mn;
+      min-height: 500px;
+    }
+
+    aside#banner {
+      grid-area: bn;
+      display: none;
+      background-color: orange;
+    }
+
+    footer {
+      grid-area: ft;
+      background-color: pink;
+    }
+
+    /****************/
+    /* VISTA TABLET */
+    /****************/
+    @media (min-width: 768px) {
+      html {
+        font-size: 16px;
+      }
+
+      body {
+        width: 95%;
+        grid-template-columns: 3fr 1fr;
+        grid-template-rows: auto auto auto; /* por defecto*/
+        grid-template-areas:
+          "hd lg"
+          "mn nv"
+          "ft nv";
+      }
+
+      nav {
+        display: block;
+      } /* MUESTRO BARRA NAV */
+    }
+
+    /****************/
+    /*  VISTA PC    */
+    /****************/
+    @media (min-width: 1024px) {
+      body {
+        width: 90%;
+        max-width: 1000px; /* SIEMPRE CONVIENE PONER UN MÁXIMO AL BODY en la vista PC/SmartTV o Superior*/
+        grid-template-columns: 1fr 4fr 1fr;
+        grid-template-rows: auto auto auto; /* por defecto*/
+        grid-template-areas:
+          "lg hd .."
+          "nv mn bn"
+          "nv ft ft";
+      }
+      aside#banner {
+        display: block;
+      } /* MUESTRO EL ASIDE */
+    }
+  </style>
+  <body>
+    <header>
+      <h1>CABECERA PAGINA</h1>
+    </header>
+
+    <aside id="logo">
+      <h3>Logo</h3>
+    </aside>
+
+    <nav>
+      Navegacion
+      <ul>
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+      </ul>
+    </nav>
+
+    <main>
+      <div id="mainHeader">
+        <p>Cabecera de seccion</p>
+      </div>
+
+      <div id="noticia1">
+        <h3>Noticia 1</h3>
+        <p>Lorem ipsum dolor sit amet</p>
+      </div>
+
+      <div id="noticia2">
+        <h3>Noticia 2</h3>
+        <p>Lorem ipsum dolor sit amet</p>
+      </div>
+
+      <div id="articles">
+        <article><p>Art1</p></article>
+        <article><p>Art2</p></article>
+        <article><p>Art3</p></article>
+        <article><p>Art4</p></article>
+        <article><p>Art5</p></article>
+        <article><p>Art6</p></article>
+        <article><p>Art7</p></article>
+        <article><p>Art8</p></article>
+      </div>
+    </main>
+
+    <aside id="banner">
+      <p>Banners</p>
+    </aside>
+
+    <footer><p>Pie de pagina</p></footer>
+  </body>
+</html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+    <title>Ejemplo Responsive con Grid Layout</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type="text/css">
+        /* Mejor CSS en fichero externo, pero para ahorrar lo hago aquí */
+        /* Inicialización */
+        *{ margin: 0; padding: 0; 
+            box-sizing: border-box;
+            text-decoration: none; 
+		}
+        /***************/
+        /* VISTA MÓVIL */
+        /***************/
+        :root {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 3vw; /* 3% del viewport-width */
+        }
+
+        h1{
+            font-size: 1.5rem; /* continua siendo fluido, al anclarse a vw */
+            padding-left: 0.5em;
+        }
+
+        h3 {
+            font-size: 1.1rem;
+        }
+		
+        body{
+            width: 100%;
+            background-color: white;
+            display: grid;
+            grid-template-columns: 1fr; /* Para móvil solo 1 columna */
+            grid-template-areas: "hea" "nvm" "mai" "foo" ;
+        }
+
+        header{
+            grid-area: hea;
+            background-color: red;
+        }
+
+        aside#logo{
+            grid-area: log;
+            background-color: pink;
+            display: none; /* Invisible para mov. */
+        }
+
+        nav#mov{
+            grid-area: nvm;
+            background-color: lightblue;
+        }
+
+        nav#tab{
+            grid-area: nvt;
+            background-color: lightgreen;
+            display: none; /* Invisible para mov. */
+        }
+
+        main{
+            grid-area: mai;
+            min-height: 10em;
+        }
+
+        aside#banner{
+            grid-area: ban;
+            background-color: pink;
+            display: none; /* Invisible para mov. */
+        }
+
+        footer{
+            grid-area: foo;
+            background-color: yellow;
+        }
+
+        /****************/
+        /* VISTA TABLET */
+        /****************/
+        @media (min-width:768px){
+            :root{
+                font-size: 2vw;
+                background-color: grey;
+            }
+			
+            body{
+                width: 97%;
+                margin: 0 auto;
+                /* display: grid; no hace falta */
+                grid-template-columns: 3fr 1fr; /* Disposicion a 2 columnas */
+                grid-template-areas: "hea log"
+                                     "mai nvt"
+                                     "foo nvt";
+            }
+
+            main{
+                min-height: 90vh; /* 98% del viewport-heigth */
+            }
+
+            /* Mostrar cosas escondidas en Mov, y Ocultar lo que deseo */
+            aside#logo{
+                display: block; /* muestro */
+            }
+
+            nav#tab{
+                display: block; /* muestro */
+            }
+
+            nav#mov{
+                display: none; /* oculto */
+            }
+        }
+                
+        
+        /****************/
+        /*  VISTA PC    */
+        /****************/
+        @media (min-width:968px) { /* Reglas de tablet se mantienen */
+            :root{ font-size: 16px; }
+            
+            body{
+                width: 95%;
+                /* display: grid; no hace falta */
+                grid-template-columns:15rem 3fr 1fr; /* 1col fija, 2 flexibles */
+                grid-template-areas: "log hea hea"
+                                     "nvt mai ban"
+                                     "foo foo foo";
+            }
+            
+            /* Mostrar u ocultar */
+            aside#banner{
+                display: block;
+            }
+		}
+         
+    </style>
+</head>
+<body>
+     <header>
+        <h1>Título</h1>
+     </header>
+     <aside id="logo">
+        <h3>Logo</h3>    
+     </aside>
+     <nav id="mov">X</nav>
+     <nav id="tab"><br/>..inicio..<br/> ..contacta..</nav>
+     
+     <main>
+         <p>Sección principal</p>
+     </main>
+     <aside id="banner">
+         <p>Banners</p>
+     </aside>
+     <footer><p>copyright 2018</p></footer>
+</body>
+</html>

@@ -4,7 +4,118 @@
     <title>Activity 1</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link href="user.js" rel="stylesheet" />
+    <script>
+      async function getUser() {
+        let userInfo = await fetch("https://randomuser.me/api/")
+          .then((response) => response.json())
+          .catch((error) => console.log("Error: " + error));
+
+        /* Gets User's profile photo */
+        function getUserFoto() {
+          let photoUrl = userInfo;
+
+          console.log("Photo URL: " + photoUrl.results[0].picture.large);
+          return photoUrl.results[0].picture.large;
+        }
+
+        /* Gets User's name */
+        function getUserName() {
+          let nameUrl = userInfo;
+
+          console.log("Name: " + nameUrl.results[0].name.first);
+          return nameUrl.results[0].name.first;
+        }
+
+        /* Gets User's last name */
+        function getUserLastName() {
+          let lastNameUrl = userInfo;
+
+          console.log("Last Name: " + lastNameUrl.results[0].name.last);
+          return lastNameUrl.results[0].name.last;
+        }
+
+        /* Gets User's email */
+        function getUserEmail() {
+          let emailUrl = userInfo;
+
+          console.log("Email: " + emailUrl.results[0].email);
+          return emailUrl.results[0].email;
+        }
+
+        /* Gets User's direction */
+        function getUserDirection() {
+          let directionUrl = userInfo;
+
+          console.log(
+            "Direction: " + directionUrl.results[0].location.street.name
+          );
+          return directionUrl.results[0].location.street.name;
+        }
+
+        /* Gets User's state */
+        function getUserState() {
+          let stateUrl = userInfo;
+
+          console.log("State: " + stateUrl.results[0].location.state);
+          return stateUrl.results[0].location.state;
+        }
+
+        let nombreUser = getUserName();
+        let fotoUser = getUserFoto();
+        let apellidoUser = getUserLastName();
+        let emailUser = getUserEmail();
+        let directionUser = getUserDirection();
+        let stateUser = getUserState();
+
+        const post = document.getElementById("post");
+
+        /* Shows user's photo */
+        let photo = document.createElement("img");
+        photo.src = `${fotoUser}`;
+        post.appendChild(photo);
+
+        /* Shows user's name */
+        let nombre = document.createElement("p");
+        nombre.innerHTML = `Nombre: ${nombreUser} ${apellidoUser}`;
+        post.appendChild(nombre);
+
+        /* Shows user's email */
+        let email = document.createElement("p");
+        email.innerHTML = `Email: ${emailUser}`;
+        post.appendChild(email);
+
+        /* Shows user's direction */
+        let direction = document.createElement("p");
+        email.innerHTML = `Direction: ${directionUser}`;
+        post.appendChild(direction);
+
+        /* Shows user's stat */
+        let state = document.createElement("p");
+        state.innerHTML = `State: ${stateUser}`;
+        post.appendChild(state);
+
+        post.style.padding = "10%";
+      }
+
+      getUser();
+    </script>
+    <style>
+      html,
+      body {
+        margin: 0;
+        width: 100%;
+        height: 100%;
+      }
+
+      div#post {
+        margin: auto;
+        background-color: hsl(50 80% 40%);
+        width: 30%;
+        height: 50%;
+      }
+    </style>
   </head>
-  <body></body>
+  <body>
+    <div id="post"></div>
+  </body>
 </html>
