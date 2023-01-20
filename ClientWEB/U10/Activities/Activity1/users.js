@@ -54,6 +54,8 @@ async function getUser() {
     return stateUrl.results[0].location.state
   }
 
+  let main = document.createElement('main')
+
   getUserFoto()
   getUserName()
   getUserLastName()
