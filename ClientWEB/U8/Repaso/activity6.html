@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Act 6</title>
+</head>
+<body>
+    <h1>LOADING...</h1>
+</body>
+<script>
+    let body = document.body;
+
+    /* Imgs container */
+    let galeria = document.createElement("div")
+
+    /* Creacion de 10 imgs */
+    for (let i = 0; i < 10; i++) {
+        let img = document.createElement("img")
+        img.src = `https://source.unsplash.com/random/${randomSize()}`
+        galeria.append(img)
+    }
+
+    function randomSize() {
+        return `${randomNumber()}x${randomNumber()}`;
+    }
+
+    function randomNumber() {
+        return Math.floor(Math.random() * 10) + 300;
+    }
+
+    window.addEventListener("load", (e) => {
+        document.getElementsByTagName("h1")[0].remove()
+        body.append(galeria)
+    })
+</script>
+</html>

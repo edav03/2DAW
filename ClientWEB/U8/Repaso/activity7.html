@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Act 7</title>
+</head>
+<body>
+    
+</body>
+<script>
+    let body = document.body;
+    let firstBanner = document.createElement("div");
+    firstBanner.draggable = "true"
+    firstBanner.style.position = "absolute"
+    firstBanner.style.top = "300px"
+    firstBanner.style.width = "200px";
+    firstBanner.style.height = "100px";
+    firstBanner.style.border = "1px solid black"
+    firstBanner.style.backgroundColor = "yellow"
+    firstBanner.innerText = "I am draggable";
+    body.append(firstBanner)
+
+    let secBanner = document.createElement("div");
+    secBanner.style.position = "absolute"
+    secBanner.style.top = "300px"
+    secBanner.style.right = "0"
+    secBanner.style.width = "200px";
+    secBanner.style.height = "100px";
+    secBanner.style.border = "1px solid black"
+    secBanner.style.backgroundColor = "white"
+    secBanner.innerText = "I am destiny";
+
+    body.append(secBanner)
+
+    firstBanner.addEventListener("dragstart", (e) => {
+        firstBanner.style.opacity = "50%"
+    })
+
+    secBanner.addEventListener("dragenter", (e) => {
+        secBanner.style.backgroundColor = "red"
+    })
+
+    secBanner.addEventListener("drop", (e) => {
+        secBanner.innerText = "You did it"
+        firstBanner.style.display = "none"
+    })
+
+    secBanner.addEventListener("dragover", (e) => {
+        e.preventDefault();
+    })
+    
+</script>
+</html>
