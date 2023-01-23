@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Act 1</title>
+</head>
+<body>
+    <ol>
+        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam voluptatibus doloremque, ratione aspernatur repellat perferendis expedita mollitia est fuga deleniti nesciunt laboriosam quae aut reiciendis tempore. Obcaecati pariatur dolorem esse?</li>
+        <li>Vitae sed dolorum fugit at tempore ad eaque velit nemo quis veniam animi porro id fugiat vero dolor, libero ex nisi temporibus. Natus eveniet, cum quos incidunt soluta alias consequatur?</li>
+        <li>Edison DavidVoluptatibus quidem sapiente in incidunt. Repellendus vel minima vitae iste pariatur ab aliquam impedit veniam facilis, non blanditiis dignissimos beatae adipisci expedita doloribus quaerat ut placeat minus. Quam, facilis in.</li>
+        <li>Ullam earum esse quo reprehenderit perferendis dolores qui eum quos fugiat? Necessitatibus dolor, libero fugiat debitis, soluta tempore, voluptas distinctio ullam labore totam cum quo culpa eos illum similique dicta?</li>
+        <li>Minus provident illo nisi maiores nulla iusto cupiditate vitae ex natus numquam velit earum quos delectus cumque dolores consequatur nam hic odio, doloremque fuga quas voluptate porro fugiat! Voluptatum, delectus!</li>
+        <li>Omnis libero sint esse praesentium a dignissimos ducimus vel officia eveniet molestias dolores illum dolorem, labore quis corporis. Omnis aperiam adipisci, dignissimos in aut accusamus voluptatibus sapiente beatae dolores eos.</li>
+        <li>Dignissimos minima, dolores placeat quo ipsam voluptatibus veniam architecto aperiam ab incidunt odit possimus, vero ad porro. Dolorum sapiente officia, esse laudantium rem eos vero nisi dolore numquam reiciendis quod?</li>
+        <li>Quod illum dignissimos dolorem quam sed. Sed vel recusandae labore temporibus, odio nobis dolore ut quas iste nostrum deserunt nesciunt, ipsum iusto commodi quo sapiente quasi nihil velit nam repudiandae.</li>
+        <li>Nobis adipisci officiis, numquam, impedit debitis laudantium doloribus libero ipsam voluptates ex eos modi corporis earum odit dolores. Veniam officiis facilis sit eaque tenetur corrupti aspernatur est laboriosam cumque corporis!</li>
+    </ol>
+</body>
+
+<script>
+    let givenNum = prompt("Elije linea")
+    document.write("You've choosen: " + givenNum)
+
+    let line = document.querySelector(`li:nth-child(${givenNum}`)
+    let lineContent = line.textContent;
+    line.innerHTML = `<strong>${lineContent}<strong>`
+
+</script>
+
+</html>

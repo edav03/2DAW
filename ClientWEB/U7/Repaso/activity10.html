@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Act 10</title>
+</head>
+<body>
+    
+</body>
+<script>
+    function createP() {
+        let newP = document.createElement("p")
+        newP.innerText="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis, nostrum. Exercitationem quis error ipsum accusamus quos illum rerum itaque. Blanditiis, sit atque. Quibusdam, alias ratione quos tempore minima odio dolorem atque impedit? Atque et quis rerum molestias. Veritatis rerum commodi consequatur, maxime eligendi deserunt obcaecati beatae quam repellendus soluta sint est. Aut laudantium cupiditate rerum cum consequuntur vitae ad aliquid ipsum atque eveniet, suscipit ipsa, soluta, eligendi iusto. Necessitatibus unde nisi molestias sapiente non voluptates quibusdam iste, itaque pariatur suscipit hic. Necessitatibus officiis vitae tempore quibusdam id? Magni iure ratione alias, placeat molestias nihil iusto excepturi, cumque culpa a fugiat fugit nobis commodi ipsa corrupti porro quaerat in. Illum, non! Dolore corporis aliquid nostrum totam exercitationem repudiandae eaque, labore blanditiis excepturi accusantium rerum iure aut provident assumenda, iste explicabo ipsa. Porro error ab repudiandae sint praesentium facere nobis tempore, culpa consectetur molestiae nihil, maxime nam ipsam unde cupiditate fugiat mollitia, quas in! Magni veritatis, ipsa earum est voluptates optio labore quae, facere sed ratione molestiae necessitatibus incidunt pariatur iusto debitis, soluta corrupti. Nihil, cum consequuntur nostrum deserunt placeat veritatis asperiores distinctio tempora possimus autem maxime quia aspernatur, eveniet quas aut nisi? Placeat quos, eum quaerat illo temporibus dicta, adipisci totam odit, quo voluptas ad earum harum nisi? Officiis rem in et magnam magni, dolor voluptates mollitia, nam non numquam suscipit! Iste neque minus aperiam tenetur, error laudantium! Omnis autem enim culpa! Expedita, eligendi! Officiis odio optio libero possimus quia corrupti soluta aperiam repudiandae dolor animi? Magni deleniti tempore excepturi possimus minima id, laudantium amet, debitis repellat, sint quidem! Exercitationem maiores, eaque fuga, harum et, vitae nisi necessitatibus itaque aliquam voluptate aspernatur reiciendis incidunt ad est quasi iure iusto excepturi quo. Modi nam cumque sint beatae, est quia assumenda? Iure, earum delectus dolore eius ullam sed assumenda quidem ipsum, repellat officiis nesciunt velit consectetur possimus ipsam similique veritatis et labore optio quae quia at laboriosam corrupti iusto fuga! Dolorum sit ab rem modi? Consequatur, est reprehenderit soluta dolor error libero consequuntur modi mollitia, corporis illo perspiciatis odio dignissimos aut provident aperiam et quo repellat iusto. Nostrum, perferendis eaque aliquid magni at corrupti necessitatibus quos voluptate ea beatae amet commodi nesciunt. Dolores, architecto. Error beatae enim adipisci quisquam maxime, nulla libero perspiciatis minus quas inventore. Molestias maxime incidunt enim cumque voluptatibus dolore ratione eveniet unde laboriosam? Nisi est esse a harum dolorum quis quidem laboriosam expedita, fugiat eum qui non in, perferendis distinctio velit repellendus ex enim! Debitis pariatur quos dicta delectus aliquam cupiditate. Quam autem iure possimus maxime doloremque ab quidem expedita, aliquam quaerat quod nobis laboriosam iste hic, adipisci consequuntur voluptas est libero dicta? Blanditiis fugit distinctio consequuntur tempore explicabo modi eos, molestiae culpa odio! Placeat unde amet officiis tenetur praesentium suscipit, quis quidem molestiae aperiam modi laboriosam ipsam, totam, sit sint officia. Debitis quibusdam voluptatum ad nulla animi officia voluptates totam optio tempore, necessitatibus repellendus fuga modi commodi cum soluta, porro alias ratione assumenda facilis quos labore nobis nostrum exercitationem! Optio libero molestiae, praesentium atque aliquam quisquam laborum voluptatibus? Porro, amet maxime! Aut, illum provident quibusdam sapiente tenetur non tempore incidunt distinctio totam laborum saepe. Amet quibusdam aspernatur temporibus voluptate similique, quidem architecto. Sapiente maiores fugiat vitae esse cupiditate autem quia ullam beatae harum minus dolores maxime expedita alias asperiores nihil quas facere assumenda, officia accusamus iste deleniti? Tempora tempore corporis numquam, libero ad inventore molestiae. Amet in esse ipsa et vitae accusantium accusamus necessitatibus, reprehenderit sit ut iste rem, vel neque natus iure nisi minus mollitia cupiditate ea sapiente reiciendis quo atque, quibusdam eum? Optio maxime fugiat dolore, tempora cupiditate distinctio laudantium voluptate illo perspiciatis, voluptatem, harum sunt."
+        document.body.append(newP)
+        newP.scrollIntoView({behavior: "smooth", block: "end"})
+    }
+
+    let cont = 0;
+
+    let tmp = setInterval(() => {
+        createP()
+        if (cont == 20) {
+           clearInterval(tmp) 
+        }else{
+            cont++
+        }
+    }
+    , 2000)
+
+</script>
+</html>

@@ -66,11 +66,12 @@
         const ARR_values = [...values];
         let totalWords = 0;
 
+        // console.log(values)
+
         for (const iter of ARR_values) {
             totalWords += iter.textContent.trim().split(' ').length;      
+            console.log(iter.textContent.trim().split(' '))
         }
-
-        hola
         
         let TextTotalWords = document.createElement('p');
         TextTotalWords.textContent = `Total de palabras que contiene el texto = ${totalWords}`;

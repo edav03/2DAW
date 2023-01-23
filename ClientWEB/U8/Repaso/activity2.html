@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Act 2</title>
+</head>
+<body>
+</body>
+<script>
+    let body = document.body
+    let marco = document.createElement("div")
+    marco.style.width = "1000px";
+    marco.style.height = "500px";
+    marco.style.margin = "auto";
+    marco.style.backgroundColor = "blue"
+    marco.style.paddingTop = "350px" 
+    marco.style.paddingLeft = "350px"
+    marco.innerHTML = "<h1>Press Alt + F12 to change background image</h1>"
+
+    body.append(marco)
+
+    body.addEventListener("keydown", (e) => {
+        if (e.key == 'F12' && e.altKey == true) {
+            console.log("change background")
+            let imageUnsplash = `https://source.unsplash.com/random`
+            marco.style.backgroundImage = `url(${imageUnsplash})`
+        }
+    })
+</script>
+</html>

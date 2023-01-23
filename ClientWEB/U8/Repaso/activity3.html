@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Act 3</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        list-style: none;
+        text-decoration: none;
+        border: none;
+        outline: none;
+    }
+
+    body{
+        width: 100%;
+        height: 100%;
+    }
+</style>
+<body>
+</body>
+<script>
+    let body = document.body;
+    let capa = document.createElement("div");
+
+    let width = window.innerWidth
+    let height = window.innerHeight
+
+    capa.style.width = `${width/2}px`;
+    capa.style.height = `${height/2}px`;
+    capa.style.margin = "auto";
+    capa.style.border = "2px solid black"
+    body.append(capa)
+
+    capa.addEventListener("mouseenter", (e) => {
+        capa.style.backgroundColor = "green"
+    })
+    capa.addEventListener("mousedown", (e) => {
+        capa.style.backgroundColor = "red"
+    })
+    capa.addEventListener("contextmenu", (e) => {
+        e.preventDefault()
+        capa.style.backgroundColor = "blue"
+    })
+    capa.addEventListener("mouseleave", (e) => {
+        capa.style.backgroundColor = "white"
+    })
+
+</script>
+</html>

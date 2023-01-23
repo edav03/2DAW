@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Act 3</title>
+</head>
+
+<body>
+    <h1>Numero de visitas: </h1>
+    <h2 id="numero">1</h2>
+</body>
+<script>
+    var existing = parseInt(localStorage.getItem("visits"));
+    var data = existing? existing + 1 : 1;
+    localStorage.setItem("visits", data)
+
+    let value = window.localStorage.getItem("visits")
+
+    let text = document.querySelector("h2")
+    text.innerText = `${value}`
+</script>
+</html>

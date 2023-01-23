@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ol>
+        <li>silla</li>
+        <li>cielo</li>
+        <li>natalia</li>
+        <li>mon</li>
+        <li>Raiz</li>
+        <li>Tierra</li>
+        <li>Kesko</li>
+        <li>holanda</li>
+        <li>Mercadona</li>
+    </ol>
+</body>
+<script>
+    let body = document.body
+    let lista = document.querySelectorAll("li");
+    let listaOl = document.getElementsByTagName("ol")[0]
+
+    let arrLista = []
+    lista.forEach(el => {
+        arrLista += el.textContent.trim().toLowerCase();
+        console.log("Elemento: " + el.textContent.toLowerCase() + " - Fin Elemento")
+    })
+
+    arrLista.sort
+    listaOl.remove()
+
+    console.log(body)
+</script>
+</html>
