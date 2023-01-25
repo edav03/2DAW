@@ -3,9 +3,6 @@ async function getUser() {
     .then((response) => response.json())
     .catch((error) => console.log("Error: " + error));
 
-  // console.log(userInfo.results[0])
-  // return userInfo
-
   /* Gets User's profile photo */
   function getUserFoto() {
     let photoUrl = userInfo;

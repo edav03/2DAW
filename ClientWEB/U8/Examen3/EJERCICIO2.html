@@ -1,0 +1,113 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <title>EJERCICIO 2</title>
+  </head>
+
+  <body>
+    <input id="genera" type="button" value="Genera !!" id="genera" />
+    <div id="primero"></div>
+    <div id="segundo"></div>
+    <div class="clear"></div>
+    <input id="compara" type="button" value="<< Compara >>" id="compara"/>
+    <div id="resultado"></div>
+  </body>
+  <script>
+    function genera() {
+      // Commentario: Genera 2 numeros d'entre el 0 i el 10
+      var numero1 = parseInt(Math.random() * 10);
+      var numero2 = parseInt(Math.random() * 10);
+      // Commentario: Agafa el primer element fill dels elements primero i segundo
+      var parrafoAnterior1 = primero.firstChild;
+      var parrafoAnterior2 = segundo.firstChild;
+      // Commentario:Crea un parraf li introdueix com text el valor de numero 1
+      var parrafo1 = document.createElement("p");
+      var texto1 = document.createTextNode(numero1);
+      parrafo1.appendChild(texto1);
+      // Commentario:Si l'element parrafoAnterior està buit el canvia per un altre i si no el remplaça per uno nou
+      if (parrafoAnterior1 != null) {
+        primero.replaceChild(parrafo1, parrafoAnterior1);
+      } else {
+        primero.appendChild(parrafo1);
+      }
+      // Commentario:Crea un parraf li introdueix com text el valor de numero 2
+      var parrafo2 = document.createElement("p");
+      var texto2 = document.createTextNode(numero2);
+      parrafo2.appendChild(texto2);
+      // Commentario:
+      if (parrafoAnterior2 != null) {
+        segundo.replaceChild(parrafo2, parrafoAnterior2);
+      } else {
+        segundo.appendChild(parrafo2);
+      }
+    }
+
+    function compara() {
+      // Commentario:Agafem el primer element fill de primero i el primer element fill de segundo
+	  var parrafo1 = primero.firstChild;
+      var parrafo2 = segundo.firstChild;
+      //  Commentario:Agafem els valors de parrafo 1 i 2
+      var numero1 = parseInt(parrafo1.firstChild.nodeValue);
+      var numero2 = parseInt(parrafo2.firstChild.nodeValue);
+      // Commentario:Ternaria: comprova quin dels dos numeros (numero1 i numero2) és major i l'instancia
+      var parrafoMayor = numero1 > numero2 ? parrafo1 : parrafo2;
+      // Commentario:Agafa el div resultado i el valor del seu primer fill
+      var resultado = document.getElementById("resultado");
+      var parrafoAnterior = resultado.firstChild;
+      // Commentario: Si està buit ho plena amb el valor de parrafoMayor, i si no el reemplaça
+      if (parrafoAnterior != null) {
+        resultado.replaceChild(parrafoMayor, parrafoAnterior);
+      } else {
+        resultado.appendChild(parrafoMayor);
+      }
+    }
+
+    // Comentario Agafa els divs amb id primero i segundo
+    var primero = document.getElementById("primero");
+    var segundo = document.getElementById("segundo");
+
+    // TODO Añade código para que al pulsar en el botón "genera" se invoque la función correspondiente. Añade comentario correspondiente
+    let gene = document.getElementById("genera");
+    gene.addEventListener("click", () => {
+      genera();
+    });
+    // TODO Añade código para que al pulsar en el botón "compara" se invoque la función correspondiente. Añade comentario correspondiente
+	let comp = document.getElementById("compara");
+	comp.addEventListener("click",(()=>{compara()}))
+  </script>
+  <style type="text/css">
+    #primero,
+    #segundo,
+    #resultado {
+      width: 150px;
+      height: 150px;
+      border: thin solid silver;
+      background: #f5f5f5;
+      float: left;
+      margin: 20px;
+      font-size: 6em;
+      color: #333;
+      text-align: center;
+      padding: 5px;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    #primero p,
+    #segundo p,
+    #resultado p {
+      margin: 0.2em 0;
+    }
+    #resultado {
+      margin-left: 1.3em;
+      border-color: black;
+    }
+    .clear {
+      clear: both;
+    }
+    #compara,
+    #genera {
+      font-size: 1.2em;
+      margin-left: 8em;
+    }
+  </style>
+</html>
