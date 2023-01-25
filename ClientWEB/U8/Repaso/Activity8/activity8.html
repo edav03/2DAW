@@ -66,13 +66,13 @@
 
 <script>
     let tipoIncidencia = document.getElementById("tipo");
-    tipoIncidencia.addEventListener("click", (e) => {
-        switch (tipoIncidencia) {
+    tipoIncidencia.addEventListener("change", (e) => {
+        switch (tipoIncidencia.value) {
             case "distribucion":
                 console.log("Valor distribucion")
                 break;
             case "oficina":
-                console.log("Valor ofician")
+                console.log("Valor oficina")
                 break;
             case "produccion":
                 console.log("Valor produccion")
@@ -81,6 +81,14 @@
                 break;
         }
     })
+    
+    let ShowDescription = document.getElementById("mostrarDescripcion");
+    ShowDescription.addEventListener("click", (e) => {
+        let desc = document.getElementById("fDescripcion")
+        desc.style.display = "inline"
+        console.log("Ha entrado en el evento")
+    })
+
 </script>
 
 </html>

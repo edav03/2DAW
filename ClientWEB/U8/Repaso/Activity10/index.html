@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculadora</title>
+    <link href='http://fonts.googleapis.com/css?family=Audiowide' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+<div id="calculadora">
+    <input type="number" id="numero1" placeholder="numero" step=".01" /><br/>
+    <button id="mas">+</button>
+    <button id="menos">-</button>
+    <button id="por">X</button>
+    <button id="entre">/</button>
+    <button id="ce" class="amarillo">CE</button>
+    <br/>
+    <input type="number" id="numero2" placeholder="numero" step=".01" /><br/>
+    <input type="number" id="resultado" readonly placeholder="resultado" step=".01" /><br/>
+</div>
+<script>
+    let num1 = document.getElementById("numero1");
+    let num2 = document.getElementById("numero2");
+    let resultado = document.getElementById("resultado")
+
+    let sumar = document.getElementById("mas");
+    let restar = document.getElementById("menos");
+    let mult = document.getElementById("por");
+    let dividir = document.getElementById("entre");
+    let reset = document.getElementById("ce");
+
+    sumar.addEventListener("click", (e) => {
+        resultado.value = parseInt(num1.value) + parseInt(num2.value)
+    })
+
+    reset.addEventListener("click", (e) => {
+        resultado.value = ""
+        num1.value = ""
+        num2.value = ""
+    })
+
+</script>
+</body>
+</html>
