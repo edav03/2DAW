@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Poesía del día</title>
+  </head>
+  <body>
+    <header>
+      <h1>La poesía del día</h1>
+    </header>
+    <main>
+      <pre></pre>
+    </main>
+    <div id="error"></div>
+    <script>
+      let pre = document.querySelector("pre");
+      let capaError = document.getElementById("error");
+      fetch("https://jorgesanchez.net/servicios/poesia.php")
+        .then((respuesta) => respuesta.text())
+        .then((texto) => {
+          pre.innerHTML = texto;
+        })
+        .catch((error) => {
+          capaError.innerText = error;
+        });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #foto {
+        background-color: red;
+        width: 100px;
+        height: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="animation"></div>
+    <script>
+      let animation = document.getElementById("animation");
+      let peoplePhotos = [];
+      fetch("https://randomuser.me/api/?results=5&inc=picture")
+        .then((response) => {
+          if (response.ok) {
+            return response.json();
+          } else {
+            throw new Error("Los datos no llegaron bien");
+          }
+        })
+        .then((data) => {
+          //let img = document.createElement('img');
+          let foto = document.createElement("img");
+          foto.setAttribute("id", "foto");
+          animation.appendChild(foto);
+          data.results.forEach((row) => {
+            //console.log(row.picture.large)
+            peoplePhotos.push(row.picture.large);
+          });
+          //console.log(peoplePhotos));
+        })
+        .then(() => {
+          /* console.log(peoplePhotos); */
+          let foto = document.getElementById("foto");
+          for (let i = 0; i < peoplePhotos.length; i++) {
+            if (i === 0) {
+              foto.setAttribute("src", peoplePhotos[0]);
+            } 
+            else {
+              setInterval(cambiarFoto(foto,peoplePhotos,i),1000)
+              
+              /* setTimeout(() => {
+                foto.setAttribute("src", peoplePhotos[i]);
+                console.log(foto.src);
+              }, 1000); */
+            }
+          }
+        });
+      function cambiarFoto(element, array, number) {
+        setTimeout(
+          element.setAttribute("src", array[number-1])
+          , 5000);
+          console.log(element.src);
+      }
+    </script>
+  </body>
+</html>

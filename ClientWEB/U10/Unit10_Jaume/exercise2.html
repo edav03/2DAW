@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Persona aleatoria</title>
+    <style>
+      #nif {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-around;
+      }
+      div.tarjeta {
+        border: 3px solid black;
+        width: 400px;
+        border-radius: 12px;
+        padding: 1rem;
+        margin: 1rem auto;
+        background-color: lightgray;
+      }
+      div.tarjeta > img {
+        border-radius: 2rem;
+        border: 1px black solid;
+        transition: all 0.2s ease;
+      }
+      div.tarjeta > img:hover {
+        transform: scale(1.2);
+        box-shadow: 1px 1px 1px 1px black;
+      }
+    </style>
+  </head>
+  <body style="text-align: center">
+    <div id="nif"></div>
+    <script>
+      var capaNIF = document.getElementById("nif");
+      fetch(
+        "https://randomuser.me/api/?results=10&nat=es&noinfo&exc=login,registered"
+      )
+        .then((response) => {
+          if (response.ok) {
+            return response.json();
+          } else {
+            throw new Error("Los datos no llegaron bien");
+          }
+        })
+        .then((data) => {
+          for (let i = 0; i < data.results.length; i++) {
+            let tarjeta = document.createElement("div");
+            tarjeta.setAttribute("class", "tarjeta");
+            let info = document.createElement("div");
+
+            let foto = document.createElement("img");
+            foto.setAttribute("src", data.results[i].picture.large);
+            foto.style.userSelect = "none";
+
+            let infoName = document.createElement("p");
+            let infoEmail = document.createElement("p");
+            let infoLocation = document.createElement("p");
+            infoName.textContent =
+              data.results[i].name.first + " " + data.results[i].name.last;
+            infoEmail.textContent = "Email: " + data.results[i].email;
+            infoLocation.textContent =
+              "Pais: " +
+              data.results[i].location.country +
+              ". Comunidad: " +
+              data.results[i].location.state +
+              ". Localidad: " +
+              data.results[i].location.city +
+              ".";
+
+            let button = document.createElement("button");
+            button.innerHTML = "Cambiar persona".toUpperCase();
+            button.addEventListener("click", function (ev) {
+              let tarjeta = ev.target.parentNode;
+              while (tarjeta.firstChild) {
+                tarjeta.removeChild(tarjeta.firstChild);
+              }
+              fetch(
+                "https://randomuser.me/api/?results=1&nat=es&noinfo&exc=login,registered"
+              )
+                .then((response) => {
+                  if (response.ok) {
+                    return response.json();
+                  } else {
+                    throw new Error("Los datos no llegaron bien");
+                  }
+                })
+                .then((data) => {
+                  let info = document.createElement("div");
+
+                  let foto = document.createElement("img");
+                  foto.setAttribute("src", data.results[0].picture.large);
+
+                  let infoName = document.createElement("p");
+                  let infoEmail = document.createElement("p");
+                  let infoLocation = document.createElement("p");
+                  infoName.textContent =
+                    data.results[0].name.first +
+                    " " +
+                    data.results[0].name.last;
+                  infoEmail.textContent = "Email: " + data.results[0].email;
+                  infoLocation.textContent =
+                    "Pais: " +
+                    data.results[0].location.country +
+                    ". Comunidad: " +
+                    data.results[0].location.state +
+                    ". Localidad: " +
+                    data.results[0].location.city +
+                    ".";
+                  tarjeta.append(foto);
+                  tarjeta.append(info);
+                  info.append(infoName, infoEmail, infoLocation);
+                  tarjeta.append(button);
+                });
+            });
+
+            capaNIF.append(tarjeta);
+            tarjeta.append(foto);
+            tarjeta.append(info);
+            info.append(infoName, infoEmail, infoLocation);
+            tarjeta.append(button);
+          }
+        })
+        .catch((error) => {
+          capaNIF.textContent = "Error: " + error;
+        });
+
+      function cambiarPersona(event) {
+        let tarjeta = event.parentNode;
+        console.log(tarjeta);
+      }
+    </script>
+  </body>
+</html>

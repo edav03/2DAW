@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #portrait{
+            text-align: center;
+            width: 100%;
+            background-color: lightblue;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            row-gap: 20px;
+        }
+        div.blur{
+            filter: blur(10px);
+        }
+    </style>
+</head>
+<body>
+    <div id="portrait"></div>
+
+    <script>
+        let portrait = document.getElementById("portrait");
+        for(let i = 1; i<=20; i++){
+            fetch("https:///picsum.photos/300/300?image=" + i).then((response)=>{
+                let contenedor = document.createElement('div');
+                contenedor.setAttribute("id", "img" + i);
+                contenedor.addEventListener("click", function(){
+                    if(contenedor.classList.contains("blur")){
+                        contenedor.setAttribute("class","");
+                    }
+                    else{
+                        contenedor.setAttribute("class","blur");
+                    }
+                }
+                )
+                let img = document.createElement('img');
+                img.setAttribute("src", response.url);
+                contenedor.appendChild(img);
+                portrait.appendChild(contenedor);
+            })
+        }
+    </script>
+</body>
+</html>

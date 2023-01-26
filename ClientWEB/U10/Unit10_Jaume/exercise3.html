@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        text-decoration: none;
+        /* border: 1px dotted green; */
+      }
+      body {
+        text-align: center;
+      }
+      h1 {
+        margin: 1rem;
+      }
+      #form {
+        width: 40%;
+        margin: 0 auto;
+        display: flex;
+        flex-flow: column nowrap;
+      }
+      #form > * {
+        margin: 5px auto;
+      }
+      #form > textarea,
+      #form > button {
+        width: 50%;
+      }
+      #map{
+        height: 500px;
+        display: flex;
+        text-align: center;
+      }
+      #map img{
+        width: 40vw;
+        height: 57,220339vw;
+      }
+    </style>
+    <script>
+      //import {cargarMapa} from "./api.js"
+
+      //apikey: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqYXVtZWJvOTVAZ21haWwuY29tIiwianRpIjoiMGVhYTVmNDUtNjIzZC00NWNhLTk1YTctOGY5MjYyYTQ4NjM2IiwiaXNzIjoiQUVNRVQiLCJpYXQiOjE2NzM0NTg3NDksInVzZXJJZCI6IjBlYWE1ZjQ1LTYyM2QtNDVjYS05NWE3LThmOTI2MmE0ODYzNiIsInJvbGUiOiIifQ.bE6NrNdpWRj86osvo_P6EwWFKphkV3rNQPJLvapFgBw
+
+      async function cargarMapa() {
+        let apiInput = document.getElementById("apikey").value;
+        var headers = new Headers({
+          "cache-control": "no-cache",
+        });
+        var conf = {
+          method: "GET",
+          mode: "cors",
+          headers: headers,
+        };
+        try {
+          const resp1 = await fetch(
+            "https://opendata.aemet.es/opendata/api/mapasygraficos/analisis?api_key=" +
+              apiInput,
+            conf
+          );
+          const data1 = await resp1.json();
+          const resp2 = await fetch(data1.datos, conf);
+          //console.log(data1);
+          const mapa = resp2.blob();
+          //console.log("mapa : " +   mapa);
+          const img = document.createElement("img");
+          //img.setAttribute("src", URL.createObjectURL(mapa));
+          img.setAttribute("src", data1.datos);
+          img.style.transform = "rotate(90deg)";
+          /* img.style.width = "50vw" */
+
+          form = document.getElementById("form");
+          form.style.display = "none";
+          let map = document.getElementById("map");
+          map.appendChild(img);
+          map.style.display = "block";
+        } catch (error) {
+          console.log(error);
+        }
+
+        form.style.display = "none";
+        /* console.log(apiInput)*/
+        // console.log("s")
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Imagen del dia de la AEMET</h1>
+    <div id="form">
+      <div>Pega tu API Key</div>
+      <textarea name="apikey" id="apikey" cols="30" rows="10"></textarea>
+      <button onclick="cargarMapa()">Cargar mapa</button>
+    </div>
+    <div style="display: none" id="map"></div>
+  </body>
+</html>
