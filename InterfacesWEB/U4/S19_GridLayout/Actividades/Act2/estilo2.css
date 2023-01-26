@@ -1,0 +1,153 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+header, div, nav, section, article, footer{
+  border: 2px solid white;
+  text-align: left;
+  padding: 1rem 0.5rem;
+}
+
+/***************/
+/* VISTA MÓVIL */
+/***************/
+
+html {
+  font-size: 14px;
+  background-color: grey;
+}
+
+body {
+  background-color: white;
+  width: 100%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "hd"
+    "nv"
+    "not"
+    "art"
+    "ft"
+    "bn";
+}
+
+header {
+  background-color: green;
+  grid-area: hd;
+}
+
+nav {
+  grid-area: nv;
+  background-color: darkred;
+}
+
+section{
+  background-color: lightblue;
+}
+
+section#noticias{
+    grid-area: not;
+    border: none;
+    padding: 0;
+}
+
+section#articles{
+  border: none;
+  background-color: white;
+  grid-area: art;
+  padding: 0;
+}
+
+article{
+  background-color: blue;
+}
+
+aside#banner{
+  grid-area: bn;
+  background-color: sandybrown;
+}
+
+footer{
+  grid-area: ft;
+  background-color: green;
+  display: none;
+}
+
+/****************/
+/* VISTA TABLET */
+/****************/
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+
+  body {
+    width: 95%;
+  }
+
+  nav{
+    display: block;
+  }
+
+  section#noticias{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+        "not1 not1"
+        "not2 not3";
+  }
+
+  div#noticia1{
+    grid-area: not1;
+  }
+
+  div#noticia2{
+    grid-area: not2;
+  }
+
+  div#noticia3{
+    grid-area: not3;
+  }
+
+  footer{
+    display: block;
+  }
+
+  section#articles{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+}
+
+/****************/
+/*  VISTA PC    */
+/****************/
+
+@media (min-width: 1024px) {
+  body {
+    width: 90%;
+    max-width: 1000px; /* SIEMPRE CONVIENE PONER UN MÁXIMO AL BODY en la vista PC/SmartTV o Superior*/
+    grid-template-columns: 3fr 1fr;
+    grid-template-areas:
+      "hd hd"
+      "nv nv"
+      "not bn"
+      "art bn"
+      "ft bn";
+  }
+
+  section#articles{
+    grid-template-columns: 1fr 1fr;
+  }
+
+  article:last-child{
+    grid-column: 1 /span 2;
+  }
+
+}

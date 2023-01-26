@@ -1,0 +1,140 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+header, div, nav, section, article, footer{
+  border: 2px solid white;
+  text-align: left;
+  padding: 1rem 0.5rem;
+}
+
+/***************/
+/* VISTA MÓVIL */
+/***************/
+
+html {
+  font-size: 14px;
+  background-color: grey;
+}
+
+body {
+  background-color: white;
+  width: 100%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  /* grid-template-rows: auto auto auto auto auto; */
+  grid-template-areas:
+    "hd"
+    "cab"
+    "not1"
+    "not2"
+    "art"
+    "ft";
+}
+
+header {
+  background-color: green;
+  grid-area: hd;
+}
+
+div#cabecera{
+  background-color: burlywood;
+  grid-area: cab;
+  text-align: left;
+}
+
+nav {
+  grid-area: nv;
+  background-color: red;
+  display: none;
+}
+
+section{
+  background-color: lightblue;
+}
+
+section#noticia1{
+  grid-area: not1;
+}
+
+section#noticia2{
+  grid-area: not2;
+}
+
+section#articles{
+  border: none;
+  background-color: white;
+  grid-area: art;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 0;
+}
+
+article{
+  background-color: blue;
+}
+
+footer{
+  grid-area: ft;
+  background-color: burlywood;
+}
+
+/****************/
+/* VISTA TABLET */
+/****************/
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+
+  body {
+    width: 95%;
+    grid-template-columns: 1fr 4fr;
+    grid-template-areas:
+      "hd hd"
+      "nv cab"
+      "nv not1"
+      "nv not2"
+      "nv art"
+      "ft ft";
+  }
+
+  nav{
+    display: block;
+    text-align: center;
+  }
+
+  section#articles{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+}
+
+/****************/
+/*  VISTA PC    */
+/****************/
+
+@media (min-width: 1024px) {
+  body {
+    width: 90%;
+    max-width: 1000px; /* SIEMPRE CONVIENE PONER UN MÁXIMO AL BODY en la vista PC/SmartTV o Superior*/
+    grid-template-columns: 1fr 3fr 3fr;
+    grid-template-areas:
+      "hd hd hd"
+      "nv cab cab"
+      "nv not1 not2"
+      "nv art art"
+      "ft ft ft";
+  }
+
+  section#articles{
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+}
