@@ -141,7 +141,7 @@
           'https://api.apilayer.com/exchangerates_data/convert?to=GBP&from=EUR&amount=1',
           requestOptions
         )
-          .then((response) => response.text())
+          .then((response) => response.json())
           .then((result) => console.log(result.result))
           .catch((error) => console.log('error', error))
       }
