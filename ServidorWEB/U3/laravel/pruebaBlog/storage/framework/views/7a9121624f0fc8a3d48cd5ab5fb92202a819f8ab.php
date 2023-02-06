@@ -1,0 +1,1 @@
+<h1>Listado posts</h1><?php /**PATH /home/edison/Documents/2DAW/ServidorWEB/U3/laravel/pruebaBlog/resources/views/posts/listado.blade.php ENDPATH**/ ?>

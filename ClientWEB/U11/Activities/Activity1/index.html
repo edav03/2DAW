@@ -6,11 +6,63 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Activity1</title>
   </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      width: 100%;
+      height: 100%;
+    }
+
+    #canvas {
+      width: 100%;
+      height: 100%;
+      border: 2px solid green;
+    }
+  </style>
   <body>
     <canvas id="canvas"></canvas>
   </body>
   <script>
-    let canvas = document.getElementById("canvas");
-    let ctx = canvas.getContext("2d");
+    let canvas = document.getElementById('canvas')
+    let ctx = canvas.getContext('2d')
+    let width = (canvas.width = window.innerWidth)
+    let height = (canvas.height = window.innerHeight)
+    let actualCount = 10
+
+    allRect = []
+
+    for (let i = 0; i < 10; i++) {
+      allRect.push(new createRect(ctx))
+    }
+
+    animar()
+
+    function animar() {
+      ctx.clearRect(0, 0, width, height)
+
+      for (const dibujo of allRect) {
+        dibujo.pintar()
+      }
+
+      console.log(allRect)
+    }
+
+    function createRect(ctx) {
+      this.x = actualCount + 10
+      actualCount = this.x
+
+      this.y = 10
+
+      this.pintar = () => {
+        ctx.fillStyle = 'grey'
+        ctx.fillRect(this.x, this.y, 5, 50)
+      }
+    }
   </script>
 </html>

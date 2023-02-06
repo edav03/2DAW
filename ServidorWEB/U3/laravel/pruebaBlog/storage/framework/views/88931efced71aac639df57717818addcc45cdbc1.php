@@ -1,0 +1,1 @@
+<h1>Ficha posts <?php echo e($id); ?></h1><?php /**PATH /home/edison/Documents/2DAW/ServidorWEB/U3/laravel/pruebaBlog/resources/views/posts/ficha.blade.php ENDPATH**/ ?>
