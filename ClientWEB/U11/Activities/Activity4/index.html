@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Act 4</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        width: 100%;
+        height: 100%;
+        background-color: black;
+      }
+
+      video {
+        margin: auto;
+        width: 100%;
+        height: 100%;
+      }
+
+      div {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 300px;
+        height: 300px;
+        margin-top: -150px;
+        margin-left: -150px;
+        background-color: lightgray;
+        padding: 5rem 5rem;
+        border-radius: 15px;
+      }
+
+      div {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>VIDEO</h1>
+    <video src="./video.mp4" autoplay loop>No se puede mostrar el video</video>
+    <div>
+      <p>Total tiempo:</p>
+    </div>
+  </body>
+  <script>
+    let video = document.querySelector('video')
+    let banner = document.querySelector('div')
+
+    video.addEventListener('click', (e) => {
+      video.paused ? video.play() : video.pause()
+    })
+
+    video.addEventListener('contextmenu', (e) => {
+      e.preventDefault()
+      if (banner.style.display == 'none') {
+        banner.style.display = 'inline'
+      } else {
+        banner.style.display = 'none'
+      }
+
+      banner.textContent = `Tiempo transcurrido en segundos: ${video.currentTime}`
+    })
+
+    banner.addEventListener('contextmenu', (e) => {
+      e.preventDefault()
+      if (banner.style.display == 'none') {
+        banner.style.display = 'inline'
+      } else {
+        banner.style.display = 'none'
+      }
+
+      banner.textContent = `Tiempo transcurrido en segundos: ${video.currentTime}`
+    })
+  </script>
+</html>
