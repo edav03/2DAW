@@ -2,6 +2,7 @@ const button = document.querySelector('#mas')
 const tarea = document.querySelector('#tarea')
 const lista = document.querySelector('#lista')
 let listaObjeto = []
+let listaNombres = []
 let id = 0
 
 // if (localStorage) {
@@ -15,17 +16,19 @@ let id = 0
 //   }
 // }
 
+/* Al clicar + */
 button.onclick = (e) => {
   e.preventDefault()
-  if (tarea.value != '') {
+  for (const iter of listaObjeto) {
+    listaNombres.push(iter.tareaNombre)
+  }
+
+  if (tarea.value != '' && !listaNombres.includes(tarea.value)) {
     /* Eliminamos todas las tareas */
     let all = document.querySelectorAll('li')
     for (const iter of all) {
       iter.remove()
     }
-
-    console.log(listaObjeto.find('a'))
-    // console.log('Hola')
 
     /* Se añade la tarea al array de tareas */
     listaObjeto.push(new concretaTarea(tarea.value, id))
@@ -42,52 +45,55 @@ button.onclick = (e) => {
       iter.add()
     }
   } else {
-    alert('Debes escribir una tarea')
+    alert('No valido!')
   }
 
   // localStorage.setItem('lista', listaObjeto)
 }
 
-function concretaTarea(tareaValor, id) {
-  this.id = id
+/* Objeto Tarea */
+class concretaTarea {
+  constructor(tareaValor, id) {
+    this.id = id
 
-  this.tareaNombre = tareaValor
+    this.tareaNombre = tareaValor
 
-  this.add = () => {
-    /* Li container the la lista */
-    let li = document.createElement('li')
-    li.setAttribute('id', id)
+    this.add = () => {
+      /* Li container the la lista */
+      let li = document.createElement('li')
+      li.setAttribute('id', id)
 
-    /* Tarea introducida */
-    let textTarea = document.createElement('p')
-    textTarea.innerText = this.tareaNombre
-    textTarea.setAttribute('id', id)
+      /* Tarea introducida */
+      let textTarea = document.createElement('p')
+      textTarea.innerText = this.tareaNombre
+      textTarea.setAttribute('id', id)
 
-    /* Boton remove */
-    let btnTarea = document.createElement('button')
-    btnTarea.innerText = 'REMOVE'
-    btnTarea.setAttribute('class', 'remove')
-    btnTarea.setAttribute('id', id)
+      /* Boton remove */
+      let btnTarea = document.createElement('button')
+      btnTarea.innerText = 'REMOVE'
+      btnTarea.setAttribute('class', 'remove')
+      btnTarea.setAttribute('id', id)
 
-    /* Se añade al HTML */
-    lista.appendChild(li)
-    li.append(textTarea, btnTarea)
+      /* Se añade al HTML */
+      lista.appendChild(li)
+      li.append(textTarea, btnTarea)
 
-    /* Eliminar tarea */
-    btnTarea.onclick = () => {
-      let thisID = btnTarea.id
-      let thisLI = document.getElementById(thisID)
-      thisLI.remove()
+      /* Eliminar tarea */
+      btnTarea.onclick = () => {
+        let thisID = btnTarea.id
+        let thisLI = document.getElementById(thisID)
+        thisLI.remove()
 
-      for (let i = 0; i < listaObjeto.length; i++) {
-        if (this.tareaNombre == listaObjeto[i].tareaNombre) {
-          delete listaObjeto[i]
+        for (let i = 0; i < listaObjeto.length; i++) {
+          if (this.tareaNombre == listaObjeto[i].tareaNombre) {
+            delete listaObjeto[i]
+          }
         }
       }
-    }
 
-    /* Reset del input y añadimos al ID */
-    tarea.value = ''
-    id++
+      /* Reset del input y añadimos al ID */
+      tarea.value = ''
+      id++
+    }
   }
 }

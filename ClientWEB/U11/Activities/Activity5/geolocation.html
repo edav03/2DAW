@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Geolocation</title>
+  </head>
+  <body>
+    <main></main>
+  </body>
+  <script>
+    /* Devuelve la posicion una vez */
+    // var main = document.querySelector('main')
+    // navigator.geolocation.getCurrentPosition((pos) => {
+    //   main.textContent =
+    //     `latitud: ${pos.coords.latitude},` + `Longitud: ${pos.coords.longitude}`
+    // })
+
+    /* Recoge continuamente la posicion */
+    var main = document.querySelector('main')
+    var cont = 0
+
+    let id = navigator.geolocation.watchPosition((pos) => {
+      cont++
+      let nodo = document.createElement('p')
+      nodo.textContent =
+        `Latitud: ${pos.coords.latitude},` + `Longitud: ${pos.coords.longitude}`
+      main.appendChild(nodo)
+      if (cont == 3) navigator.geolocation.clearWatch(id)
+    })
+  </script>
+</html>

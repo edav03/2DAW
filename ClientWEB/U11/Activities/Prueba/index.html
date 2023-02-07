@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LOCALSTORAGE</title>
+  </head>
+  <body>
+    <h1>Probando el LocalStorage</h1>
+    <h3></h3>
+  </body>
+  <script>
+    let count
+    console.log(localStorage)
+    if (localStorage) {
+      count = localStorage.getItem('contador')
+    } else {
+      count = 1
+    }
+
+    let textCounter = document.querySelector('h3')
+    textCounter.textContent = `Contador: ${count}`
+
+    window.addEventListener('keydown', (e) => {
+      if (e.keyCode == '38') {
+        count++
+        textCounter.textContent = `Contador: ${count}`
+        localStorage.setItem('contador', count)
+      }
+    })
+  </script>
+</html>
