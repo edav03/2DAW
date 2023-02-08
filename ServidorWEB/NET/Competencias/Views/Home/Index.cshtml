@@ -1,15 +1,34 @@
-﻿@{
+﻿@model IEnumerable<Competencias.Models.Participantes>
+@{
     ViewData["Title"] = "Home Page";
 }
 
 <div class="text-center">
     <h1 class="display-4">CARRERAS BY EDISON</h1>
-    <h2>Introducir datos: </h2> <br/>
-    
-    @using (Html.BeginForm("Index", "Home", FormMethod.Post,
-    new { enctype = "multipart/form-data " }))
-    {
-        <input type="file" name="postedFile" />
-        <input type="submit" name="Importar" />
-    }
+    <br />
+    <button><a href="/Home/Alta">ALTA PARTICIPANTES</a></button>
+    <button><a href="#">CARRERAS</a></button>
+    <button><a href="#">TIEMPOS</a></button>
+    <button><a href="/Home/Importar">IMPORTAR</a></button>
+
+    <table class="table">
+        <tr>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Dorsal</th>
+            <th>Club</th>
+        </tr>
+        @foreach (var participante in Model)
+        {
+            <tr>
+                <td>@participante.Nombre</td>
+                <td>@participante.Apellidos</td>
+                <td>@participante.Dorsal</td>
+                <td>@participante.Club</td>
+                <td> <a href="/Home/Editar?IdParticipantes=@participante.IdParticipantes">Editar</a></td>
+                <td> <a href="/Home/Delete?IdParticipantes=@participante.IdParticipantes">Borrar</a></td>
+            </tr>
+        }
+    </table>
+
 </div>
