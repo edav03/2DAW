@@ -1,0 +1,39 @@
+﻿@model IEnumerable<Competencias.Models.Carrera>
+@{
+    ViewData["Title"] = "Carreras";
+}
+<h1>@ViewData["Title"]</h1>
+
+<p>Lista de carreras</p>
+<a href="/Home/AltaCarrera"><button>ALTA CARRERAS</button></a>
+
+<hr />
+
+<div class="text-center">
+    <table class="table">
+        <tr>
+            <th>Id</th>
+            <th>Descripcion</th>
+            <th>Fecha</th>
+            <th>Distancia</th>
+            <th>Hora de Inicio</th>
+        </tr>
+
+    @foreach (var race in Model)
+    {
+        <tr>
+            <td>@race.IdCarrera</td>
+            <td>@race.DescripcionCarrera</td>
+            <td>@race.FechaCarrera</td>
+            <td>@race.Distanciaenmetros</td>
+            <td>@race.HoraInicio</td>
+            <td> 
+                <a href="/Home/EditarCarrera?cod=@race.IdCarrera">Editar</a>|
+                <a href="/Home/DeleteCarrera?cod=@race.IdCarrera">Borrar</a>
+            </td>
+        </tr>
+    }
+
+    </table>
+
+</div>

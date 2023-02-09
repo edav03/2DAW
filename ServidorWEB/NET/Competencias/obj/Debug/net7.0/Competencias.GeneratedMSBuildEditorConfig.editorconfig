@@ -20,8 +20,24 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBbHRhLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/edava/Documents/2DAW/ServidorWEB/NET/Competencias/Views/Home/AltaCarrera.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBbHRhQ2FycmVyYS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/edava/Documents/2DAW/ServidorWEB/NET/Competencias/Views/Home/Carreras.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDYXJyZXJhcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/edava/Documents/2DAW/ServidorWEB/NET/Competencias/Views/Home/CodigoChips.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDb2RpZ29DaGlwcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/edava/Documents/2DAW/ServidorWEB/NET/Competencias/Views/Home/Editar.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxFZGl0YXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/edava/Documents/2DAW/ServidorWEB/NET/Competencias/Views/Home/EditarCarrera.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxFZGl0YXJDYXJyZXJhLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/edava/Documents/2DAW/ServidorWEB/NET/Competencias/Views/Home/Importar.cshtml]
@@ -30,14 +46,6 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/edava/Documents/2DAW/ServidorWEB/NET/Competencias/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/edava/Documents/2DAW/ServidorWEB/NET/Competencias/Views/Home/Participantes.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQYXJ0aWNpcGFudGVzLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/edava/Documents/2DAW/ServidorWEB/NET/Competencias/Views/Home/Privacy.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/edava/Documents/2DAW/ServidorWEB/NET/Competencias/Views/Shared/Error.cshtml]
