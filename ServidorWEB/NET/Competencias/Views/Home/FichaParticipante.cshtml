@@ -1,0 +1,19 @@
+﻿@model Competencias.Models.Participantes
+
+@{
+    ViewData["Title"] = "Ficha";
+}
+<h1 asp-for="Nombre"></h1>
+
+<label asp-for="Nombre"></label>
+<h1 asp-for="Nombre"></h1>
+<input asp-for="Nombre" />
+<hr />
+
+
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

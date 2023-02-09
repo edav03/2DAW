@@ -1,8 +1,33 @@
-﻿@{
+﻿@model IEnumerable<Competencias.Models.CodigoChips>
+@{
     ViewData["Title"] = "Codigo Chips";
 }
 <h1>@ViewData["Title"]</h1>
 
 <p>Lista de Codigos Chips</p>
 
+<a href="/Home/AltaChips"><button>ALTA CHIPS</button></a>
+
 <hr />
+
+<div class="text-center">
+    <table class="table">
+        <tr>
+            <th>Codigo</th>
+            <th>Dorsal</th>
+        </tr>
+
+        @foreach (var chp in Model)
+        {
+            <tr>
+                <td>@chp.Codigo</td>
+                <td>@chp.Dorsal</td>
+                <td>
+                    <a href="/Home/DeleteChips?cod=@chp.Codigo">Borrar</a>
+                </td>
+            </tr>
+        }
+
+    </table>
+
+</div>

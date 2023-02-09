@@ -77,6 +77,26 @@ namespace Competencias.Models
             return i;
         }
 
+        public int AltaChips(CodigoChips chp)
+        {
+
+            Conectar();
+            SqlCommand cmd = new SqlCommand(
+                        "insert into codigochips (Codigo, Dorsal) " +
+                        "values(@Codigo, @Dorsal)", con);
+
+            cmd.Parameters.Add("@Codigo", System.Data.SqlDbType.VarChar);
+            cmd.Parameters.Add("@Dorsal", System.Data.SqlDbType.Int);
+
+            cmd.Parameters["@Codigo"].Value = chp.Codigo.ToString();
+            cmd.Parameters["@Dorsal"].Value = chp.Dorsal.ToString();
+
+            con.Open();
+            int i = cmd.ExecuteNonQuery();
+            con.Close();
+            return i;
+        }
+
         public List<Participantes> GetAllParticipantes()
         {
             Conectar();
@@ -99,6 +119,26 @@ namespace Competencias.Models
                 Allparticipantes.Add(part);
             }
             return Allparticipantes;
+        }
+
+        public List<CodigoChips> GetAllChips()
+        {
+            Conectar();
+            List<CodigoChips> AllChips = new List<CodigoChips>();
+            string sql = "select * from codigochips";
+            SqlCommand comando = new SqlCommand(sql, con);
+            con.Open();
+            SqlDataReader registros = comando.ExecuteReader();
+            while (registros.Read())
+            {
+
+                CodigoChips chp = new CodigoChips();
+                chp.Codigo = registros["Codigo"].ToString();
+                chp.Dorsal = int.Parse(registros["Dorsal"].ToString());
+
+                AllChips.Add(chp);
+            }
+            return AllChips;
         }
 
         public Participantes GetId(int IdParticipantes)
@@ -186,6 +226,7 @@ namespace Competencias.Models
             Conectar();
             string sql = @"update carreras set 
                             IdCarrera=@IdCarrera,
+                            NumCarrera=@NumCarrera,
                             DescripcionCarrera=@DescripcionCarrera,
                             FechaCarrera=@FechaCarrera,
                             Distanciaenmetros=@Distanciaenmetros,
@@ -194,11 +235,13 @@ namespace Competencias.Models
 
             SqlCommand comando = new SqlCommand(sql, con);
             comando.Parameters.Add("@IdCarrera", SqlDbType.Int);
+            comando.Parameters.Add("@NumCarrera", SqlDbType.Int);
             comando.Parameters.Add("@DescripcionCarrera", SqlDbType.VarChar);
             comando.Parameters.Add("@FechaCarrera", SqlDbType.VarChar);
             comando.Parameters.Add("@Distanciaenmetros", SqlDbType.VarChar);
             comando.Parameters.Add("@HoraInicio", SqlDbType.VarChar);
             comando.Parameters["@IdCarrera"].Value = race.IdCarrera;
+            comando.Parameters["@NumCarrera"].Value = race.NumCarrera;
             comando.Parameters["@DescripcionCarrera"].Value = race.DescripcionCarrera;
             comando.Parameters["@FechaCarrera"].Value = race.FechaCarrera;
             comando.Parameters["@Distanciaenmetros"].Value = race.Distanciaenmetros;
@@ -243,6 +286,21 @@ namespace Competencias.Models
             return i;
         }
 
+        public int BorrarChips(string cod)
+        {
+            Conectar();
+            string sql = "delete from codigochips where Codigo=@cod";
+            SqlCommand sentencia = new SqlCommand(sql, con);
+
+            sentencia.Parameters.Add("@cod", SqlDbType.VarChar);
+            sentencia.Parameters["@cod"].Value = cod;
+
+            con.Open();
+            int i = sentencia.ExecuteNonQuery();
+            con.Close();
+            return i;
+        }
+
         public List<Carrera> GetAllCarrera()
         {
             Conectar();
@@ -256,6 +314,7 @@ namespace Competencias.Models
 
                 Carrera race = new Carrera();
                 race.IdCarrera = int.Parse(registros["IdCarrera"].ToString());
+                race.NumCarrera = int.Parse(registros["NumCarrera"].ToString());
                 race.DescripcionCarrera = registros["DescripcionCarrera"].ToString();
                 race.FechaCarrera = registros["FechaCarrera"].ToString();
                 race.Distanciaenmetros = registros["Distanciaenmetros"].ToString();

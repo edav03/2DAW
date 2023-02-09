@@ -67,6 +67,32 @@ namespace Competencias.Controllers
             return RedirectToAction("Carreras");
         }
 
+        public IActionResult AltaChips()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult AltaChips(IFormCollection collection)
+        {
+
+            MantenimientoCompetencias car = new MantenimientoCompetencias();
+            CodigoChips chp = new CodigoChips();
+
+            chp.Codigo = collection["Codigo"].ToString();
+            chp.Dorsal = int.Parse(collection["Dorsal"].ToString());
+
+            car.AltaChips(chp);
+            return RedirectToAction("CodigoChips");
+        }
+
+        public IActionResult FichaParticipante(int IdParticipantes)
+        {
+            MantenimientoCompetencias car = new MantenimientoCompetencias();
+            Participantes part = car.GetId(IdParticipantes);
+            return View(part);
+        }
+
         public IActionResult Editar(int IdParticipantes)
         {
             MantenimientoCompetencias car = new MantenimientoCompetencias();
@@ -112,6 +138,7 @@ namespace Competencias.Controllers
         public IActionResult EditarCarrera(IFormCollection collection)
         {
             int IdCarrera = int.Parse(collection["IdCarrera"].ToString());
+            int NumCarrera = int.Parse(collection["NumCarrera"].ToString());
             string DescripcionCarrera = collection["DescripcionCarrera"].ToString();
             string FechaCarrera = collection["FechaCarrera"].ToString();
             string Distanciaenmetros = collection["Distanciaenmetros"].ToString();
@@ -119,6 +146,7 @@ namespace Competencias.Controllers
 
             Carrera race = new Carrera();
             race.IdCarrera = IdCarrera;
+            race.NumCarrera = NumCarrera;
             race.DescripcionCarrera = DescripcionCarrera;
             race.FechaCarrera = FechaCarrera;
             race.Distanciaenmetros = Distanciaenmetros;
@@ -130,7 +158,7 @@ namespace Competencias.Controllers
             return RedirectToAction("Carreras");
         }
 
-            public IActionResult Delete(int IdParticipantes)
+        public IActionResult Delete(int IdParticipantes)
         {
             MantenimientoCompetencias car = new MantenimientoCompetencias();
             car.Borrar(IdParticipantes);
@@ -146,6 +174,14 @@ namespace Competencias.Controllers
             return RedirectToAction("Carreras");
         }
 
+        public IActionResult DeleteChips(string cod)
+        {
+            MantenimientoCompetencias car = new MantenimientoCompetencias();
+            car.BorrarChips(cod);
+
+            return RedirectToAction("CodigoChips");
+        }
+
         public IActionResult Importar()
         {
             return View();
@@ -159,7 +195,8 @@ namespace Competencias.Controllers
 
         public IActionResult CodigoChips()
         {
-            return View();
+            MantenimientoCompetencias cr = new MantenimientoCompetencias();
+            return View(cr.GetAllChips());
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
