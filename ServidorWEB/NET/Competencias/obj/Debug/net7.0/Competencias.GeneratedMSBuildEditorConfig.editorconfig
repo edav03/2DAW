@@ -16,8 +16,24 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\edava\Documents\2DAW\ServidorWEB\NET\Competencias
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/edava/Documents/2DAW/ServidorWEB/NET/Competencias/Views/Home/Alta.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBbHRhLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/edava/Documents/2DAW/ServidorWEB/NET/Competencias/Views/Home/Editar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxFZGl0YXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/edava/Documents/2DAW/ServidorWEB/NET/Competencias/Views/Home/Importar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbXBvcnRhci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/edava/Documents/2DAW/ServidorWEB/NET/Competencias/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/edava/Documents/2DAW/ServidorWEB/NET/Competencias/Views/Home/Participantes.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQYXJ0aWNpcGFudGVzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/edava/Documents/2DAW/ServidorWEB/NET/Competencias/Views/Home/Privacy.cshtml]

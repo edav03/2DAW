@@ -1,0 +1,13 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h4>Introducir datos: </h4>  
+    @using (Html.BeginForm("Index", "Home", FormMethod.Post,
+    new { enctype = "multipart/form-data" }))
+    {
+            <input type="file" name="postedFile" />
+            <input type="submit" name="Importar" />
+    }
+</div>
