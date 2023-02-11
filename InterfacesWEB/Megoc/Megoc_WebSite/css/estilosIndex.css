@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Abhaya+Libre&family=Inter&family=Sevillana&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  background-color: black;
+  color: white;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+header {
+  width: 100%;
+  height: 7rem;
+  /* border: 1px solid green; */
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: center;
+}
+
+header > h1 {
+  font-family: 'Inter', Arial, Helvetica, sans-serif;
+  color: #efd96f;
+  margin-top: 2rem;
+}
+
+header > img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 7rem;
+  width: 6rem;
+}
+
+main {
+  text-align: center;
+  margin: 2rem 0;
+}
+
+main > h1 {
+  font-family: 'Sevillana', Arial, Helvetica, sans-serif;
+  font-size: 4rem;
+  color: #efd96f;
+}
+
+main > p {
+  font-family: 'Abhaya Libre', Arial, Helvetica, sans-serif;
+  text-align: justify;
+  margin: 1rem;
+  color: #b4800a;
+}
+
+main > img {
+  width: 90%;
+  height: 9rem;
+  margin: 1rem 1rem;
+  /* margin-top: 1rem;
+  margin-bottom: 1rem;
+  margin-left: 1rem;
+  margin-right: 1rem; */
+}
