@@ -102,3 +102,5 @@ dist
 
 # TernJS port file
 .tern-port
+/ServidorWEB/JAVA/WebJSP/nbproject/private/
+/ServidorWEB/JAVA/WebJSP/build/

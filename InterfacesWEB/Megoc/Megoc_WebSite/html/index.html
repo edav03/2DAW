@@ -9,8 +9,12 @@
   </head>
   <body>
     <header>
-      <img src="../img/menu_Icon.png" alt="Menu Logo" />
-      <div id="lenguaje"></div>
+      <img id="menu" src="../img/menu_Icon.png" alt="Menu Logo" />
+      <div id="lenguaje">
+        <img src="../img/sevillana.png" alt="Idioma Español">
+        <div id="barra"></div>
+        <img src="../img/casa.png" alt="Idioma Valenciano">
+      </div>
       <nav>
         <a href="#">Quienes Somos?</a>
         <a href="#">Te gusta cantar</a>
@@ -18,15 +22,15 @@
         <a href="#">Galeria</a>
       </nav>
       <h1>MEGOC</h1>
-      
     </header>
+
       <section class="carousel">
         <div class="slides">
           <div class="slides-item slide-1" id="slide-1"><img src="../img/logoMegoc.jpg" width="80%" height="500rem" alt="Logo de Megoc"></div>
-          <div class="slides-item slide-2" id="slide-2"><img src="../img/fontConcierto.jpg" width="80%" height="500rem" alt="Logo de Megoc"></div>
+          <div class="slides-item slide-2" id="slide-2"><img src="../img/hurray.jpg" width="80%" height="500rem" alt="Logo de Megoc"></div>
           <div class="slides-item slide-3" id="slide-3"><img src="../img/iglesiaActuacion.jpg" width="80%" height="500rem" alt="Logo de Megoc"></div>
-          <div class="slides-item slide-4" id="slide-4"><img src="../img/hurray.jpg" width="80%" height="500rem" alt="Logo de Megoc"></div>
-          <div class="slides-item slide-5" id="slide-5"><img src="../img/concierto2.jpeg" width="80%" height="500rem" alt="Logo de Megoc"></div>       
+          <div class="slides-item slide-4" id="slide-4"><img src="../img/portadaFacebook.jpg" width="80%" height="500rem" alt="Logo de Megoc"></div>
+          <div class="slides-item slide-5" id="slide-5"><img src="../img/fontConcierto.jpg" width="80%" height="500rem" alt="Logo de Megoc"></div>       
         </div>
         <div class="carousel__nav">
           <a class="slider-nav" href="#slide-1">1</a>
@@ -168,19 +172,6 @@
         iusto odio. Animi facere deserunt sequi fugiat, omnis quo corporis
         iusto, soluta harum, deleniti ad.
       </p>
-      <p>
-        Quam minima, ipsam deserunt error perferendis incidunt distinctio iusto
-        quae eaque blanditiis, est nisi reiciendis quia minus enim sunt nulla
-        eum beatae velit? Accusantium iusto laboriosam omnis velit voluptatem!
-        Eum sit cumque atque, eveniet magni rem minima totam tempora
-        consectetur, corporis saepe impedit, esse quisquam aliquam soluta animi.
-        Maiores repudiandae molestias deleniti. Officiis eaque a et illo quod?
-        Laboriosam deserunt aspernatur optio harum delectus tempore accusamus
-        blanditiis ipsam rerum, omnis, molestiae error modi incidunt, fugit
-        magni atque magnam earum! Eaque, similique suscipit enim assumenda
-        exercitationem voluptatem quo fugiat maiores. Doloremque debitis
-        repudiandae, facilis odio nisi ipsam et nemo quo suscipit!
-      </p>
       <img
         src="../img/concierto2.jpeg"
         alt="Actuacion de Megoc"
@@ -189,21 +180,47 @@
       </div>
     </main>
     <footer>
-      <a href="https://www.facebook.com/ModernEspaiGospelCor"
-        ><img src="../img/facebookLogo.png" alt="Link al Facebook de Megoc"
-      /></a>
+      <a target="_blank" href="https://www.facebook.com/ModernEspaiGospelCor"
+        ><img src="../img/facebookLogo.png" alt="Link al Facebook de Megoc" />
+      </a>
 
-      <a href="https://www.instagram.com/modernespaigospelcor"
-        ><img src="../img/instaLogo2.jpg" alt="Link al Instagram de Megoc"
-      /></a>
+      <a target="_blank" href="https://www.instagram.com/modernespaigospelcor">
+        <img src="../img/instaLogo2.jpg" alt="Link al Instagram de Megoc"/>
+      </a>
 
       <img src="../img/whatsLogo.png" alt="Link al Whatsapp de Megoc" />
 
-      <a href="https://www.youtube.com/@modernespaigospelcor-megoc9290"
-        ><img src="../img/youtubeLogo.png" alt="Link al Youtube de Megoc"
-      /></a>
+      <a target="_blank" href="https://www.youtube.com/@modernespaigospelcor-megoc9290">
+        <img src="../img/youtubeLogo.png" alt="Link al Youtube de Megoc"/>
+      </a>
 
-      <img src="../img/mailLogo.png" alt="Link al email de Megoc" />
+      <img src="../img/mailLogo.png" alt="Link al email de Megoc" target="_blank" />
     </footer>
+
+    <div class="menu">
+      <a href="#">¿Quienes somos?</a>
+      <a href="#">¿Te gusta cantar?</a>
+      <a href="#">Proximos Conciertos</a>
+      <a href="#">Galeria</a>
+    </div>
   </body>
+  <script>
+    let menu = document.getElementById("menu")
+    let contenedorMenu = document.querySelector(".menu")
+    let menuOn = false;
+
+    menu.addEventListener("click", (e) => {
+      if (menuOn == true) {
+        contenedorMenu.style.display = "none"
+        menuOn = false;
+
+        menu.style.rotate = "90deg";
+      } else{
+        contenedorMenu.style.display = "flex"
+        menuOn = true;
+
+        menu.style.rotate = "0deg";
+      }
+    })
+  </script>
 </html>
