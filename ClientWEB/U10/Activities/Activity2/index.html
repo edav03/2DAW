@@ -19,18 +19,27 @@
       }
 
       main {
-        width: 100%;
-        height: 100%;
+        width: 90%;
+        height: 90%;
         margin: auto;
-        display: grid;
-        grid-template-columns: repeat(5, 1fr);
-        grid-template-rows: auto;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
       }
 
       div {
+        border: 2px solid gray;
+        margin: auto;
+        width: 18%;
         text-align: center;
         font-size: small;
+        border-radius: 15px;
         overflow: hidden;
+      }
+
+      div > img {
+        border-radius: 10px;
       }
     </style>
   </head>

@@ -104,3 +104,6 @@ dist
 .tern-port
 /ServidorWEB/JAVA/WebJSP/nbproject/private/
 /ServidorWEB/JAVA/WebJSP/build/
+/ServidorWEB/JAVA/WebServlets/nbproject/private/
+/ServidorWEB/JAVA/WebServlets/build/
+/ServidorWEB/JAVA/mavenServlets/target/

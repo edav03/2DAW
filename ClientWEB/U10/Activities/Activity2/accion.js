@@ -21,8 +21,6 @@ function rellenaUsuario(response, capaUsuario, usuario) {
     /** Creacion del contenedor */
     let tarjeta = document.createElement('div')
     tarjeta.setAttribute('class', i + 1)
-    tarjeta.style.width = '90%'
-    tarjeta.style.height = '70%'
 
     /** Distincion entre pares e impares */
     if ((i + 1) % 2 == 0) {
