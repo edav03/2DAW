@@ -76,7 +76,6 @@ function rellenaUsuario(response, capaUsuario, usuario) {
           thisTarjeta.childNodes[2].textContent = `${response.results[0].email}`
           thisTarjeta.childNodes[3].textContent = `Direccion: ${response.results[0].location.street.name}`
           thisTarjeta.childNodes[4].textContent = `Estado: ${response.results[0].location.state}`
-          // console.log(thisTarjeta.nodeValue)
         })
     })
   }
