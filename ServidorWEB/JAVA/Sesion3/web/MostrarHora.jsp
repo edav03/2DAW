@@ -6,6 +6,7 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="java.util.*"%>
+<%@page isErrorPage="true"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -13,6 +14,7 @@
         <title>MOSTRAR HORA</title>
     </head>
     <body>
+        <%@page errorPage="navbar.html"%>
         <h1>HORA ACTUAL</h1>
         <p>
             <% Calendar cal = Calendar.getInstance();
