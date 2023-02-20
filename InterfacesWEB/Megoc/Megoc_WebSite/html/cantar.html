@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../css/estilosIndex.css">
+    <link rel="stylesheet" href="../css/globalEstilos.css">
     <title>Te gusta cantar</title>
   </head>
   <body>
@@ -15,9 +15,15 @@
         <div id="barra"></div>
         <img src="../img/casa.png" alt="Idioma Valenciano">
       </div>
+      <div class="menu">
+        <a href="./index.html">¿Quienes somos?</a>
+        <a href="./cantar.html">¿Te gusta cantar?</a>
+        <a href="#">Proximos Conciertos</a>
+        <a href="#">Galeria</a>
+      </div>
       <nav>
-        <a href="#" style="color: #FFFFFF;">Quienes Somos?</a>
-        <a href="#" style="color: #efd96f;">Te gusta cantar</a>
+        <a href="./index.html" style="color: #FFFFFF;">Quienes Somos?</a>
+        <a href="./cantar.html" style="color: #efd96f;">Te gusta cantar</a>
         <a href="#">Proximos Conciertos</ahref>
         <a href="#">Galeria</a>
       </nav>
@@ -27,4 +33,23 @@
       <h1>MEGOC</h1>
     </header>
   </body>
+  <script>
+    let menu = document.getElementById("menu")
+    let contenedorMenu = document.querySelector(".menu")
+    let menuOn = false;
+
+    menu.addEventListener("click", (e) => {
+      if (menuOn == true) {
+        contenedorMenu.style.display = "none"
+        menuOn = false;
+
+        menu.style.rotate = "90deg";
+      } else{
+        contenedorMenu.style.display = "flex"
+        menuOn = true;
+
+        menu.style.rotate = "0deg";
+      }
+    })
+  </script>
 </html>
