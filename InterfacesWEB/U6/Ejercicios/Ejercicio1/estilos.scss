@@ -1,0 +1,51 @@
+$color_1: #f9f9f9;
+$color_2: #5e5e5e;
+$font-family_1: Arial;
+$font-family_2: Georgia;
+$background-color_1: none;
+$background-color_2: #5e5e5e;
+$background-color_3: #f9f9f9;
+
+header {
+  margin: 0.5rem;
+  padding: 0.5rem;
+  background-image: url(./img/f1.png);
+  background-repeat: norepeat;
+  background-color: $background-color_1;
+  section {
+    margin: 0.5rem;
+    padding: 0.5rem;
+    * {
+      display: inline-block;
+      background-color: $background-color_2;
+    }
+    h1 {
+      font-family: $font-family_1;
+      font-size: 1.2rem;
+      font-style: italic;
+    }
+  }
+}
+nav {
+  ul {
+    list-style: none;
+    li {
+      text-align: center;
+      display: inline-block;
+      a {
+        font-family: $font-family_2;
+        font-weight: bold;
+        text-decoration: none;
+        display: block;
+        color: $color_1;
+        background-color: $background-color_2;
+        margin: 0.5rem;
+        padding: 0.5rem;
+        &:hover {
+          color: $color_2;
+          background-color: $background-color_3;
+        }
+      }
+    }
+  }
+}
