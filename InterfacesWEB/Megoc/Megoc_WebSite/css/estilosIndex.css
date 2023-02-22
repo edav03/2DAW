@@ -7,20 +7,9 @@
   display: none;
 }
 
-main {
-  text-align: center;
-  margin: 2rem 0;
-}
-
-main > h1 {
-  font-family: 'Sevillana', Arial, Helvetica, sans-serif;
-  font-size: 4rem;
-  color: #efd96f;
-}
-
 #Maintext > p {
   font-family: 'Abhaya Libre', Arial, Helvetica, sans-serif;
-  text-align: justify;
+  text-align: start;
   margin: 1rem;
   color: #b4800a;
 }
@@ -32,81 +21,16 @@ main > h1 {
   border-radius: 15px;
 }
 
-footer {
-  width: 80%;
-  margin: auto;
-  display: flex;
-  justify-content: space-around;
-}
-
-footer img {
-  width: 4rem;
-  height: 4rem;
-}
-
-footer img:nth-child(1) {
-  border-radius: 100%;
-}
-
 /*************************
  *  VERSION TABLET  *
 *************************/
 @media (min-width: 768px) {
-  :root {
-    font-size: 17px;
-  }
-
-  header > img {
-    display: none;
-  }
-
-  header > h1 {
-    display: none;
-  }
-
-  /** Barra de navegacion **/
-  nav > a {
-    display: inline;
-    margin: 0 0.7rem;
-    padding: 0.5rem;
-  }
-
-  /*Cambiar esto */
   nav > a:first-child {
     color: #efd96f;
   }
 
-  nav > a:hover {
-    border-radius: 20px;
-    border: 1px solid yellow;
-    background-color: #efd96f;
+  nav > a:first-child:hover {
     color: black;
-  }
-
-  #lenguaje {
-    display: inline;
-    width: 5rem;
-    height: 5rem;
-  }
-
-  #lenguaje > img {
-    width: 40%;
-    height: 80%;
-    display: inline-block;
-  }
-
-  #barra {
-    width: 5%;
-    height: 100%;
-    background-color: white;
-    display: inline-block;
-  }
-
-  header {
-    display: flex;
-    justify-content: space-around;
-    align-content: flex-end;
-    align-items: center;
   }
 
   /** Carrousel de imagenes **/
@@ -193,13 +117,6 @@ footer img:nth-child(1) {
   /** Fin de carrousel **/
 
   /** Edicion del cuerpo **/
-  main {
-    position: relative;
-    width: 95%;
-    margin: auto;
-    display: flex;
-    flex-wrap: wrap;
-  }
 
   #Maintext {
     display: flex;
@@ -211,12 +128,14 @@ footer img:nth-child(1) {
     margin: auto;
   }
 
+  /*
   main > h1 {
     text-align: start;
     width: 90%;
     margin: auto;
     font-size: 5rem;
   }
+  */
 
   #Maintext > p {
     width: 49%;
@@ -236,17 +155,9 @@ footer img:nth-child(1) {
     position: absoulte;
     margin: auto;
   }
-
-  footer {
-    margin: 2rem auto;
-  }
 }
 
 @media (min-width: 960px) {
-  :root {
-    font-size: 20px;
-  }
-
   div > img {
     height: 30rem;
   }

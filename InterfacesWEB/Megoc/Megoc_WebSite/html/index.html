@@ -19,14 +19,14 @@
       <div class="menu">
         <a href="./index.html">¿Quienes somos?</a>
         <a href="./cantar.html">¿Te gusta cantar?</a>
-        <a href="#">Proximos Conciertos</a>
-        <a href="#">Galeria</a>
+        <a href="./conciertos.html">Proximos Conciertos</a>
+        <a href="./galeria.html">Galeria</a>
       </div>
       <nav>
         <a href="./index.html">Quienes Somos?</a>
         <a href="./cantar.html">Te gusta cantar</a>
-        <a href="#">Proximos Conciertos</ahref>
-        <a href="#">Galeria</a>
+        <a href="./conciertos.html">Proximos Conciertos</ahref>
+        <a href="./galeria.html">Galeria</a>
       </nav>
       <h1>MEGOC</h1>
     </header>
@@ -206,23 +206,5 @@
 
     
   </body>
-  <script>
-    let menu = document.getElementById("menu")
-    let contenedorMenu = document.querySelector(".menu")
-    let menuOn = false;
-
-    menu.addEventListener("click", (e) => {
-      if (menuOn == true) {
-        contenedorMenu.style.display = "none"
-        menuOn = false;
-
-        menu.style.rotate = "90deg";
-      } else{
-        contenedorMenu.style.display = "flex"
-        menuOn = true;
-
-        menu.style.rotate = "0deg";
-      }
-    })
-  </script>
+  <script src="../js/menu.js"></script>
 </html>

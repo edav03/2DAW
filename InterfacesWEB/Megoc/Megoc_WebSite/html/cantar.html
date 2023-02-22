@@ -4,52 +4,113 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../css/globalEstilos.css">
+    <link rel="stylesheet" href="../css/globalEstilos.css" />
+    <link rel="stylesheet" href="../css/estilosCantar.css" />
     <title>Te gusta cantar</title>
   </head>
   <body>
     <header>
       <img id="menu" src="../img/menu_Icon.png" alt="Menu Logo" />
       <div id="lenguaje">
-        <img src="../img/sevillana.png" alt="Idioma Español">
+        <img src="../img/sevillana.png" alt="Idioma Español" />
         <div id="barra"></div>
-        <img src="../img/casa.png" alt="Idioma Valenciano">
+        <img src="../img/casa.png" alt="Idioma Valenciano" />
       </div>
       <div class="menu">
         <a href="./index.html">¿Quienes somos?</a>
         <a href="./cantar.html">¿Te gusta cantar?</a>
-        <a href="#">Proximos Conciertos</a>
-        <a href="#">Galeria</a>
+        <a href="./conciertos.html">Proximos Conciertos</a>
+        <a href="./galeria.html">Galeria</a>
       </div>
       <nav>
-        <a href="./index.html" style="color: #FFFFFF;">Quienes Somos?</a>
-        <a href="./cantar.html" style="color: #efd96f;">Te gusta cantar</a>
-        <a href="#">Proximos Conciertos</ahref>
-        <a href="#">Galeria</a>
+        <a href="./index.html">Quienes Somos?</a>
+        <a href="./cantar.html">Te gusta cantar</a>
+        <a href="./conciertos.html">Proximos Conciertos</a>
+        <a href="./galeria.html">Galeria</a>
       </nav>
-      <form action="">
-        
-      </form>
       <h1>MEGOC</h1>
     </header>
+    <main>
+      <h1>¿Te gusta cantar?</h1>
+      <form action="#">
+        <table>
+          <tr>
+            <th><label for="nombre">Nombre: </label></th>
+            <th>
+              <input type="text" name="nombre" placeholder="Alberto Lucas" />
+            </th>
+          </tr>
+          <br /><br />
+          <tr>
+            <th><label for="apellidos">Apellidos: </label></th>
+            <th>
+              <input
+                type="text"
+                name="apellidos"
+                placeholder="Morant Boigues"
+              />
+            </th>
+          </tr>
+          <br /><br />
+          <tr>
+            <th><label for="edad">Edad: </label></th>
+            <th>
+              <input
+                type="number"
+                name="edad"
+                id="edad"
+                min="14"
+                placeholder="17"
+              />
+            </th>
+          </tr>
+          <br /><br />
+          <tr>
+            <th><label for="ciudad">¿Donde vives?: </label></th>
+            <th>
+              <input
+                type="text"
+                name="ciudad"
+                id="ciudad"
+                placeholder="Ciudad"
+              />
+            </th>
+          </tr>
+        </table>
+        <br /><br />
+
+        <h2>Hay dos fechas de ingreso al año, no pierdas tu oportunidad!</h2>
+
+        <div id="botones">
+          <button class="when">Apuntame en Enero!</button>
+          <button class="when">Apuntame en Septiembre!</button>
+        </div>
+      </form>
+    </main>
+    <footer>
+      <a target="_blank" href="https://www.facebook.com/ModernEspaiGospelCor"
+        ><img src="../img/facebookLogo.png" alt="Link al Facebook de Megoc" />
+      </a>
+
+      <a target="_blank" href="https://www.instagram.com/modernespaigospelcor">
+        <img src="../img/instaLogo2.jpg" alt="Link al Instagram de Megoc" />
+      </a>
+
+      <img src="../img/whatsLogo.png" alt="Link al Whatsapp de Megoc" />
+
+      <a
+        target="_blank"
+        href="https://www.youtube.com/@modernespaigospelcor-megoc9290"
+      >
+        <img src="../img/youtubeLogo.png" alt="Link al Youtube de Megoc" />
+      </a>
+
+      <img
+        src="../img/mailLogo.png"
+        alt="Link al email de Megoc"
+        target="_blank"
+      />
+    </footer>
   </body>
-  <script>
-    let menu = document.getElementById("menu")
-    let contenedorMenu = document.querySelector(".menu")
-    let menuOn = false;
-
-    menu.addEventListener("click", (e) => {
-      if (menuOn == true) {
-        contenedorMenu.style.display = "none"
-        menuOn = false;
-
-        menu.style.rotate = "90deg";
-      } else{
-        contenedorMenu.style.display = "flex"
-        menuOn = true;
-
-        menu.style.rotate = "0deg";
-      }
-    })
-  </script>
+  <script src="../js/menu.js"></script>
 </html>

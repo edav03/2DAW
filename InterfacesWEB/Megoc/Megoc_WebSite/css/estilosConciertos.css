@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
+
+::-webkit-scrollbar {
+  width: 0px;
+}
+
+#contenedor {
+  width: 90%;
+  height: 30rem;
+  margin: auto;
+  overflow: scroll;
+}
+
+.tarjeta {
+  border: 1px solid orange;
+  border-radius: 40px;
+  background-color: #efd96f;
+  width: 18rem;
+  height: 20rem;
+  margin: 1.3rem auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.tarjeta > h3,
+.tarjeta > p {
+  background-color: transparent;
+}
+
+.tarjeta > h3 {
+  font-family: 'Sevillana', Arial, Helvetica, sans-serif;
+  font-size: 2.5rem;
+  color: black;
+}
+
+.tarjeta > p {
+  font-family: 'Satisfy', Arial, Helvetica, sans-serif;
+  font-size: 1.3rem;
+  color: #455089;
+}
+
+.tarjeta > button {
+  font-family: 'Sevillana', Arial, Helvetica, sans-serif;
+  font-size: 1.3rem;
+  border-radius: 30px;
+  width: 15rem;
+  height: 4rem;
+}
+
+/*************************
+ *  VERSION TABLET  *
+*************************/
+@media (min-width: 768px) {
+  #contenedor {
+    display: flex;
+    height: 100%;
+  }
+
+  .tarjeta {
+    margin-right: 2rem;
+  }
+
+  nav > a:nth-child(3) {
+    color: #efd96f;
+  }
+
+  nav > a:nth-child(3):hover {
+    color: black;
+  }
+}
+
+/*************************
+ *  VERSION PC  *
+*************************/
+@media (min-width: 960px) {
+  .tarjeta {
+    margin-right: 5rem;
+  }
+}

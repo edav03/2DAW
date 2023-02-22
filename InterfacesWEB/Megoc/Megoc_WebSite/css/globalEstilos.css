@@ -45,6 +45,7 @@ header > h1 {
 
 header > img {
   position: fixed;
+  background-color: transparent;
   border-radius: 15px;
   top: 0.9rem;
   right: 0.9rem;
@@ -56,6 +57,33 @@ header > img {
 
 #lenguaje {
   display: none;
+}
+
+main {
+  text-align: center;
+  margin: 2rem 0;
+}
+
+main > h1 {
+  font-family: 'Sevillana', Arial, Helvetica, sans-serif;
+  font-size: 4rem;
+  color: #efd96f;
+}
+
+footer {
+  width: 80%;
+  margin: auto;
+  display: flex;
+  justify-content: space-around;
+}
+
+footer img {
+  width: 4rem;
+  height: 4rem;
+}
+
+footer img:nth-child(1) {
+  border-radius: 100%;
 }
 
 .menu {
@@ -108,9 +136,9 @@ header > img {
   }
 
   /*Cambiar esto */
-  nav > a:first-child {
+  /* nav > a:first-child {
     color: #efd96f;
-  }
+  } */
 
   nav > a:hover {
     border-radius: 20px;
@@ -131,10 +159,42 @@ header > img {
     display: inline-block;
   }
 
+  #barra {
+    width: 5%;
+    height: 100%;
+    background-color: white;
+    display: inline-block;
+  }
+
   header {
     display: flex;
     justify-content: space-around;
     align-content: flex-end;
     align-items: center;
+  }
+
+  main {
+    position: relative;
+    width: 95%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  main > h1 {
+    text-align: center;
+    width: 90%;
+    margin: auto;
+    font-size: 5rem;
+  }
+
+  footer {
+    margin: 2rem auto;
+  }
+}
+
+@media (min-width: 960px) {
+  :root {
+    font-size: 20px;
   }
 }
