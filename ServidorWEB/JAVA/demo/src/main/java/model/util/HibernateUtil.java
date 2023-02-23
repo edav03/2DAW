@@ -7,19 +7,17 @@ package model.util;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;
-import jakarta.websocket.Session;
-import org.hibernate.SessionFactory;
 
 /**
  *
- * @author edison
+ * @author lliurex
  */
 public class HibernateUtil {
-    public static SessionFactory getCurrentSessionFromJPA() {
-        EntityManagerFactory emf = Persistence.createEntityManagerFactory("default");
-        EntityManager entityManager = emf.createEntityManager();
-        Session session = entityManager.unwrap(org.hibernate.Session.class);
-        SessionFactory factory = session.getSessionFactory();
-        return factory;
+    public static EntityManager getCurrentSessionFromJPA() {
+        
+        EntityManagerFactory sessionFactory = Persistence.createEntityManagerFactory( "default" );
+        EntityManager entityManager = sessionFactory.createEntityManager();
+        return entityManager;
+       
     }
 }

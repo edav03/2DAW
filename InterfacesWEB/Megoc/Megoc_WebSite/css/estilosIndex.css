@@ -9,6 +9,7 @@
 
 #Maintext > p {
   font-family: 'Abhaya Libre', Arial, Helvetica, sans-serif;
+  font-size: 1.5rem;
   text-align: start;
   margin: 1rem;
   color: #b4800a;
@@ -19,6 +20,23 @@
   height: 20rem;
   margin: 1rem 1rem;
   border-radius: 15px;
+}
+
+/* Cookies */
+#cookies {
+  width: 90%;
+  height: 5rem;
+  margin: auto;
+  background-color: #efd96f;
+  text-align: end;
+  border-radius: 10px;
+  display: flex;
+}
+
+#cookies > p {
+  background-color: transparent;
+  color: black;
+  text-align: center;
 }
 
 /*************************

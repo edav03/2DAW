@@ -1,10 +1,7 @@
 form {
   width: 100%;
-  height: 40rem;
-  /* margin: auto; */
   font-family: 'Abhaya Libre', Arial, Helvetica, sans-serif;
   text-align: center;
-  /* border: 1px solid green; */
   display: flex;
   justify-content: center;
   align-items: start;
@@ -17,7 +14,6 @@ table {
 }
 tr,
 th {
-  /* border: 1px solid lightblue; */
   width: 100%;
 }
 
@@ -57,10 +53,11 @@ h2 {
 
 .when {
   font-family: 'Sevillana', Arial, Helvetica, sans-serif;
+  font-size: 1.3rem;
   background-color: #efd96f;
   color: black;
-  width: 10rem;
-  height: 4rem;
+  width: 12rem;
+  height: 5rem;
   border-radius: 30px;
 }
 

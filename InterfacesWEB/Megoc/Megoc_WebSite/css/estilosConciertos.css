@@ -11,6 +11,19 @@
   overflow: scroll;
 }
 
+header {
+  /* border: 1px solid yellow; */
+}
+
+main > h1 {
+  font-size: 3rem;
+  /* border: 1px solid red; */
+}
+
+main {
+  margin-top: 0;
+}
+
 .tarjeta {
   border: 1px solid orange;
   border-radius: 40px;
@@ -30,7 +43,7 @@
 }
 
 .tarjeta > h3 {
-  font-family: 'Sevillana', Arial, Helvetica, sans-serif;
+  font-family: 'Satisfy', Arial, Helvetica, sans-serif;
   font-size: 2.5rem;
   color: black;
 }
@@ -53,6 +66,9 @@
  *  VERSION TABLET  *
 *************************/
 @media (min-width: 768px) {
+  main > h1 {
+    font-size: 4rem;
+  }
   #contenedor {
     display: flex;
     height: 100%;

@@ -61,7 +61,6 @@ header > img {
 
 main {
   text-align: center;
-  margin: 2rem 0;
 }
 
 main > h1 {
@@ -71,10 +70,11 @@ main > h1 {
 }
 
 footer {
-  width: 80%;
+  width: 100%;
   margin: auto;
   display: flex;
-  justify-content: space-around;
+  /* justify-content: space-around; */
+  justify-content: space-between;
 }
 
 footer img {
@@ -133,16 +133,12 @@ footer img:nth-child(1) {
     display: inline;
     margin: 0 0.7rem;
     padding: 0.5rem;
+    border-radius: 20px;
+    transition: background-color 0.3s, color 0.3s;
   }
 
-  /*Cambiar esto */
-  /* nav > a:first-child {
-    color: #efd96f;
-  } */
-
   nav > a:hover {
-    border-radius: 20px;
-    border: 1px solid yellow;
+    /* border: 1px solid yellow; */
     background-color: #efd96f;
     color: black;
   }
@@ -189,7 +185,9 @@ footer img:nth-child(1) {
   }
 
   footer {
+    width: 80%;
     margin: 2rem auto;
+    justify-content: space-around;
   }
 }
 

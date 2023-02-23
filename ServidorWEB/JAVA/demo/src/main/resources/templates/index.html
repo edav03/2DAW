@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>index.html HOLA</div>
+        
+    <div th:switch="${departamentos}">
+    <h2 th:case="null">No departamentos todavia!</h2>
+        <div th:case="*">
+            <h2>Departamentos</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                <tr th:each="dept : ${departamentos}">
+                    <td th:text="${dept.nombre}"></td>
+                    <td><a th:href="@{/edit/{id}(id=${dept.id})}">Edit</a></td>
+                    <td><a th:href="@{/delete/{id}(id=${dept.id})}">Delete</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>      
+    <p><a href="/alta">Añadir Departamento</a></p>
+</div>
+        
+        
+        
+        
+    </body>
+</html>
